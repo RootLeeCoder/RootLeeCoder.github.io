@@ -8,12 +8,12 @@
   
   
   
-  <title>Vue入门 | Code Zone</title>
+  <title>Vue入门 | 李根的个人博客</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="前端,Vue.js,">
+    <meta name="keywords" content="Vue.js,前端,Vue.js,入门教程,">
   
 
   <script>
@@ -67,7 +67,7 @@
   <header>
     <div class="site-brand">
       <div class="site-title">
-        <a href="/">rootleecoder.github.io</a>
+        <a href="/">Code Zone</a>
       </div>
     </div>
     <nav class="site-navigation">
@@ -205,6 +205,13 @@
       2019-01-19
     </span>
     
+      <span>
+        分类 : 
+          <a href="/categories/Vue-js/">
+            Vue.js
+          </a>
+      </span>
+    
     
       <span>
         浏览 : <span class="article-timer" data-identity="Vue入门"></span>
@@ -216,13 +223,15 @@
 
   <div class="article-content">
     <div class="markdown-body">
-      <h1 id="Vue入门"><a href="#Vue入门" class="headerlink" title="Vue入门"></a>Vue入门</h1><p>[TOC]</p>
+      <h1 id="Vue入门"><a href="#Vue入门" class="headerlink" title="Vue入门"></a>Vue入门</h1><blockquote>
+<p>注：由于 Vue 官网在中国大陆由于未知原因打开极慢，因此推荐使用 BootCDN 当中的<a href="https://vuejs.bootcss.com/" target="_blank" rel="noopener">文档镜像</a></p>
+</blockquote>
 <h2 id="Vue是什么"><a href="#Vue是什么" class="headerlink" title="Vue是什么"></a>Vue是什么</h2><hr>
 <p>Vue (读音 /vjuː/，类似于 <strong>view</strong>) 是一套用于构建用户界面的<strong>渐进式框架</strong>。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。</p>
 <p>渐进式：没有太多限制</p>
 <h2 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h2><hr>
 <p>引入Vue的方法：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 开发环境版本，包含了有帮助的命令行警告 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.jsdelivr.net/npm/vue/dist/vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 开发环境版本，包含了有帮助的命令行警告 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcss.com/vue/2.5.22/vue.common.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="声明式渲染"><a href="#声明式渲染" class="headerlink" title="声明式渲染"></a>声明式渲染</h2><hr>
 <ul>
 <li>第一个Vue程序</li>
@@ -281,19 +290,6 @@
     </div>
   </div>
   
-    <div class="copy-right">
-      <div class="markdown-body">
-        <blockquote>
-        
-        
-          本文作者 : 李根 <br>
-        
-        原文链接 : <a href="">http://yoursite.com/2019/01/19/Vue入门/</a><br>
-        版权声明 : 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
-        </blockquote>
-      </div>
-    </div>
-  
   
   
 
@@ -314,6 +310,12 @@
           <span class="span--tag">
             <a href="/tags/Vue-js/">
               #Vue.js
+            </a>
+          </span>
+          
+          <span class="span--tag">
+            <a href="/tags/入门教程/">
+              #入门教程
             </a>
           </span>
           
@@ -338,9 +340,15 @@
       <div class="nav-pre">
         <i class="iconfont icon-prev"></i>
         上一篇:
-        <a href="/2019/01/18/使用HEXO搭建个人博客/" target="_self">使用HEXO搭建个人博客</a>
+        <a href="/passages/使用HEXO搭建个人博客/" target="_self">使用HEXO搭建个人博客</a>
       </div>
     
+    
+      <div class="nav-next">
+        下一篇:
+        <a href="/passages/Node-js入门/" target="_self">Node.js入门</a>
+        <i class="iconfont icon-next"></i>
+      </div>
     
   </nav>
 
@@ -505,6 +513,8 @@ if(true){
     Theme - <a href="https://github.com/dongyuanxin/theme-bmw">BMW</a> | Made With 💗 | Powered by <a href="https://godbmw.com/">GodBMW</a>
     <br>
     
+      <a href="https://www.google.com/analytics/" target="_blank">Google Analytics</a>提供统计服务
+    
   </p>
 </footer>
 
@@ -512,7 +522,7 @@ if(true){
 
 <script>
 const timeToNowDOM = document.querySelector("#time-to-now");
-const startTimestamp = new Date(2019, 0, 19).getTime();
+const startTimestamp = new Date(2019, 0, 18).getTime();
 
 const updateTimeStr = () => {
   let offset = parseInt(

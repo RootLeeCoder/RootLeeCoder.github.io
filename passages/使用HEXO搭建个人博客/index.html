@@ -8,12 +8,12 @@
   
   
   
-  <title>Hello World | Code Zone</title>
+  <title>使用HEXO搭建个人博客 | 李根的个人博客</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="Hexo, theme-bmw, Front-end">
+    <meta name="keywords" content="HEXO,入门教程,博客,HEXO,">
   
 
   <script>
@@ -67,7 +67,7 @@
   <header>
     <div class="site-brand">
       <div class="site-title">
-        <a href="/">rootleecoder.github.io</a>
+        <a href="/">Code Zone</a>
       </div>
     </div>
     <nav class="site-navigation">
@@ -197,7 +197,7 @@
 
 <div class="post">
   <h1 class="article-title">
-    <span>Hello World</span>
+    <span>使用HEXO搭建个人博客</span>
   </h1>
   <div class="article-top-meta">
     <span>
@@ -205,9 +205,16 @@
       2019-01-18
     </span>
     
+      <span>
+        分类 : 
+          <a href="/categories/HEXO/">
+            HEXO
+          </a>
+      </span>
+    
     
       <span>
-        浏览 : <span class="article-timer" data-identity="hello-world"></span>
+        浏览 : <span class="article-timer" data-identity="使用HEXO搭建个人博客"></span>
       </span>
     
   </div>
@@ -216,31 +223,62 @@
 
   <div class="article-content">
     <div class="markdown-body">
-      <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+      <h1 id="使用HEXO搭建个人博客"><a href="#使用HEXO搭建个人博客" class="headerlink" title="使用HEXO搭建个人博客"></a>使用HEXO搭建个人博客</h1><blockquote>
+<p><a href="https://www.bilibili.com/video/av39807850" target="_blank" rel="noopener">点击观看视频教程</a></p>
+</blockquote>
+<h2 id="1-安装与使用"><a href="#1-安装与使用" class="headerlink" title="1. 安装与使用"></a>1. 安装与使用</h2><hr>
+<h3 id="1-1-安装前准备"><a href="#1-1-安装前准备" class="headerlink" title="1.1 安装前准备"></a>1.1 安装前准备</h3><p>安装前请确保电脑中已经安装下列应用程序：</p>
+<ul>
+<li><a href="https://nodejs.org/" target="_blank" rel="noopener">Node.js</a></li>
+<li><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a></li>
+</ul>
+<p>如果没有安装请点击以上链接进入官网安装。</p>
+<h3 id="1-2-进行安装"><a href="#1-2-进行安装" class="headerlink" title="1.2 进行安装"></a>1.2 进行安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<h3 id="1-3-开始建站"><a href="#1-3-开始建站" class="headerlink" title="1.3 开始建站"></a>1.3 开始建站</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init <span class="built_in">test</span></span><br><span class="line"><span class="built_in">cd</span> <span class="built_in">test</span></span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<p><strong>注：此处<code>test</code>为文件夹名称</strong></p>
+<p>如果执行<code>hexo init test</code>命令时遇到<code>npm ERR!</code>属于正常现象。</p>
+<h3 id="1-4-渲染生成网页静态文件"><a href="#1-4-渲染生成网页静态文件" class="headerlink" title="1.4 渲染生成网页静态文件"></a>1.4 渲染生成网页静态文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+<p>此处的<code>g</code>为<code>generate</code>(部署)</p>
+<h3 id="1-5-查看生成的网站"><a href="#1-5-查看生成的网站" class="headerlink" title="1.5 查看生成的网站"></a>1.5 查看生成的网站</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>此处的<code>s</code>为<code>server</code></p>
+<p>此时打开在浏览器中打开 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> ，网站建立成功。</p>
+<h2 id="2-写作"><a href="#2-写作" class="headerlink" title="2 写作"></a>2 写作</h2><hr>
+<h3 id="2-1-生成新文章"><a href="#2-1-生成新文章" class="headerlink" title="2.1 生成新文章"></a>2.1 生成新文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new <span class="string">"post title"</span></span><br></pre></td></tr></table></figure>
+<p><strong>注：此处<code>post title</code>为文章标题，以下类似语法不再说明</strong></p>
+<p>此时HEXO已经帮助我们生成了<code>post-title.md</code>文件，存放在<code>\source\_posts\</code>目录下</p>
+<p>在Markdown文件中输入文本，执行<code>hexo g</code>和<code>hexo s</code>命令后可以在浏览器中看到刚刚输入的 Markdown 文本。</p>
+<h3 id="2-2-生成草稿"><a href="#2-2-生成草稿" class="headerlink" title="2.2 生成草稿"></a>2.2 生成草稿</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new draft <span class="string">"draft title"</span></span><br></pre></td></tr></table></figure>
+<p>草稿页面不会被HEXO渲染，也就是说最后的静态页面不会生成草稿文章</p>
+<h3 id="2-3-生成页面"><a href="#2-3-生成页面" class="headerlink" title="2.3 生成页面"></a>2.3 生成页面</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">"page title"</span></span><br></pre></td></tr></table></figure>
+<h2 id="3-部署"><a href="#3-部署" class="headerlink" title="3 部署"></a>3 部署</h2><hr>
+<h3 id="3-1-安装hexo-deployer-git"><a href="#3-1-安装hexo-deployer-git" class="headerlink" title="3.1 安装hexo-deployer-git"></a>3.1 安装hexo-deployer-git</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<h3 id="3-2-确认插件是否安装"><a href="#3-2-确认插件是否安装" class="headerlink" title="3.2 确认插件是否安装"></a>3.2 确认插件是否安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm list hexo-deployer-git</span><br></pre></td></tr></table></figure>
+<h3 id="3-3-配置部署数据"><a href="#3-3-配置部署数据" class="headerlink" title="3.3 配置部署数据"></a>3.3 配置部署数据</h3><p>在<code>_config.yml</code>文件中添加以下选项：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span> </span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repo:</span> <span class="attr">http:github.com/xxx/xxx.git</span></span><br></pre></td></tr></table></figure>
+<p><strong>注：以上repo中存放Github项目地址，请前往<a href="https://pages.github.com/" target="_blank" rel="noopener">GitPage</a>去搭建自己的个人主页</strong></p>
+<h3 id="3-4-将生成的网站部署到git仓库当中："><a href="#3-4-将生成的网站部署到git仓库当中：" class="headerlink" title="3.4 将生成的网站部署到git仓库当中："></a>3.4 将生成的网站部署到git仓库当中：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>如果遇到 Github 密码错误就执行一下命令，再运行<code>hexo d</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global credential.helper wincred</span><br></pre></td></tr></table></figure>
+<h2 id="4-更改主题"><a href="#4-更改主题" class="headerlink" title="4 更改主题"></a>4 更改主题</h2><hr>
+<p>这里以本博客使用的<a href="https://github.com/dongyuanxin/theme-bmw" target="_blank" rel="noopener">BWM主题</a>为例</p>
+<p>首先将该项目<code>clone</code>到<code>\themes\</code>目录下</p>
+<ul>
+<li>网站配置文件存放于<code>\_config.yml</code></li>
+<li>主题配置文件存放于<code>\theme\theme-bmw\_config.yml</code></li>
+</ul>
+<p>再按照<a href="https://godbmw.com/passages/2018-11-15-theme-bmw-docs-zh/" target="_blank" rel="noopener">官方文档</a>进行操作</p>
+<h2 id="5-Front-Matter"><a href="#5-Front-Matter" class="headerlink" title="5 Front Matter"></a>5 Front Matter</h2><hr>
+<p><strong><em>初学者对于本节内容即学即用即可，无需了解太多信息。</em></strong></p>
+<p>Front Matter 没有确切的中文翻译，它更像是一个配置文件。</p>
+<p>自动生成的md文件最上面两个分割线所包裹的区域就是 <em>Front Matter</em>，Front Matter 采用<a href="https://yaml.org/" target="_blank" rel="noopener">YAML</a>语法</p>
+<p>示例：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">Hello</span> <span class="string">World</span></span><br><span class="line"><span class="attr">category:</span> </span><br><span class="line"><span class="bullet">  -</span> <span class="number">1</span></span><br><span class="line"><span class="bullet">  -</span> <span class="number">2</span></span><br><span class="line"><span class="attr">comment:</span> <span class="string">on</span></span><br></pre></td></tr></table></figure>
+<h2 id="6-其它常用命令"><a href="#6-其它常用命令" class="headerlink" title="6 其它常用命令"></a>6 其它常用命令</h2><hr>
+<h3 id="6-1-监视文件变动"><a href="#6-1-监视文件变动" class="headerlink" title="6.1 监视文件变动"></a>6.1 监视文件变动</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -w</span><br></pre></td></tr></table></figure>
+<h3 id="6-2-发表草稿"><a href="#6-2-发表草稿" class="headerlink" title="6.2 发表草稿"></a>6.2 发表草稿</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo publish [layout] &lt;filename&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="6-3-详细网站列表"><a href="#6-3-详细网站列表" class="headerlink" title="6.3 详细网站列表"></a>6.3 详细网站列表</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo list route</span><br></pre></td></tr></table></figure>
     </div>
   </div>
-  
-    <div class="copy-right">
-      <div class="markdown-body">
-        <blockquote>
-        
-        
-          本文作者 : 李根 <br>
-        
-        原文链接 : <a href="">http://yoursite.com/2019/01/18/hello-world/</a><br>
-        版权声明 : 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
-        </blockquote>
-      </div>
-    </div>
   
   
   
@@ -250,6 +288,27 @@
   <div class="article-footer">
     <div class="article-meta pull-left">
       <span>
+        
+          <i class="iconfont icon-06tags"></i>标签: 
+          
+          <span class="span--tag">
+            <a href="/tags/入门教程/">
+              #入门教程
+            </a>
+          </span>
+          
+          <span class="span--tag">
+            <a href="/tags/博客/">
+              #博客
+            </a>
+          </span>
+          
+          <span class="span--tag">
+            <a href="/tags/HEXO/">
+              #HEXO
+            </a>
+          </span>
+          
         
       </span>
     </div>
@@ -271,7 +330,7 @@
     
       <div class="nav-next">
         下一篇:
-        <a href="/2019/01/18/使用HEXO搭建个人博客/" target="_self">使用HEXO搭建个人博客</a>
+        <a href="/passages/Vue入门/" target="_self">Vue入门</a>
         <i class="iconfont icon-next"></i>
       </div>
     
@@ -438,6 +497,8 @@ if(true){
     Theme - <a href="https://github.com/dongyuanxin/theme-bmw">BMW</a> | Made With 💗 | Powered by <a href="https://godbmw.com/">GodBMW</a>
     <br>
     
+      <a href="https://www.google.com/analytics/" target="_blank">Google Analytics</a>提供统计服务
+    
   </p>
 </footer>
 
@@ -445,7 +506,7 @@ if(true){
 
 <script>
 const timeToNowDOM = document.querySelector("#time-to-now");
-const startTimestamp = new Date(2019, 0, 19).getTime();
+const startTimestamp = new Date(2019, 0, 18).getTime();
 
 const updateTimeStr = () => {
   let offset = parseInt(
