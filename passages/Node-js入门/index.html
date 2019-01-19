@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="Node.js,前端,入门教程,Node.js,">
+    <meta name="keywords" content="Node.js,前端,Node.js,入门教程,">
   
 
   <script>
@@ -255,7 +255,6 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</span><br><span class="line"></span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">request, response</span>)</span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 发送HTTP头部</span></span><br><span class="line">    <span class="comment">// HTTP状态值：200：OK</span></span><br><span class="line">    <span class="comment">// 内容类型：text/plain</span></span><br><span class="line">    response.writeHead(<span class="number">200</span>, &#123;<span class="string">'Content-Type'</span>: <span class="string">'text/plain'</span>&#125;);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 发送响应数据 "Hello World"</span></span><br><span class="line">    response.end(<span class="string">"Hello World\n"</span>);</span><br><span class="line">&#125;).listen(<span class="number">8888</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 终端打印以下信息</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Server running at http://127.0.0.1:8888/'</span>)</span><br></pre></td></tr></table></figure>
 <p>使用node命令来执行以上的代码：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node server.js</span><br><span class="line">Server running at http://127.0.0.1:8888/</span><br></pre></td></tr></table></figure>
-
     </div>
   </div>
   
@@ -277,14 +276,14 @@
           </span>
           
           <span class="span--tag">
-            <a href="/tags/入门教程/">
-              #入门教程
+            <a href="/tags/Node-js/">
+              #Node.js
             </a>
           </span>
           
           <span class="span--tag">
-            <a href="/tags/Node-js/">
-              #Node.js
+            <a href="/tags/入门教程/">
+              #入门教程
             </a>
           </span>
           
