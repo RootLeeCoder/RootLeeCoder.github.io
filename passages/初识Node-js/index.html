@@ -8,12 +8,12 @@
   
   
   
-  <title>友链 | 李根的个人博客</title>
+  <title>初识Node.js | 李根的个人博客</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="Hexo, theme-bmw, Front-end">
+    <meta name="keywords" content="Node.js,入门教程,前端,Node.js,">
   
 
   <script>
@@ -205,24 +205,139 @@
 
 
 
-<div class="container friend-index">
-  <div class="friend-navigation">
-    
-    <div class="card">
-      <img src="https://gravatar.loli.net/avatar/b20750c40cd911256ddbd76a7f7e724c">
-      <p class="card-header">
-        @ <a href="https://godbmw.com" target="_blank">GodBMW</a>
-      </p>
-      <p class="card-meta">
-        BMW 主题作者
-      </p>
-    </div>
-    
-  </div>
-  <div class="markdown-body">
-    <p>申请友链请在评论区里留言</p>
 
+
+
+
+<div class="container post-index">
+
+  
+
+<div class="post">
+  <h1 class="article-title">
+    <span>初识Node.js</span>
+  </h1>
+  <div class="article-top-meta">
+    <span>
+      发布 : 
+      2019-01-19
+    </span>
+    
+      <span>
+        分类 : 
+          <a href="/categories/Node-js/">
+            Node.js
+          </a>
+      </span>
+    
+    
+      <span>
+        浏览 : <span class="article-timer" data-identity="初识Node-js"></span>
+      </span>
+    
   </div>
+
+  
+
+  <div class="article-content">
+    <div class="markdown-body">
+      <h1 id="初识Node-js"><a href="#初识Node-js" class="headerlink" title="初识Node.js"></a>初识Node.js</h1><h2 id="Node-js是什么"><a href="#Node-js是什么" class="headerlink" title="Node.js是什么"></a>Node.js是什么</h2><hr>
+<p>简单的说 Node.js 就是运行在服务端的 JavaScript。</p>
+<p>Node.js 是一个基于Chrome JavaScript 运行时建立的一个平台。</p>
+<p>Node.js是一个事件驱动I/O服务端JavaScript环境，基于Google的V8引擎，V8引擎执行Javascript的速度非常快，性能非常好。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><hr>
+<p>进入<a href="https://nodejs.org" target="_blank" rel="noopener">官网</a>下载安装</p>
+<p>安装后检测版本号的方法：</p>
+<p>以管理员身份进入命令行，输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
+<h2 id="第一个程序"><a href="#第一个程序" class="headerlink" title="第一个程序"></a>第一个程序</h2><hr>
+<ol>
+<li>新建一个<code>helloworld.js</code>程序，输入</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"Hello World"</span>);</span><br></pre></td></tr></table></figure>
+<ol>
+<li>在程序目录下打开终端，执行</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node helloworld.js</span><br></pre></td></tr></table></figure>
+<h2 id="创建第一个Node-js应用"><a href="#创建第一个Node-js应用" class="headerlink" title="创建第一个Node.js应用"></a>创建第一个Node.js应用</h2><hr>
+<ol>
+<li><h3 id="引入required模块"><a href="#引入required模块" class="headerlink" title="引入required模块"></a>引入required模块</h3></li>
+</ol>
+<p>我们使用 <strong>require</strong> 指令来载入 http 模块，并将实例化的 HTTP 赋值给变量 http，实例如下:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</span><br></pre></td></tr></table></figure>
+<ol>
+<li><h3 id="创建服务器"><a href="#创建服务器" class="headerlink" title="创建服务器"></a>创建服务器</h3></li>
+</ol>
+<p>使用<code>http.createServer()</code>方法来创建服务器，并使用<code>listen</code>方法绑定8888端口。函数通过<code>request</code>，<code>response</code> 参数来接受和响应数据。</p>
+<p>在根目录下创建一个<code>server.js</code>的文件，并写入以下代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</span><br><span class="line"></span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">request, response</span>)</span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 发送HTTP头部</span></span><br><span class="line">    <span class="comment">// HTTP状态值：200：OK</span></span><br><span class="line">    <span class="comment">// 内容类型：text/plain</span></span><br><span class="line">    response.writeHead(<span class="number">200</span>, &#123;<span class="string">'Content-Type'</span>: <span class="string">'text/plain'</span>&#125;);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 发送响应数据 "Hello World"</span></span><br><span class="line">    response.end(<span class="string">"Hello World\n"</span>);</span><br><span class="line">&#125;).listen(<span class="number">8888</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 终端打印以下信息</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Server running at http://127.0.0.1:8888/'</span>)</span><br></pre></td></tr></table></figure>
+<p>使用node命令来执行以上的代码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node server.js</span><br><span class="line">Server running at http://127.0.0.1:8888/</span><br></pre></td></tr></table></figure>
+    </div>
+  </div>
+  
+  
+  
+
+  
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+      <span>
+        
+          <i class="iconfont icon-06tags"></i>标签: 
+          
+          <span class="span--tag">
+            <a href="/tags/入门教程/">
+              #入门教程
+            </a>
+          </span>
+          
+          <span class="span--tag">
+            <a href="/tags/前端/">
+              #前端
+            </a>
+          </span>
+          
+          <span class="span--tag">
+            <a href="/tags/Node-js/">
+              #Node.js
+            </a>
+          </span>
+          
+        
+      </span>
+    </div>
+    <div class="article-meta pull-right">
+    </div>
+  </div>
+</div>
+
+
+  <aside id="sidebar">
+    <p id="sidebar-header"></p>
+    <ol id="sidebar-toc"></ol>
+  </aside>
+  <script async>setTimeout(generateToc, 10);</script>
+
+
+  <nav class="post-navigation">
+    
+      <div class="nav-pre">
+        <i class="iconfont icon-prev"></i>
+        上一篇:
+        <a href="/passages/Vue入门/" target="_self">Vue入门</a>
+      </div>
+    
+    
+      <div class="nav-next">
+        下一篇:
+        <a href="/passages/Webpack简介/" target="_self">Webpack简介</a>
+        <i class="iconfont icon-next"></i>
+      </div>
+    
+  </nav>
+
   
     <a href="#comment" class="comment-anchor"></a>
 <div class="comment-title"><i class="iconfont icon-footprint"></i> 留下足迹 <i class="iconfont icon-footprint"></i></div>
@@ -245,11 +360,136 @@
 </script>
    
 
+  
+    <script defer>
+const valineAPI = (() => {
+  try {
+    AV.init("KcDcUYGNOY5MW1l7MbrToL82-gzGzoHsz", "9CYUQJPkx6RJou9wChCMTV9A");
+  } catch(error) {}
+  const isExist = (identity) => {
+    identity = identity || getRealPath();
+    let query = new AV.Query('Timer');
+    return new Promise((resolve, reject) => {
+      query.equalTo("identity", identity);
+      query.find().then(results => {
+        resolve(results.length > 0);
+      }, error => reject(error));
+    })
+  }
+
+  const _get = (identity) => {
+    let query = null;
+    if(identity && identity instanceof Array){
+      let querys = [];
+      for(let i = 0; i < identity.length; ++i) {
+        querys[i] = new AV.Query('Timer');
+        querys[i].equalTo('identity', identity[i]);
+      }
+      query = AV.Query.or.apply(null ,querys);
+    } else {
+      identity = identity || getRealPath();
+      query = new AV.Query("Timer");
+      query.equalTo("identity", identity);
+    }
+
+    return new Promise((resolve, reject) => {
+      query.find()
+      .then(results => resolve(results))
+      .catch(error => reject(error))
+    })
+  }
+
+  const create = (identity) => {
+    identity = identity || getRealPath();
+    return new Promise((resolve, reject) => {
+      let Todo = AV.Object.extend('Timer');
+      let todo = new Todo();
+      todo.set("times", 1);
+      todo.set("identity", identity);
+      todo.save().then(res => resolve(true), error => reject(error));
+    })
+  }
+
+  const update = (identity) => {
+    identity = identity || getRealPath();
+    return new Promise((resolve, reject) => {
+      let query = new AV.Query('Timer');
+      query.equalTo("identity", identity);
+      query.find().then(todos => {
+        todos.forEach(todo => {
+          todo.set("times", todo.attributes.times + 1);
+        });
+        return AV.Object.saveAll(todos);
+      }).then(todos => resolve(true), error => reject(error));
+    })
+  }
+
+  return {
+    isExist,
+    _get,
+    update,
+    create
+  }
+})()
+
+const calcAndWriteTimes = () => {
+  let isPost = true;
+
+  let timerAllDOM = document.querySelectorAll(".article-timer");
+
+  if(isPost) {
+    let identity = timerAllDOM[0].getAttribute("data-identity");
+    valineAPI.isExist(identity)
+    .then(exist => {
+      if(exist) {
+        return valineAPI.update(identity);
+      }
+      return new Promise(resolve => resolve(true));
+    })
+    .then( succuess => valineAPI._get(identity))
+    .then( result => timerAllDOM[0].innerText = result[0].attributes.times)
+    .catch(error => console.log(error.message))
+    return ;
+  }
+
+  let timerDOMCache = {};
+
+  for(let timerDOM of timerAllDOM) {
+    let identity = timerDOM.getAttribute("data-identity");
+    if(timerDOMCache.hasOwnProperty(identity)){
+      timerDOMCache[identity].dom.push(timerDOM);
+    }else{
+      timerDOMCache[identity] = {
+        dom: [timerDOM],
+        times: undefined
+      };
+    }
+  }
+
+  let identities = Object.keys(timerDOMCache);
+  valineAPI._get(identities).then(results => {
+    for(let result of results) {
+      let {identity, times} = result.attributes;
+      timerDOMCache[identity].times = times;
+      timerDOMCache[identity].dom.map(item => item.innerText = times);
+    }
+    for(let identity of identities) {
+      if(timerDOMCache[identity].times){
+        continue;
+      }
+      timerDOMCache[identity].dom.map(item => item.innerText = 1);
+      valineAPI.create(identity);
+    }
+  }).catch(error => console.log(error.message))
+}
+
+if(true){
+  calcAndWriteTimes();
+}
+</script>
+   
+
 </div>
-
-
-
-
 
 
       <footer>
