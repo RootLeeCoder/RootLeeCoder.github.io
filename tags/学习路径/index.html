@@ -8,12 +8,12 @@
   
   
   
-  <title>使用Express进行Web开发 | 李根的个人博客</title>
+  <title>标签: 学习路径 | 李根的个人博客</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="Node.js,前端,入门教程,Node.js,">
+    <meta name="keywords" content="Hexo, theme-bmw, Front-end">
   
 
   <script>
@@ -200,284 +200,45 @@
   })
 </script>
 
-      
-
-
-
-
-
-
-
-
-<div class="container post-index">
-
-  
-
-<div class="post">
-  <h1 class="article-title">
-    <span>使用Express进行Web开发</span>
-  </h1>
-  <div class="article-top-meta">
-    <span>
-      发布 : 
-      2019-01-27
-    </span>
+      <div class="container">
+  <div class="timeline">
+  <span class="archive-move-on"></span>
+  <span class="archive-page-counter">
     
-      <span>
-        分类 : 
-          <a href="/categories/Node-js/">
-            Node.js
-          </a>
-      </span>
+      <span>当前位于 1/1 页</span>
     
-    
-      <span>
-        浏览 : <span class="article-timer" data-identity="使用Express进行Web开发"></span>
-      </span>
-    
-  </div>
-
-  
-
-  <div class="article-content">
-    <div class="markdown-body">
-      <ol>
-<li>初始化项目</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init</span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>初始化完成后会出现一个<code>package.json</code>文件，此时使用一下命令来安装<code>Express.js</code>并将其存入<code>package.json</code>文件中</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express --save</span><br></pre></td></tr></table></figure>
-<ol start="3">
-<li>编写一个简单的<code>HEllo World</code>程序，来测试Express是否安装成功，首先需要编写一个<code>index.js</code>文件</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义Express实例</span></span><br><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line"><span class="comment">// 定义路由</span></span><br><span class="line">app.get(<span class="string">'/'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">    res.send(<span class="string">'Hello World!'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 设置启动地址的端口信息</span></span><br><span class="line"><span class="keyword">var</span> server = app.listen(<span class="number">3000</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> host = server.address().address;</span><br><span class="line">    <span class="keyword">var</span> port = server.address().port;</span><br><span class="line"><span class="comment">// 打印相关的内容提示</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Example app listening at http://%s:%s'</span>, host, port);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<ol start="4">
-<li>保存上述代码，在命令行中使用以下命令来运行程序</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node index.js</span><br></pre></td></tr></table></figure>
-<ol start="5">
-<li>此时在浏览器中访问 <a href="http://localhost:3000/" target="_blank" rel="noopener">http://localhost:3000/</a> 可以打开测试页面，如果输出<code>Hello World</code>即表示成功。</li>
-</ol>
-    </div>
-  </div>
+  </span>
   
   
-  
-
-  
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-      <span>
+    <div class="collection-title">
+      <h2>
         
-          <i class="iconfont icon-06tags"></i>标签: 
-          
-          <span class="span--tag">
-            <a href="/tags/前端/">
-              #前端
-            </a>
-          </span>
-          
-          <span class="span--tag">
-            <a href="/tags/入门教程/">
-              #入门教程
-            </a>
-          </span>
-          
-          <span class="span--tag">
-            <a href="/tags/Node-js/">
-              #Node.js
-            </a>
-          </span>
-          
+          <span>标签 : 学习路径</span>
         
-      </span>
+      </h2>
     </div>
-    <div class="article-meta pull-right">
-    </div>
-  </div>
+  
+  
+  
+  <article class="posts-collapse">
+    <header>
+      <h2>
+        <a href="/passages/现在的打算/">
+          <span>现在的打算</span>
+        </a>
+      </h2>
+      <div class="post-meta">
+        02-16
+      </div>
+    </header>
+  </article>
+  
 </div>
-
-
-  <aside id="sidebar">
-    <p id="sidebar-header"></p>
-    <ol id="sidebar-toc"></ol>
-  </aside>
-  <script async>setTimeout(generateToc, 10);</script>
-
-
-  <nav class="post-navigation">
+  <nav class="page-navigation">
     
-      <div class="nav-pre">
-        <i class="iconfont icon-prev"></i>
-        上一篇:
-        <a href="/passages/在HEXO博客中添加一只猫/" target="_self">在HEXO博客中添加一只猫</a>
-      </div>
-    
-    
-      <div class="nav-next">
-        下一篇:
-        <a href="/passages/现在的打算/" target="_self">现在的打算</a>
-        <i class="iconfont icon-next"></i>
-      </div>
     
   </nav>
-
-  
-    <a href="#comment" class="comment-anchor"></a>
-<div class="comment-title"><i class="iconfont icon-footprint"></i> 留下足迹 <i class="iconfont icon-footprint"></i></div>
-<div id="vcomments"></div>
-
-<script defer>
-  if( true ) {
-    let path = getRealPath()
-    new Valine({
-      el: "#vcomments",
-      appId: "KcDcUYGNOY5MW1l7MbrToL82-gzGzoHsz",
-      appKey: "9CYUQJPkx6RJou9wChCMTV9A",
-      notify: false,
-      verify: false,
-      avatar: "robohash",
-      placeholder: "正确填写邮箱, 才能及时收到回复哦♪(^∇^*)",
-      path
-    });
-  }
-</script>
-   
-
-  
-    <script defer>
-const valineAPI = (() => {
-  try {
-    AV.init("KcDcUYGNOY5MW1l7MbrToL82-gzGzoHsz", "9CYUQJPkx6RJou9wChCMTV9A");
-  } catch(error) {}
-  const isExist = (identity) => {
-    identity = identity || getRealPath();
-    let query = new AV.Query('Timer');
-    return new Promise((resolve, reject) => {
-      query.equalTo("identity", identity);
-      query.find().then(results => {
-        resolve(results.length > 0);
-      }, error => reject(error));
-    })
-  }
-
-  const _get = (identity) => {
-    let query = null;
-    if(identity && identity instanceof Array){
-      let querys = [];
-      for(let i = 0; i < identity.length; ++i) {
-        querys[i] = new AV.Query('Timer');
-        querys[i].equalTo('identity', identity[i]);
-      }
-      query = AV.Query.or.apply(null ,querys);
-    } else {
-      identity = identity || getRealPath();
-      query = new AV.Query("Timer");
-      query.equalTo("identity", identity);
-    }
-
-    return new Promise((resolve, reject) => {
-      query.find()
-      .then(results => resolve(results))
-      .catch(error => reject(error))
-    })
-  }
-
-  const create = (identity) => {
-    identity = identity || getRealPath();
-    return new Promise((resolve, reject) => {
-      let Todo = AV.Object.extend('Timer');
-      let todo = new Todo();
-      todo.set("times", 1);
-      todo.set("identity", identity);
-      todo.save().then(res => resolve(true), error => reject(error));
-    })
-  }
-
-  const update = (identity) => {
-    identity = identity || getRealPath();
-    return new Promise((resolve, reject) => {
-      let query = new AV.Query('Timer');
-      query.equalTo("identity", identity);
-      query.find().then(todos => {
-        todos.forEach(todo => {
-          todo.set("times", todo.attributes.times + 1);
-        });
-        return AV.Object.saveAll(todos);
-      }).then(todos => resolve(true), error => reject(error));
-    })
-  }
-
-  return {
-    isExist,
-    _get,
-    update,
-    create
-  }
-})()
-
-const calcAndWriteTimes = () => {
-  let isPost = true;
-
-  let timerAllDOM = document.querySelectorAll(".article-timer");
-
-  if(isPost) {
-    let identity = timerAllDOM[0].getAttribute("data-identity");
-    valineAPI.isExist(identity)
-    .then(exist => {
-      if(exist) {
-        return valineAPI.update(identity);
-      }
-      return new Promise(resolve => resolve(true));
-    })
-    .then( succuess => valineAPI._get(identity))
-    .then( result => timerAllDOM[0].innerText = result[0].attributes.times)
-    .catch(error => console.log(error.message))
-    return ;
-  }
-
-  let timerDOMCache = {};
-
-  for(let timerDOM of timerAllDOM) {
-    let identity = timerDOM.getAttribute("data-identity");
-    if(timerDOMCache.hasOwnProperty(identity)){
-      timerDOMCache[identity].dom.push(timerDOM);
-    }else{
-      timerDOMCache[identity] = {
-        dom: [timerDOM],
-        times: undefined
-      };
-    }
-  }
-
-  let identities = Object.keys(timerDOMCache);
-  valineAPI._get(identities).then(results => {
-    for(let result of results) {
-      let {identity, times} = result.attributes;
-      timerDOMCache[identity].times = times;
-      timerDOMCache[identity].dom.map(item => item.innerText = times);
-    }
-    for(let identity of identities) {
-      if(timerDOMCache[identity].times){
-        continue;
-      }
-      timerDOMCache[identity].dom.map(item => item.innerText = 1);
-      valineAPI.create(identity);
-    }
-  }).catch(error => console.log(error.message))
-}
-
-if(true){
-  calcAndWriteTimes();
-}
-</script>
-   
-
 </div>
-
 
       <footer>
   <p class="site-info">
