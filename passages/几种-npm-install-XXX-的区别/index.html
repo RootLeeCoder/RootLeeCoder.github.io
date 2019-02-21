@@ -8,12 +8,12 @@
   
   
   
-  <title>Webpack简介 | 李根的个人博客</title>
+  <title>几种 npm install XXX 的区别 | 李根的个人博客</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="Node.js,前端,入门教程,Node.js,Webpack,">
+    <meta name="keywords" content="Node.js,Node.js,">
   
 
   <script>
@@ -209,12 +209,12 @@
 
 <div class="post">
   <h1 class="article-title">
-    <span>Webpack简介</span>
+    <span>几种 npm install XXX 的区别</span>
   </h1>
   <div class="article-top-meta">
     <span>
       发布 : 
-      2019-01-19
+      2019-02-21
     </span>
     
       <span>
@@ -226,7 +226,7 @@
     
     
       <span>
-        浏览 : <span class="article-timer" data-identity="Webpack简介"></span>
+        浏览 : <span class="article-timer" data-identity="几种-npm-install-XXX-的区别"></span>
       </span>
     
   </div>
@@ -235,33 +235,60 @@
 
   <div class="article-content">
     <div class="markdown-body">
-      <h1 id="Webpack简介"><a href="#Webpack简介" class="headerlink" title="Webpack简介"></a>Webpack简介</h1><hr>
-<blockquote>
-<p>Webpack 是一个前端资源加载/打包工具。它将根据模块的依赖关系进行静态分析，然后将这些模块按照指定的规则生成对应的静态资源。</p>
-</blockquote>
-<p><img src="http://www.runoob.com/wp-content/uploads/2017/01/what-is-webpack.png" alt="Webpack工作流程图"></p>
-<p>从图中我们可以看出，Webpack 可以<strong>将多种静态资源 js、css、less 转换成一个静态文件，减少了页面的请求</strong>。</p>
-<h2 id="安装Webpack"><a href="#安装Webpack" class="headerlink" title="安装Webpack"></a>安装Webpack</h2><hr>
-<p>在安装 Webpack 前，你本地环境需要支持 <a href="http://www.runoob.com/nodejs/nodejs-install-setup.html" target="_blank" rel="noopener">node.js</a>。</p>
-<p>由于 npm 安装速度慢，本教程使用了淘宝的镜像及其命令 cnpm，安装使用介绍参照：<a href="http://www.runoob.com/nodejs/nodejs-npm.html" target="_blank" rel="noopener">使用淘宝 NPM 镜像</a>。</p>
-<p>使用cnpm安装webpack：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install webpack -g</span><br></pre></td></tr></table></figure>
-<p>如果安装出现问题，可以先清理缓存：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm cache verify</span><br></pre></td></tr></table></figure>
-<p>如果还是安装失败可以尝试：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install web3@^0.20.0</span><br></pre></td></tr></table></figure>
-<p>如果依然失败可以这样：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --global --production windows-build-tools</span><br></pre></td></tr></table></figure>
-<h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><p>首先创建一个目录：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir app</span><br></pre></td></tr></table></figure>
-<p>在目录下添加一个<code>test.js</code>文件:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.write(<span class="string">"It works."</span>);</span><br></pre></td></tr></table></figure>
-<p>在 app 目录下添加 index.html 文件，代码如下：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"bundle.js"</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>这个时候使用webpack命令来打包：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webpack test.js bundle.js</span><br></pre></td></tr></table></figure>
-<p><strong>此时如果发现无法打包，那很可能就是版本号过高所致，此时应该执行以下命令：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webpack test.js -o bundle.js</span><br></pre></td></tr></table></figure>
+      <h2 id="npm-install-X"><a href="#npm-install-X" class="headerlink" title="npm install X"></a><strong>npm install X</strong></h2><ul>
+<li>会把<code>X</code>包安装到<code>node_modules</code>目录中</li>
+<li>不会修改<code>package.json</code></li>
+<li>之后运行<code>npm install</code>命令时，不会自动安装<code>X</code></li>
+</ul>
+<h2 id="npm-install-X-–save"><a href="#npm-install-X-–save" class="headerlink" title="npm install X –save"></a><strong>npm install X –save</strong></h2><ul>
+<li>会把<code>X</code>包安装到<code>node_modules</code>目录中</li>
+<li>会在<code>package.json</code>的<code>dependencies</code>属性下添加<code>X</code></li>
+<li>之后运行<code>npm install</code>命令时，会自动安装<code>X</code>到<code>node_modules</code>目录中</li>
+<li>之后运行<code>npm install –production</code>或者注明<code>NODE_ENV</code>变量值为<code>production</code>时，会自动安装<code>msbuild</code>到<code>node_modules</code>目录中</li>
+</ul>
+<h2 id="npm-install-X-–save-dev"><a href="#npm-install-X-–save-dev" class="headerlink" title="npm install X –save-dev"></a><strong>npm install X –save-dev</strong></h2><ul>
+<li>会把<code>X</code>包安装到<code>node_modules</code>目录中</li>
+<li>会在<code>package.json</code>的<code>devDependencies</code>属性下添加<code>X</code></li>
+<li>之后运行<code>npm install</code>命令时，会自动安装<code>X</code>到<code>node_modules</code>目录中</li>
+<li>之后运行<code>npm install –production</code>或者注明<code>NODE_ENV</code>变量值为<code>production</code>时，不会自动安装<code>X</code>到<code>node_modules</code>目录中</li>
+</ul>
+<p>总结一下：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center">npm install X</th>
+<th style="text-align:center">npm install X –save</th>
+<th style="text-align:center">npm install X –save-dev</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>会把<code>X</code>包安装到<code>node_modules</code>目录中</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>会在<code>package.json</code>的<code>dependencies</code>属性下添加<code>X</code></td>
+<td style="text-align:center"><strong><em>No</em></strong></td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>之后运行<code>npm install</code>命令时，会自动安装<code>X</code>到<code>node_modules</code>目录中</td>
+<td style="text-align:center"><strong><em>No</em></strong></td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>之后运行<code>npm install –production</code>或者注明<code>NODE_ENV</code>变量值为<code>production</code>时，不会自动安装<code>X</code>到<code>node_modules</code>目录中</td>
+<td style="text-align:center">/</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center"><strong><em>No</em></strong></td>
+</tr>
+</tbody>
+</table>
     </div>
   </div>
   
@@ -277,26 +304,8 @@
           <i class="iconfont icon-06tags"></i>标签: 
           
           <span class="span--tag">
-            <a href="/tags/前端/">
-              #前端
-            </a>
-          </span>
-          
-          <span class="span--tag">
-            <a href="/tags/入门教程/">
-              #入门教程
-            </a>
-          </span>
-          
-          <span class="span--tag">
             <a href="/tags/Node-js/">
               #Node.js
-            </a>
-          </span>
-          
-          <span class="span--tag">
-            <a href="/tags/Webpack/">
-              #Webpack
             </a>
           </span>
           
@@ -321,15 +330,9 @@
       <div class="nav-pre">
         <i class="iconfont icon-prev"></i>
         上一篇:
-        <a href="/passages/初识Node-js/" target="_self">初识Node.js</a>
+        <a href="/passages/在Vue中关闭ESLint/" target="_self">在Vue中关闭ESLint</a>
       </div>
     
-    
-      <div class="nav-next">
-        下一篇:
-        <a href="/passages/Windows下Sublime-Text配置C-编译环境/" target="_self">Windows下Sublime Text配置C++编译环境</a>
-        <i class="iconfont icon-next"></i>
-      </div>
     
   </nav>
 
