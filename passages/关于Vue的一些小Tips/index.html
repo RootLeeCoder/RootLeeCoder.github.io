@@ -8,12 +8,12 @@
   
   
   
-  <title>解决Vue-CLI无法使用Webpack模板初始化项目的方法 | 李根的个人博客</title>
+  <title>关于Vue的一些小Tips | 李根的个人博客</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="Vue.js,Webpack,前端,Vue.js,">
+    <meta name="keywords" content="Vue.js,Vue.js,知识点,">
   
 
   <script>
@@ -209,12 +209,12 @@
 
 <div class="post">
   <h1 class="article-title">
-    <span>解决Vue-CLI无法使用Webpack模板初始化项目的方法</span>
+    <span>关于Vue的一些小Tips</span>
   </h1>
   <div class="article-top-meta">
     <span>
       发布 : 
-      2019-01-19
+      2019-02-26
     </span>
     
       <span>
@@ -226,7 +226,7 @@
     
     
       <span>
-        浏览 : <span class="article-timer" data-identity="解决Vue-CLI无法使用Webpack模板初始化项目的方法"></span>
+        浏览 : <span class="article-timer" data-identity="关于Vue的一些小Tips"></span>
       </span>
     
   </div>
@@ -235,14 +235,18 @@
 
   <div class="article-content">
     <div class="markdown-body">
-      <p>当我们执行以下代码时，可能无法初始化项目：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue init webpack my-project</span><br></pre></td></tr></table></figure>
-<p>问题在于<code>Vue-CLI</code>已经更新到了第3版，因此必须使用新的命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue create my-project</span><br></pre></td></tr></table></figure>
+      <h2 id="1-v-bind和v-model的区别"><a href="#1-v-bind和v-model的区别" class="headerlink" title="1. v-bind和v-model的区别"></a>1. <code>v-bind</code>和<code>v-model</code>的区别</h2><ul>
+<li><code>v-bind</code>是动态绑定指令，用于绑定属性和数据</li>
+<li><code>v-model</code>用于实现双向数据绑定，用于表单控件</li>
+</ul>
+<h2 id="2-computed和methods的区别"><a href="#2-computed和methods的区别" class="headerlink" title="2. computed和methods的区别"></a>2. <code>computed</code>和<code>methods</code>的区别</h2><p>两者在效果上是一样的</p>
+<ul>
+<li><code>computed</code>是基于它的依赖缓存，只有相关依赖发生改变时才会重新获取值</li>
+<li><code>methods</code>在渲染的时候，函数总是会重新调用执行</li>
+</ul>
 <blockquote>
-<p>官方文档上说 <code>Vue CLI 2</code> 是被 <code>Vue CLI 3</code> 覆盖的。如果你仍然需要使用旧版本的 <code>vue init</code> 功能还是可以实现的，只需要使用以下命令：</p>
+<p>详情见 <a href="http://www.runoob.com/vue2/vue-computed.html" target="_blank" rel="noopener">http://www.runoob.com/vue2/vue-computed.html</a></p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @vue/cli-init</span><br><span class="line"><span class="comment"># `vue init` 的运行效果将会跟 `vue-cli@2.x` 相同</span></span><br><span class="line">vue init webpack my-project</span><br></pre></td></tr></table></figure>
     </div>
   </div>
   
@@ -258,20 +262,14 @@
           <i class="iconfont icon-06tags"></i>标签: 
           
           <span class="span--tag">
-            <a href="/tags/Webpack/">
-              #Webpack
-            </a>
-          </span>
-          
-          <span class="span--tag">
-            <a href="/tags/前端/">
-              #前端
-            </a>
-          </span>
-          
-          <span class="span--tag">
             <a href="/tags/Vue-js/">
               #Vue.js
+            </a>
+          </span>
+          
+          <span class="span--tag">
+            <a href="/tags/知识点/">
+              #知识点
             </a>
           </span>
           
@@ -296,15 +294,9 @@
       <div class="nav-pre">
         <i class="iconfont icon-prev"></i>
         上一篇:
-        <a href="/passages/Windows下Sublime-Text配置C-编译环境/" target="_self">Windows下Sublime Text配置C++编译环境</a>
+        <a href="/passages/前端面试知识点/" target="_self">前端面试知识点</a>
       </div>
     
-    
-      <div class="nav-next">
-        下一篇:
-        <a href="/passages/右键使用Sublime-Text打开文件夹/" target="_self">右键使用Sublime Text打开文件夹</a>
-        <i class="iconfont icon-next"></i>
-      </div>
     
   </nav>
 
