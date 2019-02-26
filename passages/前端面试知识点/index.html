@@ -8,12 +8,12 @@
   
   
   
-  <title>初识Node.js | 李根的个人博客</title>
+  <title>前端面试知识点 | 李根的个人博客</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="Node.js,Node.js,前端,入门教程,">
+    <meta name="keywords" content="知识点,前端,面试,知识点,">
   
 
   <script>
@@ -209,24 +209,24 @@
 
 <div class="post">
   <h1 class="article-title">
-    <span>初识Node.js</span>
+    <span>前端面试知识点</span>
   </h1>
   <div class="article-top-meta">
     <span>
       发布 : 
-      2019-01-19
+      2019-02-26
     </span>
     
       <span>
         分类 : 
-          <a href="/categories/Node-js/">
-            Node.js
+          <a href="/categories/知识点/">
+            知识点
           </a>
       </span>
     
     
       <span>
-        浏览 : <span class="article-timer" data-identity="初识Node-js"></span>
+        浏览 : <span class="article-timer" data-identity="前端面试知识点"></span>
       </span>
     
   </div>
@@ -235,38 +235,46 @@
 
   <div class="article-content">
     <div class="markdown-body">
-      <h1 id="初识Node-js"><a href="#初识Node-js" class="headerlink" title="初识Node.js"></a>初识Node.js</h1><h2 id="Node-js是什么"><a href="#Node-js是什么" class="headerlink" title="Node.js是什么"></a>Node.js是什么</h2><hr>
-<p>简单的说 Node.js 就是运行在服务端的 JavaScript。</p>
-<p>Node.js 是一个基于Chrome JavaScript 运行时建立的一个平台。</p>
-<p>Node.js是一个事件驱动I/O服务端JavaScript环境，基于Google的V8引擎，V8引擎执行Javascript的速度非常快，性能非常好。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><hr>
-<p>进入<a href="https://nodejs.org" target="_blank" rel="noopener">官网</a>下载安装</p>
-<p>安装后检测版本号的方法：</p>
-<p>以管理员身份进入命令行，输入</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
-<h2 id="第一个程序"><a href="#第一个程序" class="headerlink" title="第一个程序"></a>第一个程序</h2><hr>
-<ol>
-<li>新建一个<code>helloworld.js</code>程序，输入</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"Hello World"</span>);</span><br></pre></td></tr></table></figure>
-<ol>
-<li>在程序目录下打开终端，执行</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node helloworld.js</span><br></pre></td></tr></table></figure>
-<h2 id="创建第一个Node-js应用"><a href="#创建第一个Node-js应用" class="headerlink" title="创建第一个Node.js应用"></a>创建第一个Node.js应用</h2><hr>
-<ol>
-<li><h3 id="引入required模块"><a href="#引入required模块" class="headerlink" title="引入required模块"></a>引入required模块</h3></li>
-</ol>
-<p>我们使用 <strong>require</strong> 指令来载入 http 模块，并将实例化的 HTTP 赋值给变量 http，实例如下:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</span><br></pre></td></tr></table></figure>
-<ol>
-<li><h3 id="创建服务器"><a href="#创建服务器" class="headerlink" title="创建服务器"></a>创建服务器</h3></li>
-</ol>
-<p>使用<code>http.createServer()</code>方法来创建服务器，并使用<code>listen</code>方法绑定8888端口。函数通过<code>request</code>，<code>response</code> 参数来接受和响应数据。</p>
-<p>在根目录下创建一个<code>server.js</code>的文件，并写入以下代码：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</span><br><span class="line"></span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">request, response</span>)</span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 发送HTTP头部</span></span><br><span class="line">    <span class="comment">// HTTP状态值：200：OK</span></span><br><span class="line">    <span class="comment">// 内容类型：text/plain</span></span><br><span class="line">    response.writeHead(<span class="number">200</span>, &#123;<span class="string">'Content-Type'</span>: <span class="string">'text/plain'</span>&#125;);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 发送响应数据 "Hello World"</span></span><br><span class="line">    response.end(<span class="string">"Hello World\n"</span>);</span><br><span class="line">&#125;).listen(<span class="number">8888</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 终端打印以下信息</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Server running at http://127.0.0.1:8888/'</span>)</span><br></pre></td></tr></table></figure>
-<p>使用node命令来执行以上的代码：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node server.js</span><br><span class="line">Server running at http://127.0.0.1:8888/</span><br></pre></td></tr></table></figure>
+      <h2 id="1-什么是盒子模型"><a href="#1-什么是盒子模型" class="headerlink" title="1. 什么是盒子模型"></a>1. 什么是盒子模型</h2><p>从外到内由外边距(margin)、边框(border)、内边距(padding)、内容(content)四部分组成</p>
+<h2 id="2-CSS实现垂直水平居中"><a href="#2-CSS实现垂直水平居中" class="headerlink" title="2. CSS实现垂直水平居中"></a>2. CSS实现垂直水平居中</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">table-cell</span>;</span><br><span class="line"><span class="selector-tag">vertical-align</span>: <span class="selector-tag">middle</span>;</span><br><span class="line"><span class="selector-tag">text-align</span>: <span class="selector-tag">center</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="3-简述一下src和href的区别"><a href="#3-简述一下src和href的区别" class="headerlink" title="3. 简述一下src和href的区别"></a>3. 简述一下src和href的区别</h2><ul>
+<li><p><code>href</code>表示超文本引用(hypertext reference)，在<code>link</code>和<code>a</code>等元素上使用。<code>href</code>的内容是与页面有关联，是引用</p>
+</li>
+<li><p><code>src</code>表示来源地址，在 <code>img、script、iframe</code> 等元素上。<code>src</code>的内容是页面必不可少的一部分，是引入</p>
+</li>
+</ul>
+<h2 id="4-px和em的区别"><a href="#4-px和em的区别" class="headerlink" title="4. px和em的区别"></a>4. px和em的区别</h2><p><code>px</code>表示绝对尺寸，优点在于比较精确，缺点在于不能适应浏览器缩放的变化。</p>
+<p><code>em</code>表示相对尺寸，相似于<code>font-size</code>，可以很好地适应浏览器缩放的变化。</p>
+<h2 id="5-行内元素有哪些？块级元素有哪些？空元素有哪些？"><a href="#5-行内元素有哪些？块级元素有哪些？空元素有哪些？" class="headerlink" title="5. 行内元素有哪些？块级元素有哪些？空元素有哪些？"></a>5. 行内元素有哪些？块级元素有哪些？空元素有哪些？</h2><ul>
+<li>行内元素</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span>&gt;</span> <span class="tag">&lt;<span class="name">b</span>&gt;</span> <span class="tag">&lt;<span class="name">code</span>&gt;</span> <span class="tag">&lt;<span class="name">em</span>&gt;</span> <span class="tag">&lt;<span class="name">span</span>&gt;</span> <span class="tag">&lt;<span class="name">strong</span>&gt;</span> <span class="tag">&lt;<span class="name">textarea</span>&gt;</span> <span class="tag">&lt;<span class="name">u</span>&gt;</span> <span class="tag">&lt;<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>块级元素</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">blockquote</span>&gt;</span> <span class="tag">&lt;<span class="name">div</span>&gt;</span> <span class="tag">&lt;<span class="name">form</span>&gt;</span> <span class="tag">&lt;<span class="name">h1</span>&gt;</span> <span class="tag">&lt;<span class="name">ol</span>&gt;</span> <span class="tag">&lt;<span class="name">p</span>&gt;</span> <span class="tag">&lt;<span class="name">ul</span>&gt;</span> <span class="tag">&lt;<span class="name">pre</span>&gt;</span> <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>空元素</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">br</span>&gt;</span> <span class="tag">&lt;<span class="name">hr</span>&gt;</span> <span class="tag">&lt;<span class="name">img</span>&gt;</span> <span class="tag">&lt;<span class="name">input</span>&gt;</span> <span class="tag">&lt;<span class="name">link</span>&gt;</span> <span class="tag">&lt;<span class="name">meta</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="6-简述同步和异步的区别"><a href="#6-简述同步和异步的区别" class="headerlink" title="6. 简述同步和异步的区别"></a>6. 简述同步和异步的区别</h2><ul>
+<li><strong>同步</strong>：所有的操作执行完，才返回给用户结果。</li>
+<li><strong>异步</strong>：不用等所有的操作执行完，就响应用户的请求。</li>
+<li><strong>同步</strong>任务指的是，在主线程上排队执行的任务，只有前一个任务执行完毕，才能执行后一个任务；</li>
+<li><strong>异步</strong>任务指的是，不进入主线程、而进入<strong>“任务队列”（task queue）</strong>的任务，只有等主线程任务执行完毕，”任务队列”开始通知主线程，请求执行任务，该任务才会进入主线程执行。**</li>
+</ul>
+<h2 id="7-Doctype的作用？严格模式与混杂模式如何区分？它们有何意义？"><a href="#7-Doctype的作用？严格模式与混杂模式如何区分？它们有何意义？" class="headerlink" title="7. Doctype的作用？严格模式与混杂模式如何区分？它们有何意义？"></a>7. Doctype的作用？严格模式与混杂模式如何区分？它们有何意义？</h2><p>DOCTYPE标签是一种标准通用标记语言的文档类型声明，它的目的是要告诉标准通用标记语言解析器，它应该使用什么样的文档类型定义（DTD）来解析文档。</p>
+<ul>
+<li>严格模式：又称标准模式，是指浏览器按照 W3C 标准解析代码。</li>
+<li>混杂模式：又称兼容模式，指浏览器用自己的方式解析代码。</li>
+<li>如何区分：浏览器解析时到底使用严格模式还是混杂模式，与网页中的文档类型定义（DTD）直接相关。</li>
+<li>意义：严格模式与混杂模式存在的意义与其来源密切相关，如果说只存在严格模式，那么许多旧网站必然受到影响，如果只存在混杂模式，那么会回到当时浏览器大战时的混乱，每个浏览器都有自己的解析模式。</li>
+</ul>
+<h2 id="8-null和undefined的区别"><a href="#8-null和undefined的区别" class="headerlink" title="8. null和undefined的区别"></a>8. <code>null</code>和<code>undefined</code>的区别</h2><p><code>null</code>： <code>null</code>类型，代表“空值”，代表一个空对象指针，使用<code>typeof</code>运算得到 <code>“object”</code>，所以你可以认为它是一个特殊的对象值。</p>
+<p><code>undefined</code>： <code>undefined</code>类型，当一个声明了一个变量未初始化时，得到的就是<code>undefined</code>。</p>
+<h2 id="9-简述你对JSON的了解"><a href="#9-简述你对JSON的了解" class="headerlink" title="9. 简述你对JSON的了解"></a>9. 简述你对JSON的了解</h2><p>JSON: <strong>J</strong>ava<strong>S</strong>cript <strong>O</strong>bject <strong>N</strong>otation(JavaScript 对象表示法)</p>
+<p>JSON 是存储和交换文本信息的语法。类似 XML。</p>
+<p>JSON 比 XML 更小、更快，更易解析。</p>
     </div>
   </div>
   
@@ -282,20 +290,20 @@
           <i class="iconfont icon-06tags"></i>标签: 
           
           <span class="span--tag">
-            <a href="/tags/Node-js/">
-              #Node.js
-            </a>
-          </span>
-          
-          <span class="span--tag">
             <a href="/tags/前端/">
               #前端
             </a>
           </span>
           
           <span class="span--tag">
-            <a href="/tags/入门教程/">
-              #入门教程
+            <a href="/tags/面试/">
+              #面试
+            </a>
+          </span>
+          
+          <span class="span--tag">
+            <a href="/tags/知识点/">
+              #知识点
             </a>
           </span>
           
@@ -320,15 +328,9 @@
       <div class="nav-pre">
         <i class="iconfont icon-prev"></i>
         上一篇:
-        <a href="/passages/Vue入门/" target="_self">Vue入门</a>
+        <a href="/passages/操作系统知识点/" target="_self">操作系统知识点</a>
       </div>
     
-    
-      <div class="nav-next">
-        下一篇:
-        <a href="/passages/Webpack简介/" target="_self">Webpack简介</a>
-        <i class="iconfont icon-next"></i>
-      </div>
     
   </nav>
 
