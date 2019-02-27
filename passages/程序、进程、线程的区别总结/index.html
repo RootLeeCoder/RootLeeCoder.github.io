@@ -8,12 +8,12 @@
   
   
   
-  <title>分类: 知识点 | 李根的个人博客</title>
+  <title>程序、进程、线程的区别总结 | 李根的个人博客</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="Hexo, theme-bmw, Front-end">
+    <meta name="keywords" content="知识点,知识点,操作系统,">
   
 
   <script>
@@ -194,73 +194,308 @@
   })
 </script>
 
-      <div class="container">
-  <div class="timeline">
-  <span class="archive-move-on"></span>
-  <span class="archive-page-counter">
-    
-      <span>当前位于 1/1 页</span>
-    
-  </span>
+      
+
+
+
+
+
+
+
+
+<div class="container post-index">
+
   
+
+<div class="post">
+  <h1 class="article-title">
+    <span>程序、进程、线程的区别总结</span>
+  </h1>
+  <div class="article-top-meta">
+    <span>
+      发布 : 
+      2019-02-27
+    </span>
+    
+      <span>
+        分类 : 
+          <a href="/categories/知识点/">
+            知识点
+          </a>
+      </span>
+    
+    
+      <span>
+        浏览 : <span class="article-timer" data-identity="程序、进程、线程的区别总结"></span>
+      </span>
+    
+  </div>
+
   
-    <div class="collection-title">
-      <h2>
-        
-          <span>分类 : 知识点</span>
-        
-      </h2>
+
+  <div class="article-content">
+    <div class="markdown-body">
+      <h2 id="进程和线程的区别"><a href="#进程和线程的区别" class="headerlink" title="进程和线程的区别"></a>进程和线程的区别</h2><hr>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center">进程</th>
+<th style="text-align:center">线程</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>根本区别</strong></td>
+<td style="text-align:center">操作系统<strong><em>资源分配</em></strong>的基本单位</td>
+<td style="text-align:center"><strong><em>任务调度和执行</em></strong>的基本单位</td>
+</tr>
+<tr>
+<td><strong>开销</strong></td>
+<td style="text-align:center">每个进程都有独立的代码和数据空间，切换开销<strong><em>较大</em></strong></td>
+<td style="text-align:center">同一类线程共享代码和数据空间开销<strong><em>较小</em></strong></td>
+</tr>
+<tr>
+<td><strong>所处环境</strong></td>
+<td style="text-align:center">操作系统中能同时运行多个进程</td>
+<td style="text-align:center">同一个进程中有多个线程同时进行</td>
+</tr>
+<tr>
+<td><strong>内存分配</strong></td>
+<td style="text-align:center">系统在运行的时候会为每个进程分配<strong><em>不同</em></strong>的内存空间</td>
+<td style="text-align:center">除了CPU外，系统不会为线程分配内存，线程组之间只能<strong><em>共享</em></strong>资源</td>
+</tr>
+</tbody>
+</table>
+<h2 id="进程和程序的区别"><a href="#进程和程序的区别" class="headerlink" title="进程和程序的区别"></a>进程和程序的区别</h2><hr>
+<table>
+<thead>
+<tr>
+<th>进程</th>
+<th>程序</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>动态</td>
+<td>静态</td>
+</tr>
+<tr>
+<td>有一定的生命周期</td>
+<td>指令的集合，本身无“运动”的含义</td>
+</tr>
+<tr>
+<td>只能对应一个程序</td>
+<td>可以对应多个进程</td>
+</tr>
+</tbody>
+</table>
     </div>
+  </div>
   
   
   
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/passages/程序、进程、线程的区别总结/">
-          <span>程序、进程、线程的区别总结</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        02-27
-      </div>
-    </header>
-  </article>
+
   
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/passages/前端面试知识点/">
-          <span>前端面试知识点</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        02-26
-      </div>
-    </header>
-  </article>
-  
-  
-  <article class="posts-collapse">
-    <header>
-      <h2>
-        <a href="/passages/操作系统知识点/">
-          <span>操作系统知识点</span>
-        </a>
-      </h2>
-      <div class="post-meta">
-        02-26
-      </div>
-    </header>
-  </article>
-  
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+      <span>
+        
+          <i class="iconfont icon-06tags"></i>标签: 
+          
+          <span class="span--tag">
+            <a href="/tags/知识点/">
+              #知识点
+            </a>
+          </span>
+          
+          <span class="span--tag">
+            <a href="/tags/操作系统/">
+              #操作系统
+            </a>
+          </span>
+          
+        
+      </span>
+    </div>
+    <div class="article-meta pull-right">
+    </div>
+  </div>
 </div>
-  <nav class="page-navigation">
+
+
+  <aside id="sidebar">
+    <p id="sidebar-header"></p>
+    <ol id="sidebar-toc"></ol>
+  </aside>
+  <script async>setTimeout(generateToc, 10);</script>
+
+
+  <nav class="post-navigation">
+    
+      <div class="nav-pre">
+        <i class="iconfont icon-prev"></i>
+        上一篇:
+        <a href="/passages/关于Vue的一些小Tips/" target="_self">关于Vue的一些小Tips</a>
+      </div>
     
     
   </nav>
+
+  
+    <a href="#comment" class="comment-anchor"></a>
+<div class="comment-title"><i class="iconfont icon-footprint"></i> 留下足迹 <i class="iconfont icon-footprint"></i></div>
+<div id="vcomments"></div>
+
+<script defer>
+  if( true ) {
+    let path = getRealPath()
+    new Valine({
+      el: "#vcomments",
+      appId: "KcDcUYGNOY5MW1l7MbrToL82-gzGzoHsz",
+      appKey: "9CYUQJPkx6RJou9wChCMTV9A",
+      notify: false,
+      verify: false,
+      avatar: "robohash",
+      placeholder: "正确填写邮箱, 才能及时收到回复哦♪(^∇^*)",
+      path
+    });
+  }
+</script>
+   
+
+  
+    <script defer>
+const valineAPI = (() => {
+  try {
+    AV.init("KcDcUYGNOY5MW1l7MbrToL82-gzGzoHsz", "9CYUQJPkx6RJou9wChCMTV9A");
+  } catch(error) {}
+  const isExist = (identity) => {
+    identity = identity || getRealPath();
+    let query = new AV.Query('Timer');
+    return new Promise((resolve, reject) => {
+      query.equalTo("identity", identity);
+      query.find().then(results => {
+        resolve(results.length > 0);
+      }, error => reject(error));
+    })
+  }
+
+  const _get = (identity) => {
+    let query = null;
+    if(identity && identity instanceof Array){
+      let querys = [];
+      for(let i = 0; i < identity.length; ++i) {
+        querys[i] = new AV.Query('Timer');
+        querys[i].equalTo('identity', identity[i]);
+      }
+      query = AV.Query.or.apply(null ,querys);
+    } else {
+      identity = identity || getRealPath();
+      query = new AV.Query("Timer");
+      query.equalTo("identity", identity);
+    }
+
+    return new Promise((resolve, reject) => {
+      query.find()
+      .then(results => resolve(results))
+      .catch(error => reject(error))
+    })
+  }
+
+  const create = (identity) => {
+    identity = identity || getRealPath();
+    return new Promise((resolve, reject) => {
+      let Todo = AV.Object.extend('Timer');
+      let todo = new Todo();
+      todo.set("times", 1);
+      todo.set("identity", identity);
+      todo.save().then(res => resolve(true), error => reject(error));
+    })
+  }
+
+  const update = (identity) => {
+    identity = identity || getRealPath();
+    return new Promise((resolve, reject) => {
+      let query = new AV.Query('Timer');
+      query.equalTo("identity", identity);
+      query.find().then(todos => {
+        todos.forEach(todo => {
+          todo.set("times", todo.attributes.times + 1);
+        });
+        return AV.Object.saveAll(todos);
+      }).then(todos => resolve(true), error => reject(error));
+    })
+  }
+
+  return {
+    isExist,
+    _get,
+    update,
+    create
+  }
+})()
+
+const calcAndWriteTimes = () => {
+  let isPost = true;
+
+  let timerAllDOM = document.querySelectorAll(".article-timer");
+
+  if(isPost) {
+    let identity = timerAllDOM[0].getAttribute("data-identity");
+    valineAPI.isExist(identity)
+    .then(exist => {
+      if(exist) {
+        return valineAPI.update(identity);
+      }
+      return new Promise(resolve => resolve(true));
+    })
+    .then( succuess => valineAPI._get(identity))
+    .then( result => timerAllDOM[0].innerText = result[0].attributes.times)
+    .catch(error => console.log(error.message))
+    return ;
+  }
+
+  let timerDOMCache = {};
+
+  for(let timerDOM of timerAllDOM) {
+    let identity = timerDOM.getAttribute("data-identity");
+    if(timerDOMCache.hasOwnProperty(identity)){
+      timerDOMCache[identity].dom.push(timerDOM);
+    }else{
+      timerDOMCache[identity] = {
+        dom: [timerDOM],
+        times: undefined
+      };
+    }
+  }
+
+  let identities = Object.keys(timerDOMCache);
+  valineAPI._get(identities).then(results => {
+    for(let result of results) {
+      let {identity, times} = result.attributes;
+      timerDOMCache[identity].times = times;
+      timerDOMCache[identity].dom.map(item => item.innerText = times);
+    }
+    for(let identity of identities) {
+      if(timerDOMCache[identity].times){
+        continue;
+      }
+      timerDOMCache[identity].dom.map(item => item.innerText = 1);
+      valineAPI.create(identity);
+    }
+  }).catch(error => console.log(error.message))
+}
+
+if(true){
+  calcAndWriteTimes();
+}
+</script>
+   
+
 </div>
+
 
       <footer>
   <p class="site-info">
