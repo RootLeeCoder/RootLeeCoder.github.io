@@ -6,14 +6,16 @@
   <meta charset="utf-8">
   <meta name="author" content="董沅鑫, yuanxin.me@gmail.com">
   
+    <meta name="robots" content="noindex">
   
   
-  <title>解决Vue-CLI无法使用Webpack模板初始化项目的方法 | 李根的个人博客</title>
+  
+  <title>李根的个人博客</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="Vue.js,前端,Vue.js,Webpack,">
+    <meta name="keywords" content="Hexo, theme-bmw, Front-end">
   
 
   <script>
@@ -195,140 +197,101 @@
 </script>
 
       
-
-
-
-
-
-
-
-
-<div class="container post-index">
-
+<div class="container home-index">
   
-
-<div class="post">
-  <h1 class="article-title">
-    <span>解决Vue-CLI无法使用Webpack模板初始化项目的方法</span>
-  </h1>
-  <div class="article-top-meta">
-    <span>
-      发布 : 
-      2019-01-19
-    </span>
-    
+  <div class="post">
+    <h1 class="article-title">
+      <a href="/passages/使用HEXO搭建个人博客/">
+        <span>使用HEXO搭建个人博客</span>
+      </a>
+    </h1>
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
       <span>
-        分类 : 
-          <a href="/categories/Vue-js/">
-            Vue.js
+        发布时间 : 2019-01-18
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2019-01-18
+      </span>
+      
+        <span>
+        分类 :
+          <a href="/categories/HEXO/">
+            HEXO
           </a>
-      </span>
+        </span>
+      
+      
+        <span>
+          浏览 : <span class="article-timer" data-identity="使用HEXO搭建个人博客"></span>
+        </span>
+      
+    </div>
     
-    
-      <span>
-        浏览 : <span class="article-timer" data-identity="解决Vue-CLI无法使用Webpack模板初始化项目的方法"></span>
-      </span>
-    
-  </div>
-
-  
-
-  <div class="article-content">
-    <div class="markdown-body">
-      <p>当我们执行以下代码时，可能无法初始化项目：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue init webpack my-project</span><br></pre></td></tr></table></figure>
-<p>问题在于<code>Vue-CLI</code>已经更新到了第3版，因此必须使用新的命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue create my-project</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>官方文档上说 <code>Vue CLI 2</code> 是被 <code>Vue CLI 3</code> 覆盖的。如果你仍然需要使用旧版本的 <code>vue init</code> 功能还是可以实现的，只需要使用以下命令：</p>
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
+        <blockquote>
+<p>这是本博客的第一篇文章，随着众多牛博<code>Powered by Hexo</code>的指引，我开始了与<code>HEXO</code>一段相见恨晚的旅程。</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @vue/cli-init</span><br><span class="line"><span class="comment"># `vue init` 的运行效果将会跟 `vue-cli@2.x` 相同</span></span><br><span class="line">vue init webpack my-project</span><br></pre></td></tr></table></figure>
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          
+            <i class="iconfont icon-tag"></i>分类:
+            <a href="/categories/HEXO/">
+              HEXO
+            </a>
+          </span>
+          
+        <span>
+          
+            <i class="iconfont icon-06tags"></i>标签:
+            
+              <span class="span--tag">
+                <a href="/tags/入门教程/">
+                  #入门教程
+                </a>
+              </span>
+            
+              <span class="span--tag">
+                <a href="/tags/博客/">
+                  #博客
+                </a>
+              </span>
+            
+              <span class="span--tag">
+                <a href="/tags/HEXO/">
+                  #HEXO
+                </a>
+              </span>
+            
+                    
+        </span>
+      </div>
+      
+        <div class="article-meta pull-right">
+          <span class="pc-view">
+            <i class="iconfont icon-view"></i>浏览: <span class="article-timer" data-identity="使用HEXO搭建个人博客"></span>
+          </span>
+        </div>
+      
     </div>
   </div>
   
-  
-  
 
-  
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-      <span>
-        
-          <i class="iconfont icon-06tags"></i>标签: 
-          
-          <span class="span--tag">
-            <a href="/tags/前端/">
-              #前端
-            </a>
-          </span>
-          
-          <span class="span--tag">
-            <a href="/tags/Vue-js/">
-              #Vue.js
-            </a>
-          </span>
-          
-          <span class="span--tag">
-            <a href="/tags/Webpack/">
-              #Webpack
-            </a>
-          </span>
-          
-        
-      </span>
-    </div>
-    <div class="article-meta pull-right">
-    </div>
-  </div>
-</div>
-
-
-  <aside id="sidebar">
-    <p id="sidebar-header"></p>
-    <ol id="sidebar-toc"></ol>
-  </aside>
-  <script async>setTimeout(generateToc, 10);</script>
-
-
-  <nav class="post-navigation">
+  <nav class="page-navigation">
     
-      <div class="nav-pre">
-        <i class="iconfont icon-prev"></i>
-        上一篇:
-        <a href="/passages/Windows下Sublime-Text配置C-编译环境/" target="_self">Windows下Sublime Text配置C++编译环境</a>
-      </div>
+      <a href="/page/2/">上一页</a>
     
-    
-      <div class="nav-next">
-        下一篇:
-        <a href="/passages/右键使用Sublime-Text打开文件夹/" target="_self">右键使用Sublime Text打开文件夹</a>
-        <i class="iconfont icon-next"></i>
-      </div>
     
   </nav>
-
-  
-    <a href="#comment" class="comment-anchor"></a>
-<div class="comment-title"><i class="iconfont icon-footprint"></i> 留下足迹 <i class="iconfont icon-footprint"></i></div>
-<div id="vcomments"></div>
-
-<script defer>
-  if( true ) {
-    let path = getRealPath()
-    new Valine({
-      el: "#vcomments",
-      appId: "KcDcUYGNOY5MW1l7MbrToL82-gzGzoHsz",
-      appKey: "9CYUQJPkx6RJou9wChCMTV9A",
-      notify: false,
-      verify: false,
-      avatar: "robohash",
-      placeholder: "正确填写邮箱, 才能及时收到回复哦♪(^∇^*)",
-      path
-    });
-  }
-</script>
-   
 
   
     <script defer>
@@ -403,7 +366,7 @@ const valineAPI = (() => {
 })()
 
 const calcAndWriteTimes = () => {
-  let isPost = true;
+  let isPost = false;
 
   let timerAllDOM = document.querySelectorAll(".article-timer");
 
@@ -458,7 +421,6 @@ if(true){
 }
 </script>
    
-
 </div>
 
 
