@@ -8,12 +8,12 @@
   
   
   
-  <title>OS复试知识点 | 李根的个人博客</title>
+  <title>面经02 | 李根的个人博客</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="知识点,操作系统,知识点,">
+    <meta name="keywords" content="面试经验,知识点,面试,">
   
 
   <script>
@@ -209,24 +209,24 @@
 
 <div class="post">
   <h1 class="article-title">
-    <span>OS复试知识点</span>
+    <span>面经02</span>
   </h1>
   <div class="article-top-meta">
     <span>
       发布 : 
-      2019-03-07
+      2019-03-14
     </span>
     
       <span>
         分类 : 
-          <a href="/categories/知识点/">
-            知识点
+          <a href="/categories/面试经验/">
+            面试经验
           </a>
       </span>
     
     
       <span>
-        浏览 : <span class="article-timer" data-identity="OS复试知识点"></span>
+        浏览 : <span class="article-timer" data-identity="面经02"></span>
       </span>
     
   </div>
@@ -235,18 +235,42 @@
 
   <div class="article-content">
     <div class="markdown-body">
-      <h2 id="第一章-操作系统概述"><a href="#第一章-操作系统概述" class="headerlink" title="第一章  操作系统概述"></a>第一章  操作系统概述</h2><ol>
-<li>操作系统的特征：<strong><em>并发、共享</em>、虚拟、异步</strong></li>
-<li><strong>并发(事件发生)</strong>是指两个或多个事件在同一时间间隔内发生。而<strong>并行(系统操作)</strong>是指系统能在同一时间进行两种或两种以上的操作</li>
-<li>多道程序设计技术：同时允许<strong>多个程序</strong>进入，并发执行；实际上，某一时刻，<strong>只有一个程序</strong>在运行</li>
-<li>中断：CPU<strong>停止当前</strong>执行的程序转而为某事件服务，待服务结束后，又能自动<strong>返回</strong>到被中断了的程序继续执行</li>
-<li>访管中断：<strong>软件</strong>中断，<strong>自愿</strong>中断</li>
-<li>中断是操作系统自身产生的，是操作系统<strong>想看到的</strong>；而异常是操作系统无法预料到的突发状况，是操作系统想<strong>尽量去避免</strong>的</li>
-<li>批处理系统的主要缺点是失去了<strong>交互性</strong></li>
-<li>分时操作系统：<strong>多路、交互、独占、及时</strong></li>
-<li>实时操作系统：响应<strong>及时</strong>和高<strong>可靠</strong>性</li>
+      <h2 id="JS六大数据类型"><a href="#JS六大数据类型" class="headerlink" title="JS六大数据类型"></a>JS六大数据类型</h2><ol>
+<li>Number</li>
+<li>String</li>
+<li>Boolean</li>
+<li>Undefined</li>
+<li>Object</li>
+<li>Function</li>
 </ol>
-<h2 id="第二章-进程管理"><a href="#第二章-进程管理" class="headerlink" title="第二章  进程管理"></a>第二章  进程管理</h2><h2 id="第三章-内存管理"><a href="#第三章-内存管理" class="headerlink" title="第三章  内存管理"></a>第三章  内存管理</h2><h2 id="第四章-文件管理"><a href="#第四章-文件管理" class="headerlink" title="第四章  文件管理"></a>第四章  文件管理</h2><h2 id="第五章-I-O管理"><a href="#第五章-I-O管理" class="headerlink" title="第五章  I/O管理"></a>第五章  I/O管理</h2>
+<h2 id="CSS实现上下左右居中"><a href="#CSS实现上下左右居中" class="headerlink" title="CSS实现上下左右居中"></a>CSS实现上下左右居中</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">vertical-align</span>: <span class="selector-tag">middle</span>;</span><br><span class="line"><span class="selector-tag">margin</span>: 0 <span class="selector-tag">auto</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="display-none和visibility-hidden的区别"><a href="#display-none和visibility-hidden的区别" class="headerlink" title="display:none和visibility:hidden的区别"></a><code>display:none</code>和<code>visibility:hidden</code>的区别</h2><p><code>display:none</code>隐藏后不占据额外空间，它会产生回流和重绘，而<code>visibility:hidden</code>和<code>opacity:0</code>元素虽然隐藏了，但它们仍然占据着空间，它们俩只会引起页面重绘。</p>
+<p><code>display:none</code> 的元素都已经不再页面存在了，因此肯定也无法触发它上面绑定的事件；</p>
+<p><code>visibility:hidden</code> 元素上绑定的事件也无法触发；</p>
+<p><code>opacity: 0</code>元素上面绑定的事件是可以触发的。</p>
+<h2 id="使用jQuery的animate-方法修改样式"><a href="#使用jQuery的animate-方法修改样式" class="headerlink" title="使用jQuery的animate()方法修改样式"></a>使用<code>jQuery</code>的<code>animate()</code>方法修改样式</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">".btn1"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  $(<span class="string">"#box"</span>).animate(&#123;<span class="attr">height</span>:<span class="string">"300px"</span>&#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 简单写法</span></span><br><span class="line">$(<span class="string">"div"</span>).animate(&#123;<span class="attr">height</span>:<span class="string">"300px"</span>&#125;,<span class="number">1000</span>) <span class="comment">// 1000的单位为毫秒</span></span><br></pre></td></tr></table></figure>
+<h2 id="CSS设置行高"><a href="#CSS设置行高" class="headerlink" title="CSS设置行高"></a>CSS设置行高</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-class">.small</span> &#123;<span class="attribute">line-height</span>:<span class="number">90%</span>&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="CSS去掉下划线语句"><a href="#CSS去掉下划线语句" class="headerlink" title="CSS去掉下划线语句"></a>CSS去掉下划线语句</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">text-decoration</span>:none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="CSS清除浮动的方法"><a href="#CSS清除浮动的方法" class="headerlink" title="CSS清除浮动的方法"></a>CSS清除浮动的方法</h2><ul>
+<li>添加额外标签</li>
+<li>父元素设置<code>overflow:hidden</code></li>
+<li>使用<code>after</code>伪元素</li>
+</ul>
+<h2 id="let和var的区别"><a href="#let和var的区别" class="headerlink" title="let和var的区别"></a><code>let</code>和<code>var</code>的区别</h2><p>ES6 新增了<code>let</code>命令，用来声明变量。它的用法类似于<code>var</code>，但是所声明的变量，只在<code>let</code>命令所在的代码块内有效。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="keyword">let</span> a = <span class="number">10</span>;</span><br><span class="line">  <span class="keyword">var</span> b = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">a <span class="comment">// ReferenceError: a is not defined.</span></span><br><span class="line">b <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<p>上面代码在代码块之中，分别用<code>let</code>和<code>var</code>声明了两个变量。然后在代码块之外调用这两个变量，结果<code>let</code>声明的变量报错，<code>var</code>声明的变量返回了正确的值。这表明，<code>let</code>声明的变量只在它所在的代码块有效。</p>
+<p><code>for</code>循环的计数器，就很合适使用<code>let</code>命令。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(i);</span><br><span class="line"><span class="comment">// ReferenceError: i is not defined</span></span><br></pre></td></tr></table></figure>
+<p>上面代码中，计数器<code>i</code>只在<code>for</code>循环体内有效，在循环体外引用就会报错。</p>
+<p>下面的代码如果使用<code>var</code>，最后输出的是<code>10</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">  a[i] = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line">a[<span class="number">6</span>](); <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
+<p>上面代码中，变量<code>i</code>是<code>var</code>命令声明的，在全局范围内都有效，所以全局只有一个变量<code>i</code>。每一次循环，变量<code>i</code>的值都会发生改变，而循环内被赋给数组<code>a</code>的函数内部的<code>console.log(i)</code>，里面的<code>i</code>指向的就是全局的<code>i</code>。也就是说，所有数组<code>a</code>的成员里面的<code>i</code>，指向的都是同一个<code>i</code>，导致运行时输出的是最后一轮的<code>i</code>的值，也就是 10。</p>
+<p>如果使用<code>let</code>，声明的变量仅在块级作用域内有效，最后输出的是 6。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">  a[i] = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line">a[<span class="number">6</span>](); <span class="comment">// 6</span></span><br></pre></td></tr></table></figure>
+<p>上面代码中，变量<code>i</code>是<code>let</code>声明的，当前的<code>i</code>只在本轮循环有效，所以每一次循环的<code>i</code>其实都是一个新的变量，所以最后输出的是<code>6</code>。你可能会问，如果每一轮循环的变量<code>i</code>都是重新声明的，那它怎么知道上一轮循环的值，从而计算出本轮循环的值？这是因为 JavaScript 引擎内部会记住上一轮循环的值，初始化本轮的变量<code>i</code>时，就在上一轮循环的基础上进行计算。</p>
+<p>另外，<code>for</code>循环还有一个特别之处，就是设置循环变量的那部分是一个父作用域，而循环体内部是一个单独的子作用域。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">  <span class="keyword">let</span> i = <span class="string">'abc'</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// abc</span></span><br><span class="line"><span class="comment">// abc</span></span><br><span class="line"><span class="comment">// abc</span></span><br></pre></td></tr></table></figure>
+<p>上面代码正确运行，输出了 3 次<code>abc</code>。这表明函数内部的变量<code>i</code>与循环变量<code>i</code>不在同一个作用域，有各自单独的作用域。</p>
     </div>
   </div>
   
@@ -262,14 +286,14 @@
           <i class="iconfont icon-06tags"></i>标签: 
           
           <span class="span--tag">
-            <a href="/tags/操作系统/">
-              #操作系统
+            <a href="/tags/知识点/">
+              #知识点
             </a>
           </span>
           
           <span class="span--tag">
-            <a href="/tags/知识点/">
-              #知识点
+            <a href="/tags/面试/">
+              #面试
             </a>
           </span>
           
@@ -294,15 +318,9 @@
       <div class="nav-pre">
         <i class="iconfont icon-prev"></i>
         上一篇:
-        <a href="/passages/软件工程知识点/" target="_self">软件工程知识点</a>
-      </div>
-    
-    
-      <div class="nav-next">
-        下一篇:
         <a href="/passages/面经01/" target="_self">面经01</a>
-        <i class="iconfont icon-next"></i>
       </div>
+    
     
   </nav>
 
