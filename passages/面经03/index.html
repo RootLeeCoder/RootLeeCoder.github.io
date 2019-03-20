@@ -8,7 +8,7 @@
   
   
   
-  <title>面经01 | 李根的个人博客</title>
+  <title>面经03 | 李根的个人博客</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -209,12 +209,12 @@
 
 <div class="post">
   <h1 class="article-title">
-    <span>面经01</span>
+    <span>面经03</span>
   </h1>
   <div class="article-top-meta">
     <span>
       发布 : 
-      2019-03-12
+      2019-03-21
     </span>
     
       <span>
@@ -226,7 +226,7 @@
     
     
       <span>
-        浏览 : <span class="article-timer" data-identity="面经01"></span>
+        浏览 : <span class="article-timer" data-identity="面经03"></span>
       </span>
     
   </div>
@@ -235,124 +235,96 @@
 
   <div class="article-content">
     <div class="markdown-body">
-      <h2 id="抽象类和接口的区别"><a href="#抽象类和接口的区别" class="headerlink" title="抽象类和接口的区别"></a>抽象类和接口的区别</h2><ul>
-<li>抽象类是用来捕捉子类的通用特性的，它不能被实例化。抽象类是不完整的，它只能用作基类。抽象类主要用来进行类型隐藏和充当全局变量的角色。</li>
-<li>接口是抽象方法的集合。如果一个类实现了某个接口，那么它就继承了这个接口的抽象方法。接口只是一种形式，接口自身不能做任何事情。</li>
-</ul>
-<table>
+      <h2 id="一、Vue的优势"><a href="#一、Vue的优势" class="headerlink" title="一、Vue的优势"></a>一、Vue的优势</h2><p>Vue是一个构建用户界面的渐进式框架。</p>
+<p>Vue 只关注视图层， 采用自底向上增量开发的设计。</p>
+<p>轻量级框架、简单易学、双向数据绑定、组件化、数据与结构分离、运行速度快</p>
+<h2 id="二、Vue的生命周期"><a href="#二、Vue的生命周期" class="headerlink" title="二、Vue的生命周期"></a>二、Vue的生命周期</h2><p><code>beforecreated</code>：el 和 data 并未初始化<br><code>created</code>:完成了 data 数据的初始化，el没有<br><code>beforeMount</code>：完成了 el 和 data 初始化<br><code>mounted</code> ：完成挂载</p>
+<p><code>beforecreate</code> : 举个栗子：可以在这加个loading事件<br><code>created</code> ：在这结束loading，还做一些初始化，实现函数自执行<br><code>mounted</code> ： 在这发起后端请求，拿回数据，配合路由钩子做一些事情<br><code>beforeDestroy</code>： 你确认删除XX吗？<br><code>destroyed</code> ：当前组件已被删除，清空相关内容</p>
+<h2 id="三、组件数据传递"><a href="#三、组件数据传递" class="headerlink" title="三、组件数据传递"></a>三、组件数据传递</h2><h3 id="父传子"><a href="#父传子" class="headerlink" title="父传子"></a>父传子</h3><p>Prop 是你可以在组件上注册的一些<strong><em>自定义特性</em></strong>。当一个值传递给一个 prop 特性的时候，它就变成了那个组件实例的一个属性。为了给博文组件传递一个标题，我们可以用一个 <code>props</code> 选项将其包含在该组件可接受的 prop 列表中：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">'blog-post'</span>, &#123;</span><br><span class="line">  props: [<span class="string">'title'</span>],</span><br><span class="line">  template: <span class="string">'&lt;h3&gt;&#123;&#123; title &#125;&#125;&lt;/h3&gt;'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>一个组件默认可以拥有任意数量的 prop，任何值都可以传递给任何 prop。在上述模板中，你会发现我们能够在组件实例中访问这个值，就像访问 <code>data</code> 中的值一样。</p>
+<p>一个 prop 被注册之后，你就可以像这样把数据作为一个自定义特性传递进来：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">blog-post</span> <span class="attr">title</span>=<span class="string">"My journey with Vue"</span>&gt;</span><span class="tag">&lt;/<span class="name">blog-post</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">blog-post</span> <span class="attr">title</span>=<span class="string">"Blogging with Vue"</span>&gt;</span><span class="tag">&lt;/<span class="name">blog-post</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">blog-post</span> <span class="attr">title</span>=<span class="string">"Why Vue is so fun"</span>&gt;</span><span class="tag">&lt;/<span class="name">blog-post</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="子传父"><a href="#子传父" class="headerlink" title="子传父"></a>子传父</h3><p>用<code>this.$emit()</code>方法来注册一个事件，再用<code>v-on</code>来监听这个事件，执行对应的方法</p>
+<h2 id="四、v-model和双括号的区别"><a href="#四、v-model和双括号的区别" class="headerlink" title="四、v-model和双括号的区别"></a>四、<code>v-model</code>和双括号的区别</h2><p>双括号是<code>v-text</code>的简写形式。<code>v-model</code>通常用于表单组件的绑定，例如<code>input，select</code>等。它与<code>v-text</code>的区别在于它实现的表单组件的双向绑定，如果用于表单控件以外标签是没有用的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HEXO对于非代码块里面的&#123;&#123;&#125;&#125;都会渲染报错</span><br></pre></td></tr></table></figure>
+<h2 id="五、jQuery常见动画效果"><a href="#五、jQuery常见动画效果" class="headerlink" title="五、jQuery常见动画效果"></a>五、<code>jQuery</code>常见动画效果</h2><table>
 <thead>
 <tr>
-<th><strong>参数</strong></th>
-<th><strong>抽象类</strong></th>
-<th><strong>接口</strong></th>
+<th>Code</th>
+<th>效果</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>默认的方法实现</td>
-<td>它可以有默认的方法实现</td>
-<td>接口完全是抽象的。它根本不存在方法的实现</td>
+<td>hide()</td>
+<td>隐藏</td>
 </tr>
 <tr>
-<td>实现</td>
-<td>子类使用<strong>extends</strong>关键字来继承抽象类。如果子类不是抽象类的话，它需要提供抽象类中所有声明的方法的实现。</td>
-<td>子类使用关键字<strong>implements</strong>来实现接口。它需要提供接口中所有声明的方法的实现</td>
+<td>show()</td>
+<td>显示</td>
 </tr>
 <tr>
-<td>构造器</td>
-<td>抽象类可以有构造器</td>
-<td>接口不能有构造器</td>
+<td>toggle()</td>
+<td>切换隐藏/显示</td>
 </tr>
 <tr>
-<td>与正常Java类的区别</td>
-<td>除了你不能实例化抽象类之外，它和普通Java类没有任何区别</td>
-<td>接口是完全不同的类型</td>
+<td>fadeIn()</td>
+<td>淡入</td>
 </tr>
 <tr>
-<td>访问修饰符</td>
-<td>抽象方法可以有<strong>public</strong>、<strong>protected</strong>和<strong>default</strong>这些修饰符</td>
-<td>接口方法默认修饰符是<strong>public</strong>。你不可以使用其它修饰符。</td>
+<td>fadeOut()</td>
+<td>淡出</td>
 </tr>
 <tr>
-<td>main方法</td>
-<td>抽象方法可以有main方法并且我们可以运行它</td>
-<td>接口没有main方法，因此我们不能运行它。（java8以后接口可以有default和static方法，所以可以运行main方法）</td>
+<td>fadeTo()</td>
+<td>颜色渐变</td>
 </tr>
 <tr>
-<td>多继承</td>
-<td>抽象方法可以继承一个类和实现多个接口</td>
-<td>接口只可以继承一个或多个其它接口</td>
+<td>slideDown()</td>
+<td>滑下</td>
 </tr>
 <tr>
-<td>速度</td>
-<td>它比接口速度要快</td>
-<td>接口是稍微有点慢的，因为它需要时间去寻找在类中实现的方法。</td>
+<td>slideUp()</td>
+<td>拉起</td>
 </tr>
 <tr>
-<td>添加新方法</td>
-<td>如果你往抽象类中添加新的方法，你可以给它提供默认的实现。因此你不需要改变你现在的代码。</td>
-<td>如果你往接口中添加方法，那么你必须改变实现该接口的类。</td>
+<td>slideToggle()</td>
+<td>显示/隐藏</td>
+</tr>
+<tr>
+<td>animate()</td>
+<td>自定义动画</td>
 </tr>
 </tbody>
 </table>
-<h2 id="N条线程同时访问M个资源如何保证不死锁"><a href="#N条线程同时访问M个资源如何保证不死锁" class="headerlink" title="N条线程同时访问M个资源如何保证不死锁"></a>N条线程同时访问M个资源如何保证不死锁</h2><p>使用多线程时，一种非常简单的避免死锁的方式就是：指定锁的顺序，并强制线程按照指定的顺序获取锁。</p>
-<p>产生死锁的四个条件：</p>
-<ol>
-<li>互斥</li>
-<li>请求与保持</li>
-<li>不可剥夺</li>
-<li>循环等待</li>
-</ol>
-<p>只要破坏其中任意一个条件，就可以避免死锁，其中最简单的就是破环循环等待条件。按同一顺序访问对象，加载锁，释放锁。</p>
-<h2 id="什么是Servlet？"><a href="#什么是Servlet？" class="headerlink" title="什么是Servlet？"></a>什么是Servlet？</h2><p>Servlet（Server Applet）是Java Servlet的简称，称为小服务程序或服务连接器，用Java编写的服务器端程序</p>
-<h2 id="什么是单例模式"><a href="#什么是单例模式" class="headerlink" title="什么是单例模式"></a>什么是单例模式</h2><p>在它的核心结构中只包含一个被称为单例的特殊类。通过单例模式可以保证系统中，应用该模式的一个类只有一个实例。即一个类只有一个对象实例。</p>
-<h2 id="SQL创建一个表，和设置主键"><a href="#SQL创建一个表，和设置主键" class="headerlink" title="SQL创建一个表，和设置主键"></a>SQL创建一个表，和设置主键</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> dept</span><br><span class="line">(</span><br><span class="line">    dept_id <span class="built_in">int</span> primary <span class="keyword">key</span>,</span><br><span class="line">    dept_name <span class="keyword">nvarchar</span>(<span class="number">100</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">    dept_address <span class="keyword">nvarchar</span>(<span class="number">100</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<h2 id="delete、truncate-和-drop的区别"><a href="#delete、truncate-和-drop的区别" class="headerlink" title="delete、truncate 和 drop的区别"></a>delete、truncate 和 drop的区别</h2><ul>
-<li>DELETE语句执行删除的过程是每次从表中删除一行，并且同时将该行的删除操作作为事务记录在日志中保存以便进行进行回滚操作</li>
-<li>TRUNCATE TABLE 则一次性地从表中删除所有的数据并不把单独的删除操作记录记入日志保存，删除行是不能恢复的。并且在删除的过程中不会激活与表有关的删除触发器。执行速度快。</li>
-<li>DROP语句将表所占用的空间全释放掉</li>
-</ul>
-<table>
+<h2 id="六、CSS3的多媒体查询"><a href="#六、CSS3的多媒体查询" class="headerlink" title="六、CSS3的多媒体查询"></a>六、CSS3的多媒体查询</h2><table>
 <thead>
 <tr>
-<th></th>
-<th>DELETE</th>
-<th>TRUNCATE</th>
-<th>DROP</th>
+<th>值</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>撤销/回滚</td>
-<td>可以</td>
-<td>不可以</td>
-<td>不可以</td>
+<td>all</td>
+<td>用于所有多媒体类型设备</td>
 </tr>
 <tr>
-<td>触发器</td>
-<td>会触发</td>
-<td>不会</td>
-<td>不会</td>
+<td>print</td>
+<td>用于打印机</td>
 </tr>
 <tr>
-<td>删除</td>
-<td>数据</td>
-<td>数据</td>
-<td>整个表(结构和数据)</td>
+<td>screen</td>
+<td>用于电脑屏幕，平板，智能手机等。</td>
 </tr>
 <tr>
-<td>速度</td>
-<td>慢</td>
-<td>中</td>
-<td>快</td>
+<td>speech</td>
+<td>用于屏幕阅读器</td>
 </tr>
 </tbody>
 </table>
-<h2 id="迭代式开发"><a href="#迭代式开发" class="headerlink" title="迭代式开发"></a>迭代式开发</h2><p>与传统的瀑布式开发相反，它弥补了传统开发方式中的一些弱点，具有更高的成功率和生产率。</p>
-<p><strong>瀑布式开发(最传统)</strong>，也就是从需求到设计，从设计到编码，从编码到测试，从测试到提交大概这样的流程，要求每一个开发阶段都要做到最好。<br>特别是前期阶段，设计的越完美，提交后的成本损失就越少。</p>
-<p><strong>迭代式开发</strong>，不要求每一个阶段的任务做的都是最完美的，而是明明知道还有很多不足的地方，却偏偏不去完善它，而是把主要功能先搭建起来为目的，以最短的时间，<br>最少的损失先完成一个“不完美的成果物”直至提交。然后再通过客户或用户的反馈信息，在这个“不完美的成果物”上逐步进行完善。</p>
-<p><strong>螺旋开发</strong>，很大程度上是一种风险驱动的方法体系，因为在每个阶段之前及经常发生的循环之前，都必须首先进行风险评估。</p>
-<p><strong>敏捷开发</strong>相比迭代式开发两者都强调在较短的开发周期提交软件，但是，敏捷开发的周期可能更短，并且更加强调队伍中的高度协作。<br>敏捷方法有时候被误认为是无计划性和纪律性的方法，实际上更确切的说法是敏捷方法强调适应性而非预见性。   </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> screen and (min-width: <span class="number">480px</span>) &#123;</span><br><span class="line">    <span class="selector-tag">body</span> &#123;</span><br><span class="line">        <span class="attribute">background-color</span>: lightgreen;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*如果媒体类型屏幕的可视窗口宽度小于 480 px ，背景颜色将改变*/</span></span><br></pre></td></tr></table></figure>
     </div>
   </div>
   
@@ -400,15 +372,9 @@
       <div class="nav-pre">
         <i class="iconfont icon-prev"></i>
         上一篇:
-        <a href="/passages/OS复试知识点/" target="_self">OS复试知识点</a>
-      </div>
-    
-    
-      <div class="nav-next">
-        下一篇:
         <a href="/passages/面经02/" target="_self">面经02</a>
-        <i class="iconfont icon-next"></i>
       </div>
+    
     
   </nav>
 
