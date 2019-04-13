@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[面经03]]></title>
+    <url>%2Fpassages%2F%E9%9D%A2%E7%BB%8F03%2F</url>
+    <content type="text"><![CDATA[Don’t fall before dawn. 一、Vue的优势Vue是一个构建用户界面的渐进式框架。 Vue 只关注视图层， 采用自底向上增量开发的设计。 轻量级框架、简单易学、双向数据绑定、组件化、数据与结构分离、运行速度快 二、Vue的生命周期beforeCreate：组件实例化之前执行的函数created：组件实例化完毕，但页面仍未显示beforeMount：组件挂载前，页面仍未显示，但虚拟DOM已经配置mounted：组件挂载后，此方法执行后，页面显示beforeUpdate：组件更新前，页面仍未更新，但虚拟DOM已经配置Updated：组件更新，此方法执行后，页面显示before：组件销毁前destoryed：组件销毁 beforeCreate：el 和 data 并未初始化created:完成了 data 数据的初始化，el没有beforeMount：完成了 el 和 data 初始化mounted ：完成挂载 beforeCreate : 举个栗子：可以在这加个loading事件created ：在这结束loading，还做一些初始化，实现函数自执行mounted ： 在这发起后端请求，拿回数据，配合路由钩子做一些事情beforeDestroy： 你确认删除XX吗？destroyed ：当前组件已被删除，清空相关内容 三、组件数据传递父传子Prop 是你可以在组件上注册的一些自定义特性。当一个值传递给一个 prop 特性的时候，它就变成了那个组件实例的一个属性。为了给博文组件传递一个标题，我们可以用一个 props 选项将其包含在该组件可接受的 prop 列表中： 1234Vue.component('blog-post', &#123; props: ['title'], template: '&lt;h3&gt;&#123;&#123; title &#125;&#125;&lt;/h3&gt;'&#125;) 一个组件默认可以拥有任意数量的 prop，任何值都可以传递给任何 prop。在上述模板中，你会发现我们能够在组件实例中访问这个值，就像访问 data 中的值一样。 一个 prop 被注册之后，你就可以像这样把数据作为一个自定义特性传递进来： 123&lt;blog-post title="My journey with Vue"&gt;&lt;/blog-post&gt;&lt;blog-post title="Blogging with Vue"&gt;&lt;/blog-post&gt;&lt;blog-post title="Why Vue is so fun"&gt;&lt;/blog-post&gt; 子传父(事件传值)用this.$emit()方法来注册一个事件，再用v-on来监听这个事件，执行对应的方法 四、v-model和双括号的区别双括号是v-text的简写形式。v-model通常用于表单组件的绑定，例如input，select等。它与v-text的区别在于它实现的表单组件的双向绑定，如果用于表单控件以外标签是没有用的。 1HEXO对于非代码块里面的&#123;&#123;&#125;&#125;都会渲染报错 五、jQuery常见动画效果 Code 效果 hide() 隐藏 show() 显示 toggle() 切换隐藏/显示 fadeIn() 淡入 fadeOut() 淡出 fadeTo() 颜色渐变 slideDown() 滑下 slideUp() 拉起 slideToggle() 显示/隐藏 animate() 自定义动画 六、CSS3的多媒体查询 值 描述 all 用于所有多媒体类型设备 print 用于打印机 screen 用于电脑屏幕，平板，智能手机等。 speech 用于屏幕阅读器 123456@media screen and (min-width: 480px) &#123; body &#123; background-color: lightgreen; &#125;&#125;/*如果媒体类型屏幕的可视窗口宽度小于 480 px ，背景颜色将改变*/]]></content>
+      <categories>
+        <category>面试经验</category>
+      </categories>
+      <tags>
+        <tag>知识点</tag>
+        <tag>面试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[面经02]]></title>
+    <url>%2Fpassages%2F%E9%9D%A2%E7%BB%8F02%2F</url>
+    <content type="text"><![CDATA[Try more, don’t be afraid of failure. JS六大数据类型 Number String Boolean Undefined Object Function CSS实现上下左右居中12vertical-align: middle;margin: 0 auto; display:none和visibility:hidden的区别display:none隐藏后不占据额外空间，它会产生回流和重绘，而visibility:hidden和opacity:0元素虽然隐藏了，但它们仍然占据着空间，它们俩只会引起页面重绘。 display:none 的元素都已经不再页面存在了，因此肯定也无法触发它上面绑定的事件； visibility:hidden 元素上绑定的事件也无法触发； opacity: 0元素上面绑定的事件是可以触发的。 使用jQuery的animate()方法修改样式123456$(".btn1").click(function()&#123; $("#box").animate(&#123;height:"300px"&#125;);&#125;);// 简单写法$("div").animate(&#123;height:"300px"&#125;,1000) // 1000的单位为毫秒 CSS设置行高1p.small &#123;line-height:90%&#125; CSS去掉下划线语句123a &#123; text-decoration:none;&#125; CSS清除浮动的方法 添加额外标签 父元素设置overflow:hidden 使用after伪元素 let和var的区别ES6 新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。 1234567&#123; let a = 10; var b = 1;&#125;a // ReferenceError: a is not defined.b // 1 上面代码在代码块之中，分别用let和var声明了两个变量。然后在代码块之外调用这两个变量，结果let声明的变量报错，var声明的变量返回了正确的值。这表明，let声明的变量只在它所在的代码块有效。 for循环的计数器，就很合适使用let命令。 123456for (let i = 0; i &lt; 10; i++) &#123; // ...&#125;console.log(i);// ReferenceError: i is not defined 上面代码中，计数器i只在for循环体内有效，在循环体外引用就会报错。 下面的代码如果使用var，最后输出的是10。 1234567var a = [];for (var i = 0; i &lt; 10; i++) &#123; a[i] = function () &#123; console.log(i); &#125;;&#125;a[6](); // 10 上面代码中，变量i是var命令声明的，在全局范围内都有效，所以全局只有一个变量i。每一次循环，变量i的值都会发生改变，而循环内被赋给数组a的函数内部的console.log(i)，里面的i指向的就是全局的i。也就是说，所有数组a的成员里面的i，指向的都是同一个i，导致运行时输出的是最后一轮的i的值，也就是 10。 如果使用let，声明的变量仅在块级作用域内有效，最后输出的是 6。 1234567var a = [];for (let i = 0; i &lt; 10; i++) &#123; a[i] = function () &#123; console.log(i); &#125;;&#125;a[6](); // 6 上面代码中，变量i是let声明的，当前的i只在本轮循环有效，所以每一次循环的i其实都是一个新的变量，所以最后输出的是6。你可能会问，如果每一轮循环的变量i都是重新声明的，那它怎么知道上一轮循环的值，从而计算出本轮循环的值？这是因为 JavaScript 引擎内部会记住上一轮循环的值，初始化本轮的变量i时，就在上一轮循环的基础上进行计算。 另外，for循环还有一个特别之处，就是设置循环变量的那部分是一个父作用域，而循环体内部是一个单独的子作用域。 1234567for (let i = 0; i &lt; 3; i++) &#123; let i = 'abc'; console.log(i);&#125;// abc// abc// abc 上面代码正确运行，输出了 3 次abc。这表明函数内部的变量i与循环变量i不在同一个作用域，有各自单独的作用域。]]></content>
+      <categories>
+        <category>面试经验</category>
+      </categories>
+      <tags>
+        <tag>知识点</tag>
+        <tag>面试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[面经01]]></title>
+    <url>%2Fpassages%2F%E9%9D%A2%E7%BB%8F01%2F</url>
+    <content type="text"><![CDATA[My first time to have an interview. 抽象类和接口的区别 抽象类是用来捕捉子类的通用特性的，它不能被实例化。抽象类是不完整的，它只能用作基类。抽象类主要用来进行类型隐藏和充当全局变量的角色。 接口是抽象方法的集合。如果一个类实现了某个接口，那么它就继承了这个接口的抽象方法。接口只是一种形式，接口自身不能做任何事情。 参数 抽象类 接口 默认的方法实现 它可以有默认的方法实现 接口完全是抽象的。它根本不存在方法的实现 实现 子类使用extends关键字来继承抽象类。如果子类不是抽象类的话，它需要提供抽象类中所有声明的方法的实现。 子类使用关键字implements来实现接口。它需要提供接口中所有声明的方法的实现 构造器 抽象类可以有构造器 接口不能有构造器 与正常Java类的区别 除了你不能实例化抽象类之外，它和普通Java类没有任何区别 接口是完全不同的类型 访问修饰符 抽象方法可以有public、protected和default这些修饰符 接口方法默认修饰符是public。你不可以使用其它修饰符。 main方法 抽象方法可以有main方法并且我们可以运行它 接口没有main方法，因此我们不能运行它。（java8以后接口可以有default和static方法，所以可以运行main方法） 多继承 抽象方法可以继承一个类和实现多个接口 接口只可以继承一个或多个其它接口 速度 它比接口速度要快 接口是稍微有点慢的，因为它需要时间去寻找在类中实现的方法。 添加新方法 如果你往抽象类中添加新的方法，你可以给它提供默认的实现。因此你不需要改变你现在的代码。 如果你往接口中添加方法，那么你必须改变实现该接口的类。 N条线程同时访问M个资源如何保证不死锁使用多线程时，一种非常简单的避免死锁的方式就是：指定锁的顺序，并强制线程按照指定的顺序获取锁。 产生死锁的四个条件： 互斥 请求与保持 不可剥夺 循环等待 只要破坏其中任意一个条件，就可以避免死锁，其中最简单的就是破环循环等待条件。按同一顺序访问对象，加载锁，释放锁。 什么是Servlet？Servlet（Server Applet）是Java Servlet的简称，称为小服务程序或服务连接器，用Java编写的服务器端程序 什么是单例模式在它的核心结构中只包含一个被称为单例的特殊类。通过单例模式可以保证系统中，应用该模式的一个类只有一个实例。即一个类只有一个对象实例。 SQL创建一个表，和设置主键123456create table dept( dept_id int primary key, dept_name nvarchar(100) not null, dept_address nvarchar(100)) delete、truncate 和 drop的区别 DELETE语句执行删除的过程是每次从表中删除一行，并且同时将该行的删除操作作为事务记录在日志中保存以便进行进行回滚操作 TRUNCATE TABLE 则一次性地从表中删除所有的数据并不把单独的删除操作记录记入日志保存，删除行是不能恢复的。并且在删除的过程中不会激活与表有关的删除触发器。执行速度快。 DROP语句将表所占用的空间全释放掉 DELETE TRUNCATE DROP 撤销/回滚 可以 不可以 不可以 触发器 会触发 不会 不会 删除 数据 数据 整个表(结构和数据) 速度 慢 中 快 迭代式开发与传统的瀑布式开发相反，它弥补了传统开发方式中的一些弱点，具有更高的成功率和生产率。 瀑布式开发(最传统)，也就是从需求到设计，从设计到编码，从编码到测试，从测试到提交大概这样的流程，要求每一个开发阶段都要做到最好。特别是前期阶段，设计的越完美，提交后的成本损失就越少。 迭代式开发，不要求每一个阶段的任务做的都是最完美的，而是明明知道还有很多不足的地方，却偏偏不去完善它，而是把主要功能先搭建起来为目的，以最短的时间，最少的损失先完成一个“不完美的成果物”直至提交。然后再通过客户或用户的反馈信息，在这个“不完美的成果物”上逐步进行完善。 螺旋开发，很大程度上是一种风险驱动的方法体系，因为在每个阶段之前及经常发生的循环之前，都必须首先进行风险评估。 敏捷开发相比迭代式开发两者都强调在较短的开发周期提交软件，但是，敏捷开发的周期可能更短，并且更加强调队伍中的高度协作。敏捷方法有时候被误认为是无计划性和纪律性的方法，实际上更确切的说法是敏捷方法强调适应性而非预见性。]]></content>
+      <categories>
+        <category>面试经验</category>
+      </categories>
+      <tags>
+        <tag>知识点</tag>
+        <tag>面试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[OS复试知识点]]></title>
+    <url>%2Fpassages%2FOS%E5%A4%8D%E8%AF%95%E7%9F%A5%E8%AF%86%E7%82%B9%2F</url>
+    <content type="text"><![CDATA[Create a miracle. 第一章 操作系统概述 操作系统的特征：并发、共享、虚拟、异步 并发(事件发生)是指两个或多个事件在同一时间间隔内发生。而并行(系统操作)是指系统能在同一时间进行两种或两种以上的操作 多道程序设计技术：同时允许多个程序进入，并发执行；实际上，某一时刻，只有一个程序在运行 中断：CPU停止当前执行的程序转而为某事件服务，待服务结束后，又能自动返回到被中断了的程序继续执行 访管中断：软件中断，自愿中断 中断是操作系统自身产生的，是操作系统想看到的；而异常是操作系统无法预料到的突发状况，是操作系统想尽量去避免的 批处理系统的主要缺点是失去了交互性 分时操作系统：多路、交互、独占、及时 实时操作系统：响应及时和高可靠性 第二章 进程管理第三章 内存管理第四章 文件管理第五章 I/O管理]]></content>
+      <categories>
+        <category>知识点</category>
+      </categories>
+      <tags>
+        <tag>知识点</tag>
+        <tag>操作系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[软件工程知识点]]></title>
+    <url>%2Fpassages%2F%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E7%9F%A5%E8%AF%86%E7%82%B9%2F</url>
+    <content type="text"><![CDATA[关于软件工程的几个基本问题 一、 什么是软件危机？产生的原因是什么？概念：软件危机是指落后的软件生产方式无法满足迅速增长的计算机软件需求，从而导致软件开发与维护过程中出现一系列严重问题的现象。 原因： 用户需求不明确 缺乏正确的理论指导 软件开发规模越来越大 软件开发复杂度越来越高 二、 需求分析阶段的基本任务是什么？软件需求分析所要做的工作是深入描述软件的功能和性能，确定软件设计的限制和软件同其它系统元素的接口细节，定义软件的其它有效性需求。 三、 什么是数据字典？有什么作用？有哪些条目？概念：数据字典是描述数据的信息集合，是对系统中使用的所有数据元素的定义的集合。 作用：数据字典最重要的作用是作为分析阶段的工具。任何字典最重要的用途都是供人查询对不了解的条目的解释，在结构化分析中，数据字典的作用是给数据流图上每个成分加以定义和说明。 条目： 数据项 数据结构 数据流 数据存储 处理过程 外部实体 四 、概要设计阶段的基本任务是什么？概要设计的主要任务是把需求分析得到的系统扩展用例图转换为软件结构和数据结构。设计软件结构的具体任务是：将一个复杂系统按功能进行模块划分、建立模块的层次结构及调用关系、确定模块间的接口及人机界面等。 五、 详细设计阶段的基本任务是什么？有哪些描述方法？基本任务： 为每个模块进行详细的算法设计 为每个模块内的数据结构进行设计 对数据库进行设计，即确定数据库的物理结构 编写详细设计说明书 评审 描述方法： 程序流程图 PAD 图 (Problem Analysis Diagram, 问题分析图) 过程设计语言]]></content>
+      <categories>
+        <category>知识点</category>
+      </categories>
+      <tags>
+        <tag>知识点</tag>
+        <tag>软件工程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[“三次握手”和“四次挥手”]]></title>
+    <url>%2Fpassages%2F%E2%80%9C%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E2%80%9D%E5%92%8C%E2%80%9C%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B%E2%80%9D%2F</url>
+    <content type="text"><![CDATA[计算机网络当中的“三次握手”和“四次挥手”简单讲解。 概念列表 简写 全称 翻译 备注 SYN Synchronize Sequence Numbers 同步序列编号 发送请求 ACK Acknowledgement 确认字符 确认请求 FIN Finish TCP首部中的结束标志 关闭请求 三次握手(建立连接) 客户端发送SYN，进入SYN_SEND状态 服务器接收到SYN，向客户端返回SYN+ACK，进入SYN-RCVD状态 客户端返回ACK，双方都进入ESTABLISHED状态，连接成功 四次挥手(关闭连接) 客户端向服务器发送一个ACK和FIN报文段，此时，客户端进入FIN_WAIT_1状态，表示没有数据可发了 服务器收到了客户端的FIN报文段，回复最后一个ACK，此时客户端进入FIN_WAIT_2状态，服务器告诉客户端，我也没有数据可发了，可以关闭了 服务器向客户端发送FIN报文段，请求关闭连接，同时进入CLOSE_WAIT状态 客户端收到了服务器的FIN报文段，向服务器发送ACK报文段，然后进入TIME_WAIT状态。服务器收到后关闭连接，客户端等待 2ms 后依然没有回应，证明连接已关闭，客户端关闭连接。 场景类比三次握手 次数 顾客(客户端) 在线客服(服务器) 1 您好，在吗？ 2 亲，在的，请问有什么问题吗？ 3 我想咨询关于。。。 四次挥手 次数 顾客(客户端) 电话客服(服务器) 1 我想问的就是这些了 2 您的问题已全部答复，祝您生活愉快，再见！ 3 挂断电话 4 喂? 啊，客服电话挂断了，我也挂断吧]]></content>
+      <categories>
+        <category>知识点</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+        <tag>知识点</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[HTTP与HTTPS的区别]]></title>
+    <url>%2Fpassages%2FHTTP%E4%B8%8EHTTPS%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
+    <content type="text"><![CDATA[Nothing to say. HTTP HTTPS 安全性 不安全 安全 OSI网络模型位置 应用层 传输层 标准端口 80 443 证书 不需要 需要 加密 不需要 需要 SSL 证书就是遵守 SSL协议，由受信任的数字证书颁发机构CA，在验证服务器身份后颁发，具有服务器身份验证和数据传输加密功能。]]></content>
+      <categories>
+        <category>知识点</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+        <tag>知识点</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[常见网络状态码]]></title>
+    <url>%2Fpassages%2F%E5%B8%B8%E8%A7%81%E7%BD%91%E7%BB%9C%E7%8A%B6%E6%80%81%E7%A0%81%2F</url>
+    <content type="text"><![CDATA[常见的网络状态码简介 状态码 解释 1xx 临时响应 2xx 成功 3xx 重定向 4xx 请求错误 5xx 服务器错误 100 继续 101 切换协议 200 成功 201 已创建 202 已接受 204 无内容 300 多种选择 301 永久移动 302 临时移动 307 临时重定向 400 错误请求(语法错误) 401 未授权 403 禁止(权限不够) 404 未找到 405 方法禁用 406 不接受 500 服务器内部错误 501 尚未实施 502 错误网关 503 服务不可用 504 网关超时 505 HTTP 版本不受支持]]></content>
+      <categories>
+        <category>知识点</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+        <tag>知识点</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[程序、进程、线程的区别总结]]></title>
+    <url>%2Fpassages%2F%E7%A8%8B%E5%BA%8F%E3%80%81%E8%BF%9B%E7%A8%8B%E3%80%81%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB%E6%80%BB%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[本文以表格的方式总结 进程和线程的区别 进程 线程 根本区别 操作系统资源分配的基本单位 任务调度和执行的基本单位 开销 每个进程都有独立的代码和数据空间，切换开销较大 同一类线程共享代码和数据空间开销较小 所处环境 操作系统中能同时运行多个进程 同一个进程中有多个线程同时进行 内存分配 系统在运行的时候会为每个进程分配不同的内存空间 除了CPU外，系统不会为线程分配内存，线程组之间只能共享资源 进程和程序的区别 进程 程序 动态 静态 有一定的生命周期 指令的集合，本身无“运动”的含义 只能对应一个程序 可以对应多个进程]]></content>
+      <categories>
+        <category>知识点</category>
+      </categories>
+      <tags>
+        <tag>知识点</tag>
+        <tag>操作系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[关于Vue的一些小Tips]]></title>
+    <url>%2Fpassages%2F%E5%85%B3%E4%BA%8EVue%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8FTips%2F</url>
+    <content type="text"><![CDATA[Nothing to say. 1. v-bind和v-model的区别 v-bind是动态绑定指令，用于绑定属性和数据 v-model用于实现双向数据绑定，用于表单控件 2. computed和methods的区别两者在效果上是一样的 computed是基于它的依赖缓存，只有相关依赖发生改变时才会重新获取值 methods在渲染的时候，函数总是会重新调用执行 详情见 http://www.runoob.com/vue2/vue-computed.html 3.v-if和v-show的区别v-if 是“真正”的条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建。 v-if 也是惰性的：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。 相比之下，v-show 就简单得多——不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换。 一般来说，v-if 有更高的切换开销，而 v-show 有更高的初始渲染开销。因此，如果需要非常频繁地切换，则使用 v-show 较好；如果在运行时条件很少改变，则使用 v-if 较好。]]></content>
+      <categories>
+        <category>Vue.js</category>
+      </categories>
+      <tags>
+        <tag>知识点</tag>
+        <tag>Vue.js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[前端面试知识点]]></title>
+    <url>%2Fpassages%2F%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%86%E7%82%B9%2F</url>
+    <content type="text"><![CDATA[有些事情是你必须去面对的。 1. 什么是盒子模型从外到内由外边距(margin)、边框(border)、内边距(padding)、内容(content)四部分组成 2. CSS实现垂直水平居中123display: table-cell;vertical-align: middle;text-align: center; 3. 简述一下src和href的区别 href表示超文本引用(hypertext reference)，在link和a等元素上使用。href的内容是与页面有关联，是引用 src表示来源地址，在 img、script、iframe 等元素上。src的内容是页面必不可少的一部分，是引入 4. px和em的区别px表示绝对尺寸，优点在于比较精确，缺点在于不能适应浏览器缩放的变化。 em表示相对尺寸，相似于font-size，可以很好地适应浏览器缩放的变化。 5. 行内元素有哪些？块级元素有哪些？空元素有哪些？ 行内元素 1&lt;a&gt; &lt;b&gt; &lt;code&gt; &lt;em&gt; &lt;span&gt; &lt;strong&gt; &lt;textarea&gt; &lt;u&gt; &lt;select&gt; 块级元素 1&lt;blockquote&gt; &lt;div&gt; &lt;form&gt; &lt;h1&gt; &lt;ol&gt; &lt;p&gt; &lt;ul&gt; &lt;pre&gt; &lt;table&gt; 空元素 1&lt;/br&gt; &lt;hr&gt; &lt;img&gt; &lt;input&gt; &lt;link&gt; &lt;meta&gt; 6. 简述同步和异步的区别 同步：所有的操作执行完，才返回给用户结果。 异步：不用等所有的操作执行完，就响应用户的请求。 同步任务指的是，在主线程上排队执行的任务，只有前一个任务执行完毕，才能执行后一个任务； 异步任务指的是，不进入主线程、而进入“任务队列”（task queue）的任务，只有等主线程任务执行完毕，”任务队列”开始通知主线程，请求执行任务，该任务才会进入主线程执行。** 7. Doctype的作用？严格模式与混杂模式如何区分？它们有何意义？DOCTYPE标签是一种标准通用标记语言的文档类型声明，它的目的是要告诉标准通用标记语言解析器，它应该使用什么样的文档类型定义（DTD）来解析文档。 严格模式：又称标准模式，是指浏览器按照 W3C 标准解析代码。 混杂模式：又称兼容模式，指浏览器用自己的方式解析代码。 如何区分：浏览器解析时到底使用严格模式还是混杂模式，与网页中的文档类型定义（DTD）直接相关。 意义：严格模式与混杂模式存在的意义与其来源密切相关，如果说只存在严格模式，那么许多旧网站必然受到影响，如果只存在混杂模式，那么会回到当时浏览器大战时的混乱，每个浏览器都有自己的解析模式。 8. null和undefined的区别null： null类型，代表“空值”，代表一个空对象指针，使用typeof运算得到 “object”，所以你可以认为它是一个特殊的对象值。 undefined： undefined类型，当一个声明了一个变量未初始化时，得到的就是undefined。 9. 简述你对JSON的了解JSON: JavaScript Object Notation(JavaScript 对象表示法) JSON 是存储和交换文本信息的语法。类似 XML。 JSON 比 XML 更小、更快，更易解析。]]></content>
+      <categories>
+        <category>知识点</category>
+      </categories>
+      <tags>
+        <tag>知识点</tag>
+        <tag>前端</tag>
+        <tag>面试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[操作系统知识点]]></title>
+    <url>%2Fpassages%2F%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9F%A5%E8%AF%86%E7%82%B9%2F</url>
+    <content type="text"><![CDATA[考研复试 or 工作都要掌握的东西 线程死锁是指由于两个或者多个线程互相持有对方所需要的资源，导致这些线程处于等待状态，无法前往执行。 产生死锁的四大条件：互斥、请求和保持、不剥夺、循环等待。 一个作业从外存载入内存后，不会再次发生在后备队列等待调度的情形。 文件系统在创建一个文件时，为它建立一个文件目录项。文件目录项包含有关文件的信息，包括属性、位置和所有权等，这些信息主要由操作系统进行管理。 在用户程序中要将一个字符送到显示器上显示，需要使用操作系统提供的系统调用接口。 原语强调的是某个操作或者指令集合的连续性以及不可中断性。而系统调用是出于对多种设计原则的考虑。 进程才是所有操作系统分配CPU时间的基本单位！ 首次适应算法的空闲区是按地址递增顺序链在一起。 一个进程被唤醒意味着进程变为就绪状态 在使用锁保证线程安全时，可能会出现活跃度失败的情况，活跃度失败主要包括死锁、饥饿、活锁 同一个进程的多个线程，堆共享，栈私有 Unix系统中，可用于进程通信的有Socket、共享内存、消息队列、信号量 进程和程序的本质区别是动态和静态特征 在支持多线程的系统中，隶属于同一个进程的多个线程不能共享的是保存函数参数、返回地址等信息的堆栈 临界区指的是一个访问共用资源的程序片段 批处理操作系统的主要目的是提高系统资源的利用率]]></content>
+      <categories>
+        <category>知识点</category>
+      </categories>
+      <tags>
+        <tag>知识点</tag>
+        <tag>考研</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[几种 npm install XXX 的区别]]></title>
+    <url>%2Fpassages%2F%E5%87%A0%E7%A7%8D-npm-install-XXX-%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
+    <content type="text"><![CDATA[在使用npm命令安装资源包时，有哪些需要注意的区别 npm install X 会把X包安装到node_modules目录中 不会修改package.json 之后运行npm install命令时，不会自动安装X npm install X –save 会把X包安装到node_modules目录中 会在package.json的dependencies属性下添加X 之后运行npm install命令时，会自动安装X到node_modules目录中 之后运行npm install –production或者注明NODE_ENV变量值为production时，会自动安装msbuild到node_modules目录中 npm install X –save-dev 会把X包安装到node_modules目录中 会在package.json的devDependencies属性下添加X 之后运行npm install命令时，会自动安装X到node_modules目录中 之后运行npm install –production或者注明NODE_ENV变量值为production时，不会自动安装X到node_modules目录中 总结一下： npm install X npm install X –save npm install X –save-dev 会把X包安装到node_modules目录中 Yes Yes Yes 会在package.json的dependencies属性下添加X No Yes Yes 之后运行npm install命令时，会自动安装X到node_modules目录中 No Yes Yes 之后运行npm install –production或者注明NODE_ENV变量值为production时，不会自动安装X到node_modules目录中 / Yes No]]></content>
+      <categories>
+        <category>Node.js</category>
+      </categories>
+      <tags>
+        <tag>Node.js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[在Vue中关闭ESLint]]></title>
+    <url>%2Fpassages%2F%E5%9C%A8Vue%E4%B8%AD%E5%85%B3%E9%97%ADESLint%2F</url>
+    <content type="text"><![CDATA[代码规范是好事，但是过于严苛的规范无疑束缚了思维，使初学者不能将精力集中在代码本身。 1. 创建时不要ESLint在命令行创建 Vue 项目的时候，在Use ESLint to lint your code?处选择 N 2. 关闭WebStorm的ESLintFile-&gt;Settings-&gt;搜索 ESLint -&gt;取消Enable的勾选 3. 注释掉项目内的ESLint位置在build---&gt;webpack.base.conf.js]]></content>
+      <categories>
+        <category>Vue.js</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>使用技巧</tag>
+        <tag>Vue.js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[SQL 和 NoSQL 的区别]]></title>
+    <url>%2Fpassages%2FSQL-%E5%92%8C-NoSQL-%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
+    <content type="text"><![CDATA[简单讲解 SQL 和 NoSQL 的区别 转载并修改自 https://www.cnblogs.com/jeakeven/p/5402095.html 一、概念 SQL (Structured Query Language) 数据库，指关系型数据库。主要代表：SQL Server，Oracle，MySQL(开源)，PostgreSQL(开源)。 NoSQL（Not Only SQL）泛指非关系型数据库。主要代表：MongoDB，Redis，CouchDB。 二、区别 1. 存储方式SQL数据存在特定结构的表中；而NoSQL则更加灵活和可扩展，存储方式可以省是JSON文档、哈希表或者其他方式。SQL通常以数据库表形式存储数据。 举个栗子，存个学生借书数据： 学号 姓名 书名 借阅时间 1 江XX 《他改变了中国》 2019-01-02 2 习XX 《XXX谈治国理政》 2019-03-04 而NoSQL存储方式比较灵活，比如使用类JSON文件存储上表中的借阅数据： 12345678910&#123; 学号: 1, 姓名: "江XX", 书名: "《他改变了中国》", 借阅时间: "2019-01-02", 增加项目: [ &#123;审核人: "胡XX", 审核时间: "2019-01-03"&#125;, &#123;审核人: "习XX", 审核时间: "2019-01-04"&#125; ]&#125; 2. 表/数据集合的数据的关系在SQL中，必须定义好表和字段结构后才能添加数据，例如定义表的主键(primary key)，索引(index),触发器(trigger),存储过程(stored procedure)等。表结构可以在被定义之后更新，但是如果有比较大的结构变更的话就会变得比较复杂。在NoSQL中，数据可以在任何时候任何地方添加，不需要先定义表。例如下面这段代码会自动创建一个新的”借阅表”数据集合： 123456db.借阅表.insert( 学号: 1, 姓名: "江XX", 书名: "《他改变了中国》", 借阅时间: "2019-01-02") NoSQL也可以在数据集中建立索引。以MongoDB为例，会自动在数据集合创建后创建唯一值_id字段，这样的话就可以在数据集创建后增加索引。 从这点来看，NoSQL可能更加适合初始化数据还不明确或者未定的项目中。 （未完待续）]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>数据库</tag>
+        <tag>SQL</tag>
+        <tag>NoSQL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[一些互联网行业的名词]]></title>
+    <url>%2Fpassages%2F%E4%B8%80%E4%BA%9B%E4%BA%92%E8%81%94%E7%BD%91%E8%A1%8C%E4%B8%9A%E7%9A%84%E5%90%8D%E8%AF%8D%2F</url>
+    <content type="text"><![CDATA[转载自 http://www.sohu.com/a/217331409_653840 缩写 全称 翻译 DAU Daily Active User 日活跃用户量 MAU Month Active User 月活跃用户量 ARPU Average Revenue Per User 每用户平均收入 KPI Key Performance Indicator 关键绩效指标法 MOU Minute Of Usage 平均每户每月通话时间 OTT Over The Top 通过互联网向用户提供各种应用服务 CPC Cost Per Click 每次点击付费广告 CPM Cost Per Mille 听到或者看到某广告的每一人平均分担到多少广告成本 CPA Cost Per Action 每行动成本 CPR Cost Per Response 每回应成本 CPP Cost Per Purchase 每购买成本 PFP Pay-For-Performance 按业绩付费 IP Intellectual Property 知识产权 KOL Key Opinion Leader 关键意见领袖 SEO Search Engine Optimization 搜索引擎优化 RISC Reduced Instruction Set Computer 精简指令集计算机 VR Virtual Reality 虚拟现实 SOHO Small Office Home Office 自由职业者 UGC User Generated Content 用户生成内容 UED User Experience Design 用户体验设计 LBS Location Based Service 基于位置服务 SNS Social Networking Services 社会性网络服务 TMT Technology，Media，Telecom 数字新媒体 PV Page View 页面浏览量 UV Unique Visitor 第一次进入网站的具有独立IP的访问者]]></content>
+      <categories>
+        <category>百科知识</category>
+      </categories>
+      <tags>
+        <tag>互联网</tag>
+        <tag>名词解释</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[现在的打算]]></title>
+    <url>%2Fpassages%2F%E7%8E%B0%E5%9C%A8%E7%9A%84%E6%89%93%E7%AE%97%2F</url>
+    <content type="text"><![CDATA[考研成绩出来之后，我最终还是进入了多方面准备的模式。]]></content>
+      <categories>
+        <category>日记</category>
+      </categories>
+      <tags>
+        <tag>学习路径</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[使用Express进行Web开发]]></title>
+    <url>%2Fpassages%2F%E4%BD%BF%E7%94%A8Express%E8%BF%9B%E8%A1%8CWeb%E5%BC%80%E5%8F%91%2F</url>
+    <content type="text"><![CDATA[Express 是一个基于 Node.js 平台的极简、灵活的 Web 应用开发框架，它提供了一系列强大的特性，帮助开发人员创建各种 Web 和移动设备应用。 初始化项目 1npm init 初始化完成后会出现一个package.json文件，此时使用一下命令来安装Express.js并将其存入package.json文件中 1npm install express --save 编写一个简单的HEllo World程序，来测试Express是否安装成功，首先需要编写一个index.js文件 1234567891011121314// 定义Express实例var express = require('express');var app = express();// 定义路由app.get('/', function (req, res) &#123; res.send('Hello World!');&#125;);// 设置启动地址的端口信息var server = app.listen(3000, function () &#123; var host = server.address().address; var port = server.address().port;// 打印相关的内容提示 console.log('Example app listening at http://%s:%s', host, port);&#125;); 保存上述代码，在命令行中使用以下命令来运行程序 1node index.js 此时在浏览器中访问 http://localhost:3000/ 可以打开测试页面，如果输出Hello World即表示成功。]]></content>
+      <categories>
+        <category>Node.js</category>
+      </categories>
+      <tags>
+        <tag>Node.js</tag>
+        <tag>前端</tag>
+        <tag>入门教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[在HEXO博客中添加一只猫]]></title>
+    <url>%2Fpassages%2F%E5%9C%A8HEXO%E5%8D%9A%E5%AE%A2%E4%B8%AD%E6%B7%BB%E5%8A%A0%E4%B8%80%E5%8F%AA%E7%8C%AB%2F</url>
+    <content type="text"><![CDATA[一些别致的小玩意儿总能增添博客的生机，让我们来看看如何在HEXO博客中添加一只猫呢 项目地址： https://github.com/EYHN/hexo-helper-live2d/blob/master/README.zh-CN.md 写在之前 在阅读本文之前你需要具备使用 HEXO 搭建个人博客的基本知识，如果你对此不了解，请点击这里 安装模块 在HEXO博客根目录下进入命令行，使用以下命令安装插件： 1npm install --save hexo-helper-live2d 下载模型 作者各种模型包展示 可安装的模型包汇总 选择好对应的模型，使用 npm install &lt;模型的包名&gt;来安装，比如我选择的的是live2d-widget-model-hijiki 模型包 安装模型包 在HEXO博客根目录下进入命令行，使用以下命令安装模型包： 1npm install live2d-widget-model-hijiki 配置 请向 Hexo 根目录下的 _config.yml 文件添加配置 12345678910111213141516live2d: enable: true scriptFrom: local pluginRootPath: live2dw/ pluginJsPath: lib/ pluginModelPath: assets/ tagMode: false debug: false model: use: live2d-widget-model-hijiki display: position: left width: 100 height: 200 mobile: show: false 如果你使用的其它模型包，请修改model.use 最后别忘了使用hexo g进行渲染，大功告成！]]></content>
+      <categories>
+        <category>使用技巧</category>
+      </categories>
+      <tags>
+        <tag>使用技巧</tag>
+        <tag>HEXO</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[右键使用Sublime Text打开文件夹]]></title>
+    <url>%2Fpassages%2F%E5%8F%B3%E9%94%AE%E4%BD%BF%E7%94%A8Sublime-Text%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E5%A4%B9%2F</url>
+    <content type="text"><![CDATA[在前端开发过程当中，我们经常需要用 Sublime Text 来打开文件夹，但是很遗憾官方没有提供右键打开功能。通过修改 Windows 注册表的方式可以实现这样的功能。 使用Win键 + R运行regedit，打开注册表。 点开HKEY_CLASSES_ROOT\Directory\Background\shell 新建一个新的项，这里命名为sublime，然后将其默认值改为Open With Sublime Text 3，这个值是显示在文件夹右键菜单上的值 在新建的sublime项下再新建一个项，命名为Command，编辑Command的值。我的值为&quot;C:\Program Files\Sublime Text 3\sublime_text.exe&quot; &quot;%V&quot;，前面的路径要替换成安装 Sublime Text 的路径。 大功告成！ 本技巧转载自 http://www.cnblogs.com/sogoe/p/4293067.html]]></content>
+      <categories>
+        <category>使用技巧</category>
+      </categories>
+      <tags>
+        <tag>Sublime Text</tag>
+        <tag>使用技巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[解决Vue-CLI无法使用Webpack模板初始化项目的方法]]></title>
+    <url>%2Fpassages%2F%E8%A7%A3%E5%86%B3Vue-CLI%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8Webpack%E6%A8%A1%E6%9D%BF%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[Vue的版本更新非常快，这就带来了旧命令不兼容的问题 当我们执行以下代码时，可能无法初始化项目： 1vue init webpack my-project 问题在于Vue-CLI已经更新到了第3版，因此必须使用新的命令 1vue create my-project 官方文档上说 Vue CLI 2 是被 Vue CLI 3 覆盖的。如果你仍然需要使用旧版本的 vue init 功能还是可以实现的，只需要使用以下命令： 123npm install -g @vue/cli-init# `vue init` 的运行效果将会跟 `vue-cli@2.x` 相同vue init webpack my-project]]></content>
+      <categories>
+        <category>Vue.js</category>
+      </categories>
+      <tags>
+        <tag>Webpack</tag>
+        <tag>前端</tag>
+        <tag>Vue.js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Windows下Sublime Text配置C++编译环境]]></title>
+    <url>%2Fpassages%2FWindows%E4%B8%8BSublime-Text%E9%85%8D%E7%BD%AEC-%E7%BC%96%E8%AF%91%E7%8E%AF%E5%A2%83%2F</url>
+    <content type="text"><![CDATA[大二时写的东西，现在搬运过来，可能有一些疏漏，望指正 打开 Sublime，选择 Tools-&gt;Build System-&gt;New Build System… 将以下代码复制粘贴到新文件中去 123456789101112131415&#123; "path": "C:\\Program Files (x86)\\Dev-Cpp\\MinGW64\\bin", "cmd": "g++ $file -o $file_base_name.exe", "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$", "working_dir": "$file_path", "selector": "source.c, source.c++", "shell": true, "variants": [ &#123; "name": "RUN", "cmd": "g++ $file -o $file_base_name.exe &amp;&amp; start $file_base_name.exe" &#125; ]&#125; 注意上一步骤代码中的path部分是自己计算机中 cpp 编译器所在位置，每个人可能不一样，我的是 DEV-CPP 的默认安装位置。另外，path部分的路径一定是双斜杠，不是单斜杠！ 保存文件，后缀名是.sublime-build。比如DEV-CPP.sublime-build，保存成功后在Tools-&gt;Build System中可以选择自己刚刚创建的 build system。 新建一个cpp文件进行测试，注意一定要保存文件后才可以进行编译，最后一定要加上system(&quot;Pause&quot;);语句，前面一定要有#include &lt;stdlib.h&gt;。 使用快捷键Ctrl+B编译，编译效果如图：]]></content>
+      <categories>
+        <category>使用技巧</category>
+      </categories>
+      <tags>
+        <tag>Sublime Text</tag>
+        <tag>C++</tag>
+        <tag>使用技巧</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Webpack简介]]></title>
+    <url>%2Fpassages%2FWebpack%E7%AE%80%E4%BB%8B%2F</url>
+    <content type="text"><![CDATA[Webpack 是一个前端资源加载/打包工具。它将根据模块的依赖关系进行静态分析，然后将这些模块按照指定的规则生成对应的静态资源。 Webpack 是一个前端资源加载/打包工具。它将根据模块的依赖关系进行静态分析，然后将这些模块按照指定的规则生成对应的静态资源。 从图中我们可以看出，Webpack 可以将多种静态资源 js、css、less 转换成一个静态文件，减少了页面的请求。 安装Webpack 在安装 Webpack 前，你本地环境需要支持 node.js。 由于 npm 安装速度慢，本教程使用了淘宝的镜像及其命令 cnpm，安装使用介绍参照：使用淘宝 NPM 镜像。 使用cnpm安装webpack： 1cnpm install webpack -g 如果安装出现问题，可以先清理缓存： 1npm cache verify 如果还是安装失败可以尝试： 1npm install web3@^0.20.0 如果依然失败可以这样： 1npm install --global --production windows-build-tools 创建项目首先创建一个目录： 1mkdir app 在目录下添加一个test.js文件: 1document.write("It works."); 在 app 目录下添加 index.html 文件，代码如下： 12345678&lt;html&gt; &lt;head&gt; &lt;meta charset="utf-8"&gt; &lt;/head&gt; &lt;body&gt; &lt;script type="text/javascript" src="bundle.js" charset="utf-8"&gt;&lt;/script&gt; &lt;/body&gt;&lt;/html&gt; 这个时候使用webpack命令来打包： 1webpack test.js bundle.js 此时如果发现无法打包，那很可能就是版本号过高所致，此时应该执行以下命令： 1webpack test.js -o bundle.js]]></content>
+      <categories>
+        <category>Node.js</category>
+      </categories>
+      <tags>
+        <tag>Webpack</tag>
+        <tag>Node.js</tag>
+        <tag>前端</tag>
+        <tag>入门教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[初识Node.js]]></title>
+    <url>%2Fpassages%2F%E5%88%9D%E8%AF%86Node-js%2F</url>
+    <content type="text"><![CDATA[在毕业设计的后端选择当中，我在 PHP+MySQL 和 Node.js+MongoDB 当中纠结了一阵子。后来想了想既然决定用新技术，就干脆一新到底吧。 Node.js是什么 简单的说 Node.js 就是运行在服务端的 JavaScript。 Node.js 是一个基于Chrome JavaScript 运行时建立的一个平台。 Node.js是一个事件驱动I/O服务端JavaScript环境，基于Google的V8引擎，V8引擎执行Javascript的速度非常快，性能非常好。 安装 进入官网下载安装 安装后检测版本号的方法： 以管理员身份进入命令行，输入 1node -v 第一个程序 新建一个helloworld.js程序，输入 1console.log("Hello World"); 在程序目录下打开终端，执行 1node helloworld.js 创建第一个Node.js应用 引入required模块 我们使用 require 指令来载入 http 模块，并将实例化的 HTTP 赋值给变量 http，实例如下: 1var http = require("http"); 创建服务器 使用http.createServer()方法来创建服务器，并使用listen方法绑定8888端口。函数通过request，response 参数来接受和响应数据。 在根目录下创建一个server.js的文件，并写入以下代码： 123456789101112131415var http = require("http");http.createServer(function (request, response)&#123; // 发送HTTP头部 // HTTP状态值：200：OK // 内容类型：text/plain response.writeHead(200, &#123;'Content-Type': 'text/plain'&#125;); // 发送响应数据 "Hello World" response.end("Hello World\n");&#125;).listen(8888);// 终端打印以下信息console.log('Server running at http://127.0.0.1:8888/') 使用node命令来执行以上的代码： 12node server.jsServer running at http://127.0.0.1:8888/]]></content>
+      <categories>
+        <category>Node.js</category>
+      </categories>
+      <tags>
+        <tag>Node.js</tag>
+        <tag>前端</tag>
+        <tag>入门教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Vue入门]]></title>
+    <url>%2Fpassages%2FVue%E5%85%A5%E9%97%A8%2F</url>
+    <content type="text"><![CDATA[考研结束之后，接踵而至的就是毕业设计，我为了紧跟技术潮流，选择了 Vue 作为毕业设计的前端框架。当然，对于一个为了考研半年没怎么碰电脑的人来说，真正的考验才刚刚开始。 注：由于 Vue 官网在中国大陆由于未知原因打开极慢，因此推荐使用 BootCDN 当中的文档镜像 Vue是什么 Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。 渐进式：没有太多限制 起步 引入Vue的方法： 12&lt;!-- 开发环境版本，包含了有帮助的命令行警告 --&gt;&lt;script src="https://cdn.bootcss.com/vue/2.5.22/vue.common.js"&gt;&lt;/script&gt; 声明式渲染 第一个Vue程序 123&lt;div id="app"&gt; &#123;&#123; message &#125;&#125;&lt;/div&gt; 123456var app = new Vue(&#123; el: '#app', data: &#123; message: 'Hello Vue!' &#125;&#125;) 此时打开JavaScript控制台，并修改app.message的值，页面将实时更新 绑定元素特性 12345&lt;div id="app-2"&gt; &lt;span v-bind:title="message"&gt; 鼠标悬停几秒钟查看此处动态绑定的提示信息！ &lt;/span&gt;&lt;/div&gt; 123456var app2 = new Vue(&#123; el: '#app-2', data: &#123; message: '页面加载于 ' + new Date().toLocaleString() &#125;&#125;) 这里的 v-bind 特性被称为指令。指令带有前缀 v-，以表示它们是 Vue 提供的特殊特性 在这里，该指令的意思是：“将这个元素节点的 title 特性和 Vue 实例的 message 属性保持一致”。 如果你再次打开浏览器的 JavaScript 控制台，输入 app2.message = &#39;新消息&#39;，就会再一次看到这个绑定了 title 特性的 HTML 已经进行了更新。 条件与循环 控制切换一个元素 123&lt;div id="app-3"&gt; &lt;p v-if="seen"&gt;现在你看到我了&lt;/p&gt;&lt;/div&gt; 123456var app3 = new Vue(&#123; el: '#app-3', data: &#123; seen: true &#125;&#125;) 在控制台输入app3.seen=flase，之前的消息也会消失 使用v-for来渲染一个项目列表 1234567&lt;div id="app-4"&gt; &lt;ol&gt; &lt;li v-for="todo in todos"&gt; &#123;&#123; todo.text &#125;&#125; &lt;/li&gt; &lt;/ol&gt;&lt;/div&gt; 12345678910var app4 = new Vue(&#123; el: '#app-4', data: &#123; todos: [ &#123; text: '学习 JavaScript' &#125;, &#123; text: '学习 Vue' &#125;, &#123; text: '整个牛项目' &#125; ] &#125;&#125;) 在控制台里，输入 app4.todos.push({ text: &#39;新项目&#39; })，你会发现列表最后添加了一个新项目。 处理用户输入 使用v-on指令来添加一个事件监听器 1234&lt;div id="app-5"&gt; &lt;p&gt;&#123;&#123; message &#125;&#125;&lt;/p&gt; &lt;button v-on:click="reverseMessage"&gt;逆转消息&lt;/button&gt;&lt;/div&gt; 1234567891011var app5 = new Vue(&#123; el: '#app-5', data: &#123; message: 'Hello Vue.js!' &#125;, methods: &#123; reverseMessage: function () &#123; this.message = this.message.split('').reverse().join('') &#125; &#125;&#125;) 使用v-model指令来实现表单输入和应用状态之间的双向绑定 1234&lt;div id="app-6"&gt; &lt;p&gt;&#123;&#123; message &#125;&#125;&lt;/p&gt; &lt;input v-model="message"&gt;&lt;/div&gt; 123456var app6 = new Vue(&#123; el: '#app-6', data: &#123; message: 'Hello Vue!' &#125;&#125;) 组件化应用构建 组件系统是 Vue 的另一个重要概念，因为它是一种抽象，允许我们使用小型、独立和通常可复用的组件构建大型应用。仔细想想，几乎任意类型的应用界面都可以抽象为一个组件树： 在Vue中注册组件 1234// 定义名为 todo-item 的新组件Vue.component('todo-item', &#123; template: '&lt;li&gt;这是个待办项&lt;/li&gt;'&#125;) 用它构建另一个组件模板 1234&lt;ol&gt; &lt;!-- 创建一个 todo-item 组件的实例 --&gt; &lt;todo-item&gt;&lt;/todo-item&gt;&lt;/ol&gt; 但是这样会为每个待办项渲染同样的文本，这看起来并不炫酷。我们应该能从父作用域将数据传到子组件才对。让我们来修改一下组件的定义，使之能够接受一个 prop： 1234567Vue.component('todo-item', &#123; // todo-item 组件现在接受一个 // "prop"，类似于一个自定义特性。 // 这个 prop 名为 todo。 props: ['todo'], template: '&lt;li&gt;&#123;&#123; todo.text &#125;&#125;&lt;/li&gt;'&#125;) 现在，我们可以使用 v-bind 指令将待办项传到循环输出的每个组件中： 123456789101112131415&lt;div id="app-7"&gt; &lt;ol&gt; &lt;!-- 现在我们为每个 todo-item 提供 todo 对象 todo 对象是变量，即其内容可以是动态的。 我们也需要为每个组件提供一个“key”，稍后再 作详细解释。 --&gt; &lt;todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id"&gt; &lt;/todo-item&gt; &lt;/ol&gt;&lt;/div&gt; 123456789101112131415Vue.component('todo-item', &#123; props: ['todo'], template: '&lt;li&gt;&#123;&#123; todo.text &#125;&#125;&lt;/li&gt;'&#125;)var app7 = new Vue(&#123; el: '#app-7', data: &#123; groceryList: [ &#123; id: 0, text: '蔬菜' &#125;, &#123; id: 1, text: '奶酪' &#125;, &#123; id: 2, text: '随便其它什么人吃的东西' &#125; ] &#125;&#125;)]]></content>
+      <categories>
+        <category>Vue.js</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>入门教程</tag>
+        <tag>Vue.js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[使用HEXO搭建个人博客]]></title>
+    <url>%2Fpassages%2F%E4%BD%BF%E7%94%A8HEXO%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%2F</url>
+    <content type="text"><![CDATA[这是本博客的第一篇文章，随着众多牛博Powered by Hexo的指引，我开始了与HEXO一段相见恨晚的旅程。 点击观看视频教程 1. 安装与使用 1.1 安装前准备安装前请确保电脑中已经安装下列应用程序： Node.js Git 如果没有安装请点击以上链接进入官网安装。 1.2 进行安装1npm install -g hexo-cli 1.3 开始建站123hexo init &lt;文件夹名称&gt;cd &lt;文件夹名称&gt;npm install 如果执行hexo init &lt;文件夹名称&gt;命令时遇到npm ERR!属于正常现象。 1.4 渲染生成网页静态文件1hexo g 此处的g为generate(部署) 1.5 查看生成的网站1hexo s 此处的s为server 此时打开在浏览器中打开 http://localhost:4000/ ，网站建立成功。 2 写作 2.1 生成新文章1hexo new "post title" 注：此处post title为文章标题，以下类似语法不再说明 此时HEXO已经帮助我们生成了post-title.md文件，存放在\source\_posts\目录下 在Markdown文件中输入文本，执行hexo g和hexo s命令后可以在浏览器中看到刚刚输入的 Markdown 文本。 2.2 生成草稿1hexo new draft "draft title" 草稿页面不会被HEXO渲染，也就是说最后的静态页面不会生成草稿文章 2.3 生成页面1hexo new page "page title" 3 部署 3.1 安装hexo-deployer-git1npm install hexo-deployer-git --save 3.2 确认插件是否安装1npm list hexo-deployer-git 3.3 配置部署数据在_config.yml文件中添加以下选项： 123deploy: type: git repo: http:github.com/xxx/xxx.git 注：以上repo中存放Github项目地址，请前往GitPage去搭建自己的个人主页 3.4 将生成的网站部署到git仓库当中：1hexo d 如果遇到 Github 密码错误就执行一下命令，再运行hexo d： 1git config --global credential.helper wincred 4 更改主题 这里以本博客使用的BWM主题为例 首先将该项目clone到\themes\目录下 网站配置文件存放于\_config.yml 主题配置文件存放于\theme\theme-bmw\_config.yml 再按照官方文档进行操作 初学者看到这里就可以了哦，下面的东西仅仅作为补充，并不影响博客的搭建。毕竟博客的内容才是最重要的。 5 Front Matter 新手对于本节内容即学即用即可。 Front Matter 没有确切的中文翻译，它更像是一个配置文件。 自动生成的md文件最上面两个分割线所包裹的区域就是 Front Matter，Front Matter 采用YAML语法 示例： 12345title: Hello Worldcategory: - 1 - 2comment: on 6 其它常用命令 6.1 监视文件变动1hexo g -w 6.2 发表草稿1hexo publish [layout] &lt;filename&gt; 6.3 详细网站列表1hexo list route]]></content>
+      <categories>
+        <category>HEXO</category>
+      </categories>
+      <tags>
+        <tag>入门教程</tag>
+        <tag>博客</tag>
+        <tag>HEXO</tag>
+      </tags>
+  </entry>
+</search>
