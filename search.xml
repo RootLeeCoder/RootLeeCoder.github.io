@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[初识 ECharts 的一个小 Demo]]></title>
+    <url>%2Fpassages%2F%E5%88%9D%E8%AF%86-ECharts-%E7%9A%84%E4%B8%80%E4%B8%AA%E5%B0%8F-Demo%2F</url>
+    <content type="text"><![CDATA[刚刚初次使用 ECharts 做了一个小 Demo，在完成项目的过程当中遇到的一些问题在这里记录一下。 首先附上项目地址 完成的效果如下： 首先使用 VUe-Cli构建一个 Vue 空项目，再通过 npm 安装 ECharts： 1npm install echarts --save 构建 ECharts 的代码可以写在钩子函数当中，首先使用require引入模块： 12// 得到包中的EChartsvar echarts = require('echarts'); 然后初始化 ECharts 实例： 12// 基于准备好的dom，初始化echarts实例，这里的main是HTML当中id为'main'的divvar myChart = echarts.init(document.getElementById('main')); 配置图表的详细样式： 123var option = &#123; ... // 下面的内容会详细讲&#125; 最后是使用刚指定的配置项和数据显示图表： 1myChart.setOption(option); 至此，图表配置已经完成，以下是option的全部代码，参考见注释。 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158159160161162163164165166167168169170171172173174175176177178179180181182183var option = &#123; title: &#123; // 设置图表标题 text: 'Top10', textStyle: &#123; fontWeight: "bold", color: "red" &#125;, &#125;, tooltip: &#123; // 设置鼠标悬停显示效果 trigger: 'axis', axisPointer: &#123; type: 'cross', // 设置鼠标的悬停效果为显示横纵轴数据 &#125;, formatter: function (params) &#123; // 自定义显示格式 // 自定义提示框 var result = ''; result += `&lt;span style="display:inline-block; position:absolute; left:5px"&gt;$&#123;params[0].axisValue&#125;&lt;/span&gt;` + "&lt;/br&gt;" // 自定义提示框，小点添加 let marker = `&lt;span style="display:inline-block; margin-right:5px; border-radius:10px; width:10px; height:10px; background-color:rgb(40,210,240);"&gt;&lt;/span&gt;` result += marker + "金额: " + params[0].value; return result; &#125; &#125;, grid: &#123; left: '3%', right: '4%', bottom: '3%', containLabel: true // 显示标签名称 &#125;, xAxis: [&#123; show: false, // 不显示X轴 &#125;], yAxis: &#123; type: 'category', axisLine: &#123; show: false &#125;, // 不显示Y轴竖线 axisTick: &#123; show: false &#125;, // 不显示Y轴坐标 data: ['缪超', '薛佳运', '刘庆智', '董洋', '孔德娜', '刘敏', '孟蕾', '朱沛冉', '杨涤非', '李竞'], axisLabel: &#123; formatter: function (value, index) &#123; let mapping = &#123; 1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six', 7: 'seven', 8: 'eight', 9: 'nine', 10: 'ten', &#125; return '&#123;value|' + value + '&#125; &#123;' + mapping[10 - index] + '|&#125;'; &#125;, margin: 20, rich: &#123; value: &#123; lineHeight: 30, align: 'center' &#125;, one: &#123; height: 23, lineHeight: 23, width: 23, backgroundColor: &#123; image: rankingIcons.one &#125; &#125;, two: &#123; height: 23, width: 23, lineHeight: 23, backgroundColor: &#123; image: rankingIcons.two &#125; &#125;, three: &#123; height: 23, width: 23, lineHeight: 23, backgroundColor: &#123; image: rankingIcons.three &#125; &#125;, four: &#123; height: 23, width: 23, lineHeight: 23, backgroundColor: &#123; image: rankingIcons.four &#125; &#125;, five: &#123; height: 23, width: 23, lineHeight: 23, backgroundColor: &#123; image: rankingIcons.five &#125; &#125;, six: &#123; height: 23, width: 23, lineHeight: 23, backgroundColor: &#123; image: rankingIcons.six &#125; &#125;, seven: &#123; height: 23, width: 23, lineHeight: 23, backgroundColor: &#123; image: rankingIcons.seven &#125; &#125;, eight: &#123; height: 23, width: 23, lineHeight: 23, backgroundColor: &#123; image: rankingIcons.eight &#125; &#125;, nine: &#123; height: 23, width: 23, lineHeight: 23, backgroundColor: &#123; image: rankingIcons.nine &#125; &#125;, ten: &#123; height: 23, width: 23, lineHeight: 23, backgroundColor: &#123; image: rankingIcons.ten &#125; &#125; &#125; // rich &#125;, // axisLabel &#125;, // yAxis series: [ &#123; // 设置柱状图样式 type: 'bar', barGap: '-60%', // 设置柱间距离 data: [1000000, 2000000, 3000000, 4000000, 5000000, 8000000, 12000000, 17000000, 45000000, 50000000], itemStyle: &#123; normal: &#123; borderWidth: 1, borderColor: 'rgb(99,195,228)', barBorderRadius: [40, 40, 40, 40], // 设置成圆角矩形 color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [&#123; // 分别是左、下、右、上 offset: 0, color: "rgb(47,207,234)" // 0% 处的颜色 &#125;, &#123; offset: 1, color: "rgb(82,212,167)" // 100% 处的颜色 &#125;], false) &#125; // normal &#125; // itemStyle &#125;, // 设置柱状图样式 &#123; // 设置柱状图背景槽样式 type: 'bar', barGap: '-100%', data: [50000000, 50000000, 50000000, 50000000, 50000000, 50000000, 50000000, 50000000, 50000000, 50000000], itemStyle: &#123; normal: &#123; borderWidth: 1, borderColor: 'rgb(99,195,228)', barBorderRadius: [40, 40, 40, 40], // 设置成圆角矩形 color: new echarts.graphic.LinearGradient(1, 1, 1, 1, [&#123; // 分别是左、下、右、上 offset: 0, color: "#fff" // 0% 处的颜色 &#125;, &#123; offset: 1, color: "#fff" // 100% 处的颜色 &#125;], false) &#125; // normal &#125; // itemStyle &#125; // 设置柱状图背景槽样式 ] // series&#125;]]></content>
+      <categories>
+        <category>ECharts</category>
+      </categories>
+      <tags>
+        <tag>ECharts</tag>
+        <tag>前端</tag>
+        <tag>入门教程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[面经03]]></title>
     <url>%2Fpassages%2F%E9%9D%A2%E7%BB%8F03%2F</url>
     <content type="text"><![CDATA[Don’t fall before dawn. 一、Vue的优势Vue是一个构建用户界面的渐进式框架。 Vue 只关注视图层， 采用自底向上增量开发的设计。 轻量级框架、简单易学、双向数据绑定、组件化、数据与结构分离、运行速度快 二、Vue的生命周期beforeCreate：组件实例化之前执行的函数created：组件实例化完毕，但页面仍未显示beforeMount：组件挂载前，页面仍未显示，但虚拟DOM已经配置mounted：组件挂载后，此方法执行后，页面显示beforeUpdate：组件更新前，页面仍未更新，但虚拟DOM已经配置Updated：组件更新，此方法执行后，页面显示before：组件销毁前destoryed：组件销毁 beforeCreate：el 和 data 并未初始化created:完成了 data 数据的初始化，el没有beforeMount：完成了 el 和 data 初始化mounted ：完成挂载 beforeCreate : 举个栗子：可以在这加个loading事件created ：在这结束loading，还做一些初始化，实现函数自执行mounted ： 在这发起后端请求，拿回数据，配合路由钩子做一些事情beforeDestroy： 你确认删除XX吗？destroyed ：当前组件已被删除，清空相关内容 三、组件数据传递父传子Prop 是你可以在组件上注册的一些自定义特性。当一个值传递给一个 prop 特性的时候，它就变成了那个组件实例的一个属性。为了给博文组件传递一个标题，我们可以用一个 props 选项将其包含在该组件可接受的 prop 列表中： 1234Vue.component('blog-post', &#123; props: ['title'], template: '&lt;h3&gt;&#123;&#123; title &#125;&#125;&lt;/h3&gt;'&#125;) 一个组件默认可以拥有任意数量的 prop，任何值都可以传递给任何 prop。在上述模板中，你会发现我们能够在组件实例中访问这个值，就像访问 data 中的值一样。 一个 prop 被注册之后，你就可以像这样把数据作为一个自定义特性传递进来： 123&lt;blog-post title="My journey with Vue"&gt;&lt;/blog-post&gt;&lt;blog-post title="Blogging with Vue"&gt;&lt;/blog-post&gt;&lt;blog-post title="Why Vue is so fun"&gt;&lt;/blog-post&gt; 子传父(事件传值)用this.$emit()方法来注册一个事件，再用v-on来监听这个事件，执行对应的方法 四、v-model和双括号的区别双括号是v-text的简写形式。v-model通常用于表单组件的绑定，例如input，select等。它与v-text的区别在于它实现的表单组件的双向绑定，如果用于表单控件以外标签是没有用的。 1HEXO对于非代码块里面的&#123;&#123;&#125;&#125;都会渲染报错 五、jQuery常见动画效果 Code 效果 hide() 隐藏 show() 显示 toggle() 切换隐藏/显示 fadeIn() 淡入 fadeOut() 淡出 fadeTo() 颜色渐变 slideDown() 滑下 slideUp() 拉起 slideToggle() 显示/隐藏 animate() 自定义动画 六、CSS3的多媒体查询 值 描述 all 用于所有多媒体类型设备 print 用于打印机 screen 用于电脑屏幕，平板，智能手机等。 speech 用于屏幕阅读器 123456@media screen and (min-width: 480px) &#123; body &#123; background-color: lightgreen; &#125;&#125;/*如果媒体类型屏幕的可视窗口宽度小于 480 px ，背景颜色将改变*/]]></content>
@@ -128,8 +141,8 @@
         <category>知识点</category>
       </categories>
       <tags>
-        <tag>知识点</tag>
         <tag>前端</tag>
+        <tag>知识点</tag>
         <tag>面试</tag>
       </tags>
   </entry>
@@ -251,8 +264,8 @@
       </categories>
       <tags>
         <tag>前端</tag>
-        <tag>Vue.js</tag>
         <tag>Webpack</tag>
+        <tag>Vue.js</tag>
       </tags>
   </entry>
   <entry>
@@ -304,8 +317,8 @@
       </categories>
       <tags>
         <tag>前端</tag>
-        <tag>Vue.js</tag>
         <tag>入门教程</tag>
+        <tag>Vue.js</tag>
       </tags>
   </entry>
   <entry>
