@@ -108,7 +108,7 @@
 <meta property="og:description" content="初入职场，发现 Vue 项目当中使用了 Vuex，借此机会初步了解一下 Vuex 的入门知识。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://s2.ax1x.com/2019/07/17/ZLRosP.png">
-<meta property="og:updated_time" content="2019-07-23T01:40:24.801Z">
+<meta property="og:updated_time" content="2019-07-23T07:00:59.141Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vuex 入门">
 <meta name="twitter:description" content="初入职场，发现 Vue 项目当中使用了 Vuex，借此机会初步了解一下 Vuex 的入门知识。">
@@ -442,7 +442,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-23 09:40:24" itemprop="dateModified" datetime="2019-07-23T09:40:24+08:00">2019-07-23</time>
+                <time title="修改时间：2019-07-23 15:00:59" itemprop="dateModified" datetime="2019-07-23T15:00:59+08:00">2019-07-23</time>
               
             
           </span>
@@ -527,7 +527,15 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">actions: &#123; <span class="comment">// 注册 actions，类似 Vue 里的 methods</span></span><br><span class="line">    addFun(context) &#123; <span class="comment">// 接收一个与 store 实例具有相同方法属性的 context 对象</span></span><br><span class="line">        context.commit(<span class="string">'add'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    reductionFun(context) &#123; <span class="comment">// 接收一个与 store 实例具有相同方法属性的 context 对象</span></span><br><span class="line">        context.commit(<span class="string">'reduction'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 <p>然后在 .vue 文件里面修改 methods：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">    addFun() &#123;</span><br><span class="line">        <span class="comment">// this.$store.commit("add");</span></span><br><span class="line">        <span class="keyword">this</span>.$store.dispatch(<span class="string">"addFun"</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    reductionFun() &#123;</span><br><span class="line">        <span class="comment">// this.$store.commit("reduction");</span></span><br><span class="line">        <span class="keyword">this</span>.$store.dispatch(<span class="string">"reductionFun"</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这里我们把commit提交mutations修改为使用dispatch来提交actions；我们点击页面，效果是一样的。</p>
+<p>这里我们把 commit 提交 mutations 修改为使用 dispatch 来提交 actions ；我们点击页面，效果是一样的。</p>
+<p>如果我们需要指定加减的数值，就直接传入 dispatch 中的第二个参数，然后在 action 中的对应函数中接受参数在传递给 mutations 中的函数进行计算：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">methods: &#123;</span><br><span class="line">    addFun() &#123;</span><br><span class="line">        <span class="comment">// this.$store.commit("add");</span></span><br><span class="line">        <span class="keyword">this</span>.$store.dispatch(<span class="string">"addFun"</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    reductionFun() &#123;</span><br><span class="line">        <span class="comment">// this.$store.commit("reduction");</span></span><br><span class="line">        <span class="keyword">var</span> n=<span class="number">100</span>;</span><br><span class="line">        <span class="keyword">this</span>.$store.dispatch(<span class="string">"reductionFun"</span>, n);</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>修改 store.js 如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">actions: &#123; <span class="comment">// 注册 actions，类似 Vue 里的 methods</span></span><br><span class="line">    addFun(context) &#123; <span class="comment">// 接收一个与 store 实例具有相同方法属性的 context 对象</span></span><br><span class="line">        context.commit(<span class="string">'add'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    reductionFun(context,n) &#123; <span class="comment">// 接收一个与 store 实例具有相同方法属性的 context 对象</span></span><br><span class="line">        context.commit(<span class="string">'reduction'</span>,n)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>此时再点击按钮，可以看到减少的值为设定的变量 n 的值。</p>
+<blockquote>
+<p>本文参考<a href="https://baijiahao.baidu.com/s?id=1618794879569468435&amp;wfr=spider&amp;for=pc" target="_blank" rel="noopener">https://baijiahao.baidu.com/s?id=1618794879569468435&amp;wfr=spider&amp;for=pc</a></p>
+</blockquote>
 
       
     </div>
