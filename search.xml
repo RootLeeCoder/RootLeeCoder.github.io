@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Vuex 入门]]></title>
+    <url>%2Fpassages%2FVuex-%E5%85%A5%E9%97%A8%2F</url>
+    <content type="text"><![CDATA[初入职场，发现 Vue 项目当中使用了 Vuex，借此机会初步了解一下 Vuex 的入门知识。 官网对于Vuex的解释如下： Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。 在还用 webpack4 创建Vue-CLi项目的时候可以选择使用Vuex，创建后的文件目录结构如下： 打开store.js文件之后，看到的代码如下： 12345678910111213141516import Vue from 'vue'import Vuex from 'vuex'Vue.use(Vuex)export default new Vuex.Store(&#123; state: &#123; &#125;, mutations: &#123; &#125;, actions: &#123; &#125;&#125;) state: 驱动应用的数据源state是Vuex中的数据源，我们需要保存的数据就保存在这里，可以在页面通过this.$store.state来获取我们定义的数据。举个栗子，在state当中添加如下数据： 123state: &#123; count: 12&#125;, 在 DOM 结构当中添加： 1&lt;h1&gt;我是从页面上直接获取的：&#123;&#123;this.$store.state.count&#125;&#125;&lt;/h1&gt; Getters: 计算属性Getters相当于 Vue 中的computed计算属性，getter 的返回值会根据它的依赖被缓存起来，且只有当它的依赖值发生了改变才会被重新计算，这里我们可以通过定义Vuex的Getters来获取，Getters 可以用于监听state中的值的变化，返回计算后的结果。 在 DOM 结构当中添加： 1&lt;h1&gt;我是从Getters获取的计算后的值：&#123;&#123;this.$store.getters.getStateCount&#125;&#125;&lt;/h1&gt; 再修改state.js文件如下，其中getters中的getStateCount方法接收一个参数state，这个参数就是我们用来保存数据的那个对象： 12345getters: &#123; // 类似于 Vue 当中的 computed getStateCount: function(state) &#123; return state.count+1 &#125;&#125; Mutations: 更改 Vuex 的 store 中的状态如果需要修改store中的值唯一的方法就是提交mutation来修改，在 DOM 结构当中添加： 123&lt;h1&gt;count的值：&#123;&#123;this.$store.state.count&#125;&#125;&lt;/h1&gt;&lt;button @click="addFun"&gt;+&lt;/button&gt;&lt;button @click="reductionFun"&gt;-&lt;/button&gt; 在 methods 当中添加： 12345678methods: &#123; addFun() &#123; this.$store.commit("add"); &#125;, reductionFun() &#123; this.$store.commit("reduction"); &#125;,&#125; 在 store.js 文件当中添加： 12345678mutations: &#123; add(state) &#123; // 上面的定义 state 对象 state.count += 10 &#125;, reduction(state) &#123; // 上面的定义 state 对象 state.count -= 10 &#125;,&#125;, 修改完成之后可以发现点击加减按钮可以改变 count 的值 Actions: 提交 mutation，而不是直接变更状态Action 可以包含任意异步操作。 先修改 store.js 文件，在当中定义 actions 提交 mutation 的函数： 12345678actions: &#123; // 注册 actions，类似 Vue 里的 methods addFun(context) &#123; // 接收一个与 store 实例具有相同方法属性的 context 对象 context.commit('add') &#125;, reductionFun(context) &#123; // 接收一个与 store 实例具有相同方法属性的 context 对象 context.commit('reduction') &#125;&#125;, 然后在 .vue 文件里面修改 methods： 12345678910methods: &#123; addFun() &#123; // this.$store.commit("add"); this.$store.dispatch("addFun"); &#125;, reductionFun() &#123; // this.$store.commit("reduction"); this.$store.dispatch("reductionFun"); &#125;,&#125; 这里我们把commit提交mutations修改为使用dispatch来提交actions；我们点击页面，效果是一样的。]]></content>
+      <categories>
+        <category>Vue.js</category>
+      </categories>
+      <tags>
+        <tag>Vue.js</tag>
+        <tag>前端开发</tag>
+        <tag>Vuex</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[初识 ECharts 的一个小 Demo]]></title>
     <url>%2Fpassages%2F%E5%88%9D%E8%AF%86-ECharts-%E7%9A%84%E4%B8%80%E4%B8%AA%E5%B0%8F-Demo%2F</url>
     <content type="text"><![CDATA[刚刚初次使用 ECharts 做了一个小 Demo，在完成项目的过程当中遇到的一些问题在这里记录一下。 首先附上项目地址 完成的效果如下： 首先使用 VUe-Cli构建一个 Vue 空项目，再通过 npm 安装 ECharts： 1npm install echarts --save 构建 ECharts 的代码可以写在钩子函数当中，首先使用require引入模块： 12// 得到包中的EChartsvar echarts = require('echarts'); 然后初始化 ECharts 实例： 12// 基于准备好的dom，初始化echarts实例，这里的main是HTML当中id为'main'的divvar myChart = echarts.init(document.getElementById('main')); 配置图表的详细样式： 123var option = &#123; ... // 下面的内容会详细讲&#125; 最后是使用刚指定的配置项和数据显示图表： 1myChart.setOption(option); 至此，图表配置已经完成，以下是option的全部代码，参考见注释。 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158159160161162163164165166167168169170171172173174175176177178179180181182183var option = &#123; title: &#123; // 设置图表标题 text: 'Top10', textStyle: &#123; fontWeight: "bold", color: "red" &#125;, &#125;, tooltip: &#123; // 设置鼠标悬停显示效果 trigger: 'axis', axisPointer: &#123; type: 'cross', // 设置鼠标的悬停效果为显示横纵轴数据 &#125;, formatter: function (params) &#123; // 自定义显示格式 // 自定义提示框 var result = ''; result += `&lt;span style="display:inline-block; position:absolute; left:5px"&gt;$&#123;params[0].axisValue&#125;&lt;/span&gt;` + "&lt;/br&gt;" // 自定义提示框，小点添加 let marker = `&lt;span style="display:inline-block; margin-right:5px; border-radius:10px; width:10px; height:10px; background-color:rgb(40,210,240);"&gt;&lt;/span&gt;` result += marker + "金额: " + params[0].value; return result; &#125; &#125;, grid: &#123; left: '3%', right: '4%', bottom: '3%', containLabel: true // 显示标签名称 &#125;, xAxis: [&#123; show: false, // 不显示X轴 &#125;], yAxis: &#123; type: 'category', axisLine: &#123; show: false &#125;, // 不显示Y轴竖线 axisTick: &#123; show: false &#125;, // 不显示Y轴坐标 data: ['缪超', '薛佳运', '刘庆智', '董洋', '孔德娜', '刘敏', '孟蕾', '朱沛冉', '杨涤非', '李竞'], axisLabel: &#123; formatter: function (value, index) &#123; let mapping = &#123; 1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six', 7: 'seven', 8: 'eight', 9: 'nine', 10: 'ten', &#125; return '&#123;value|' + value + '&#125; &#123;' + mapping[10 - index] + '|&#125;'; &#125;, margin: 20, rich: &#123; value: &#123; lineHeight: 30, align: 'center' &#125;, one: &#123; height: 23, lineHeight: 23, width: 23, backgroundColor: &#123; image: rankingIcons.one &#125; &#125;, two: &#123; height: 23, width: 23, lineHeight: 23, backgroundColor: &#123; image: rankingIcons.two &#125; &#125;, three: &#123; height: 23, width: 23, lineHeight: 23, backgroundColor: &#123; image: rankingIcons.three &#125; &#125;, four: &#123; height: 23, width: 23, lineHeight: 23, backgroundColor: &#123; image: rankingIcons.four &#125; &#125;, five: &#123; height: 23, width: 23, lineHeight: 23, backgroundColor: &#123; image: rankingIcons.five &#125; &#125;, six: &#123; height: 23, width: 23, lineHeight: 23, backgroundColor: &#123; image: rankingIcons.six &#125; &#125;, seven: &#123; height: 23, width: 23, lineHeight: 23, backgroundColor: &#123; image: rankingIcons.seven &#125; &#125;, eight: &#123; height: 23, width: 23, lineHeight: 23, backgroundColor: &#123; image: rankingIcons.eight &#125; &#125;, nine: &#123; height: 23, width: 23, lineHeight: 23, backgroundColor: &#123; image: rankingIcons.nine &#125; &#125;, ten: &#123; height: 23, width: 23, lineHeight: 23, backgroundColor: &#123; image: rankingIcons.ten &#125; &#125; &#125; // rich &#125;, // axisLabel &#125;, // yAxis series: [ &#123; // 设置柱状图样式 type: 'bar', barGap: '-60%', // 设置柱间距离 data: [1000000, 2000000, 3000000, 4000000, 5000000, 8000000, 12000000, 17000000, 45000000, 50000000], itemStyle: &#123; normal: &#123; borderWidth: 1, borderColor: 'rgb(99,195,228)', barBorderRadius: [40, 40, 40, 40], // 设置成圆角矩形 color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [&#123; // 分别是左、下、右、上 offset: 0, color: "rgb(47,207,234)" // 0% 处的颜色 &#125;, &#123; offset: 1, color: "rgb(82,212,167)" // 100% 处的颜色 &#125;], false) &#125; // normal &#125; // itemStyle &#125;, // 设置柱状图样式 &#123; // 设置柱状图背景槽样式 type: 'bar', barGap: '-100%', data: [50000000, 50000000, 50000000, 50000000, 50000000, 50000000, 50000000, 50000000, 50000000, 50000000], itemStyle: &#123; normal: &#123; borderWidth: 1, borderColor: 'rgb(99,195,228)', barBorderRadius: [40, 40, 40, 40], // 设置成圆角矩形 color: new echarts.graphic.LinearGradient(1, 1, 1, 1, [&#123; // 分别是左、下、右、上 offset: 0, color: "#fff" // 0% 处的颜色 &#125;, &#123; offset: 1, color: "#fff" // 100% 处的颜色 &#125;], false) &#125; // normal &#125; // itemStyle &#125; // 设置柱状图背景槽样式 ] // series&#125;]]></content>
@@ -8,9 +21,9 @@
         <category>ECharts</category>
       </categories>
       <tags>
-        <tag>ECharts</tag>
         <tag>前端</tag>
         <tag>入门教程</tag>
+        <tag>ECharts</tag>
       </tags>
   </entry>
   <entry>
@@ -129,8 +142,8 @@
         <category>Vue.js</category>
       </categories>
       <tags>
-        <tag>知识点</tag>
         <tag>Vue.js</tag>
+        <tag>知识点</tag>
       </tags>
   </entry>
   <entry>
@@ -141,8 +154,8 @@
         <category>知识点</category>
       </categories>
       <tags>
-        <tag>前端</tag>
         <tag>知识点</tag>
+        <tag>前端</tag>
         <tag>面试</tag>
       </tags>
   </entry>
@@ -177,8 +190,8 @@
         <category>Vue.js</category>
       </categories>
       <tags>
-        <tag>前端</tag>
         <tag>Vue.js</tag>
+        <tag>前端</tag>
         <tag>使用技巧</tag>
       </tags>
   </entry>
@@ -263,9 +276,9 @@
         <category>Vue.js</category>
       </categories>
       <tags>
+        <tag>Vue.js</tag>
         <tag>前端</tag>
         <tag>Webpack</tag>
-        <tag>Vue.js</tag>
       </tags>
   </entry>
   <entry>
@@ -291,8 +304,8 @@
       <tags>
         <tag>前端</tag>
         <tag>入门教程</tag>
-        <tag>Webpack</tag>
         <tag>Node.js</tag>
+        <tag>Webpack</tag>
       </tags>
   </entry>
   <entry>
@@ -316,9 +329,9 @@
         <category>Vue.js</category>
       </categories>
       <tags>
+        <tag>Vue.js</tag>
         <tag>前端</tag>
         <tag>入门教程</tag>
-        <tag>Vue.js</tag>
       </tags>
   </entry>
   <entry>
