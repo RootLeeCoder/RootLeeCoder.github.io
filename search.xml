@@ -29,7 +29,7 @@
   <entry>
     <title><![CDATA[面经03]]></title>
     <url>%2Fpassages%2F%E9%9D%A2%E7%BB%8F03%2F</url>
-    <content type="text"><![CDATA[Don’t fall before dawn. 一、Vue的优势Vue是一个构建用户界面的渐进式框架。 Vue 只关注视图层， 采用自底向上增量开发的设计。 轻量级框架、简单易学、双向数据绑定、组件化、数据与结构分离、运行速度快 二、Vue的生命周期beforeCreate：组件实例化之前执行的函数created：组件实例化完毕，但页面仍未显示beforeMount：组件挂载前，页面仍未显示，但虚拟DOM已经配置mounted：组件挂载后，此方法执行后，页面显示beforeUpdate：组件更新前，页面仍未更新，但虚拟DOM已经配置Updated：组件更新，此方法执行后，页面显示before：组件销毁前destoryed：组件销毁 beforeCreate：el 和 data 并未初始化created:完成了 data 数据的初始化，el没有beforeMount：完成了 el 和 data 初始化mounted ：完成挂载 beforeCreate : 举个栗子：可以在这加个loading事件created ：在这结束loading，还做一些初始化，实现函数自执行mounted ： 在这发起后端请求，拿回数据，配合路由钩子做一些事情beforeDestroy： 你确认删除XX吗？destroyed ：当前组件已被删除，清空相关内容 三、组件数据传递父传子Prop 是你可以在组件上注册的一些自定义特性。当一个值传递给一个 prop 特性的时候，它就变成了那个组件实例的一个属性。为了给博文组件传递一个标题，我们可以用一个 props 选项将其包含在该组件可接受的 prop 列表中： 1234Vue.component('blog-post', &#123; props: ['title'], template: '&lt;h3&gt;&#123;&#123; title &#125;&#125;&lt;/h3&gt;'&#125;) 一个组件默认可以拥有任意数量的 prop，任何值都可以传递给任何 prop。在上述模板中，你会发现我们能够在组件实例中访问这个值，就像访问 data 中的值一样。 一个 prop 被注册之后，你就可以像这样把数据作为一个自定义特性传递进来： 123&lt;blog-post title="My journey with Vue"&gt;&lt;/blog-post&gt;&lt;blog-post title="Blogging with Vue"&gt;&lt;/blog-post&gt;&lt;blog-post title="Why Vue is so fun"&gt;&lt;/blog-post&gt; 子传父(事件传值)用this.$emit()方法来注册一个事件，再用v-on来监听这个事件，执行对应的方法 四、v-model和双括号的区别双括号是v-text的简写形式。v-model通常用于表单组件的绑定，例如input，select等。它与v-text的区别在于它实现的表单组件的双向绑定，如果用于表单控件以外标签是没有用的。 1HEXO对于非代码块里面的&#123;&#123;&#125;&#125;都会渲染报错 五、jQuery常见动画效果 Code 效果 hide() 隐藏 show() 显示 toggle() 切换隐藏/显示 fadeIn() 淡入 fadeOut() 淡出 fadeTo() 颜色渐变 slideDown() 滑下 slideUp() 拉起 slideToggle() 显示/隐藏 animate() 自定义动画 六、CSS3的多媒体查询 值 描述 all 用于所有多媒体类型设备 print 用于打印机 screen 用于电脑屏幕，平板，智能手机等。 speech 用于屏幕阅读器 123456@media screen and (min-width: 480px) &#123; body &#123; background-color: lightgreen; &#125;&#125;/*如果媒体类型屏幕的可视窗口宽度小于 480 px ，背景颜色将改变*/]]></content>
+    <content type="text"><![CDATA[Do not fall before dawn. 一、Vue的优势Vue是一个构建用户界面的渐进式框架。 Vue 只关注视图层， 采用自底向上增量开发的设计。 轻量级框架、简单易学、双向数据绑定、组件化、数据与结构分离、运行速度快 二、Vue的生命周期beforeCreate：组件实例化之前执行的函数created：组件实例化完毕，但页面仍未显示beforeMount：组件挂载前，页面仍未显示，但虚拟DOM已经配置mounted：组件挂载后，此方法执行后，页面显示beforeUpdate：组件更新前，页面仍未更新，但虚拟DOM已经配置Updated：组件更新，此方法执行后，页面显示before：组件销毁前destoryed：组件销毁 beforeCreate：el 和 data 并未初始化created:完成了 data 数据的初始化，el没有beforeMount：完成了 el 和 data 初始化mounted ：完成挂载 beforeCreate : 举个栗子：可以在这加个loading事件created ：在这结束loading，还做一些初始化，实现函数自执行mounted ： 在这发起后端请求，拿回数据，配合路由钩子做一些事情beforeDestroy： 你确认删除XX吗？destroyed ：当前组件已被删除，清空相关内容 三、组件数据传递父传子Prop 是你可以在组件上注册的一些自定义特性。当一个值传递给一个 prop 特性的时候，它就变成了那个组件实例的一个属性。为了给博文组件传递一个标题，我们可以用一个 props 选项将其包含在该组件可接受的 prop 列表中： 1234Vue.component('blog-post', &#123; props: ['title'], template: '&lt;h3&gt;&#123;&#123; title &#125;&#125;&lt;/h3&gt;'&#125;) 一个组件默认可以拥有任意数量的 prop，任何值都可以传递给任何 prop。在上述模板中，你会发现我们能够在组件实例中访问这个值，就像访问 data 中的值一样。 一个 prop 被注册之后，你就可以像这样把数据作为一个自定义特性传递进来： 123&lt;blog-post title="My journey with Vue"&gt;&lt;/blog-post&gt;&lt;blog-post title="Blogging with Vue"&gt;&lt;/blog-post&gt;&lt;blog-post title="Why Vue is so fun"&gt;&lt;/blog-post&gt; 子传父(事件传值)用this.$emit()方法来注册一个事件，再用v-on来监听这个事件，执行对应的方法 四、v-model和双括号的区别双括号是v-text的简写形式。v-model通常用于表单组件的绑定，例如input，select等。它与v-text的区别在于它实现的表单组件的双向绑定，如果用于表单控件以外标签是没有用的。 1HEXO对于非代码块里面的&#123;&#123;&#125;&#125;都会渲染报错 五、jQuery常见动画效果 Code 效果 hide() 隐藏 show() 显示 toggle() 切换隐藏/显示 fadeIn() 淡入 fadeOut() 淡出 fadeTo() 颜色渐变 slideDown() 滑下 slideUp() 拉起 slideToggle() 显示/隐藏 animate() 自定义动画 六、CSS3的多媒体查询 值 描述 all 用于所有多媒体类型设备 print 用于打印机 screen 用于电脑屏幕，平板，智能手机等。 speech 用于屏幕阅读器 123456@media screen and (min-width: 480px) &#123; body &#123; background-color: lightgreen; &#125;&#125;/*如果媒体类型屏幕的可视窗口宽度小于 480 px ，背景颜色将改变*/]]></content>
       <categories>
         <category>面试经验</category>
       </categories>
@@ -41,7 +41,7 @@
   <entry>
     <title><![CDATA[面经02]]></title>
     <url>%2Fpassages%2F%E9%9D%A2%E7%BB%8F02%2F</url>
-    <content type="text"><![CDATA[Try more, don’t be afraid of failure. JS六大数据类型 Number String Boolean Undefined Object Function CSS实现上下左右居中12vertical-align: middle;margin: 0 auto; display:none和visibility:hidden的区别display:none隐藏后不占据额外空间，它会产生回流和重绘，而visibility:hidden和opacity:0元素虽然隐藏了，但它们仍然占据着空间，它们俩只会引起页面重绘。 display:none 的元素都已经不再页面存在了，因此肯定也无法触发它上面绑定的事件； visibility:hidden 元素上绑定的事件也无法触发； opacity: 0元素上面绑定的事件是可以触发的。 使用jQuery的animate()方法修改样式123456$(".btn1").click(function()&#123; $("#box").animate(&#123;height:"300px"&#125;);&#125;);// 简单写法$("div").animate(&#123;height:"300px"&#125;,1000) // 1000的单位为毫秒 CSS设置行高1p.small &#123;line-height:90%&#125; CSS去掉下划线语句123a &#123; text-decoration:none;&#125; CSS清除浮动的方法 添加额外标签 父元素设置overflow:hidden 使用after伪元素 let和var的区别ES6 新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。 1234567&#123; let a = 10; var b = 1;&#125;a // ReferenceError: a is not defined.b // 1 上面代码在代码块之中，分别用let和var声明了两个变量。然后在代码块之外调用这两个变量，结果let声明的变量报错，var声明的变量返回了正确的值。这表明，let声明的变量只在它所在的代码块有效。 for循环的计数器，就很合适使用let命令。 123456for (let i = 0; i &lt; 10; i++) &#123; // ...&#125;console.log(i);// ReferenceError: i is not defined 上面代码中，计数器i只在for循环体内有效，在循环体外引用就会报错。 下面的代码如果使用var，最后输出的是10。 1234567var a = [];for (var i = 0; i &lt; 10; i++) &#123; a[i] = function () &#123; console.log(i); &#125;;&#125;a[6](); // 10 上面代码中，变量i是var命令声明的，在全局范围内都有效，所以全局只有一个变量i。每一次循环，变量i的值都会发生改变，而循环内被赋给数组a的函数内部的console.log(i)，里面的i指向的就是全局的i。也就是说，所有数组a的成员里面的i，指向的都是同一个i，导致运行时输出的是最后一轮的i的值，也就是 10。 如果使用let，声明的变量仅在块级作用域内有效，最后输出的是 6。 1234567var a = [];for (let i = 0; i &lt; 10; i++) &#123; a[i] = function () &#123; console.log(i); &#125;;&#125;a[6](); // 6 上面代码中，变量i是let声明的，当前的i只在本轮循环有效，所以每一次循环的i其实都是一个新的变量，所以最后输出的是6。你可能会问，如果每一轮循环的变量i都是重新声明的，那它怎么知道上一轮循环的值，从而计算出本轮循环的值？这是因为 JavaScript 引擎内部会记住上一轮循环的值，初始化本轮的变量i时，就在上一轮循环的基础上进行计算。 另外，for循环还有一个特别之处，就是设置循环变量的那部分是一个父作用域，而循环体内部是一个单独的子作用域。 1234567for (let i = 0; i &lt; 3; i++) &#123; let i = 'abc'; console.log(i);&#125;// abc// abc// abc 上面代码正确运行，输出了 3 次abc。这表明函数内部的变量i与循环变量i不在同一个作用域，有各自单独的作用域。]]></content>
+    <content type="text"><![CDATA[Try more, do not be afraid of failure. JS六大数据类型 Number String Boolean Undefined Object Function CSS实现上下左右居中12vertical-align: middle;margin: 0 auto; display:none和visibility:hidden的区别display:none隐藏后不占据额外空间，它会产生回流和重绘，而visibility:hidden和opacity:0元素虽然隐藏了，但它们仍然占据着空间，它们俩只会引起页面重绘。 display:none 的元素都已经不再页面存在了，因此肯定也无法触发它上面绑定的事件； visibility:hidden 元素上绑定的事件也无法触发； opacity: 0元素上面绑定的事件是可以触发的。 使用jQuery的animate()方法修改样式123456$(".btn1").click(function()&#123; $("#box").animate(&#123;height:"300px"&#125;);&#125;);// 简单写法$("div").animate(&#123;height:"300px"&#125;,1000) // 1000的单位为毫秒 CSS设置行高1p.small &#123;line-height:90%&#125; CSS去掉下划线语句123a &#123; text-decoration:none;&#125; CSS清除浮动的方法 添加额外标签 父元素设置overflow:hidden 使用after伪元素 let和var的区别ES6 新增了let命令，用来声明变量。它的用法类似于var，但是所声明的变量，只在let命令所在的代码块内有效。 1234567&#123; let a = 10; var b = 1;&#125;a // ReferenceError: a is not defined.b // 1 上面代码在代码块之中，分别用let和var声明了两个变量。然后在代码块之外调用这两个变量，结果let声明的变量报错，var声明的变量返回了正确的值。这表明，let声明的变量只在它所在的代码块有效。 for循环的计数器，就很合适使用let命令。 123456for (let i = 0; i &lt; 10; i++) &#123; // ...&#125;console.log(i);// ReferenceError: i is not defined 上面代码中，计数器i只在for循环体内有效，在循环体外引用就会报错。 下面的代码如果使用var，最后输出的是10。 1234567var a = [];for (var i = 0; i &lt; 10; i++) &#123; a[i] = function () &#123; console.log(i); &#125;;&#125;a[6](); // 10 上面代码中，变量i是var命令声明的，在全局范围内都有效，所以全局只有一个变量i。每一次循环，变量i的值都会发生改变，而循环内被赋给数组a的函数内部的console.log(i)，里面的i指向的就是全局的i。也就是说，所有数组a的成员里面的i，指向的都是同一个i，导致运行时输出的是最后一轮的i的值，也就是 10。 如果使用let，声明的变量仅在块级作用域内有效，最后输出的是 6。 1234567var a = [];for (let i = 0; i &lt; 10; i++) &#123; a[i] = function () &#123; console.log(i); &#125;;&#125;a[6](); // 6 上面代码中，变量i是let声明的，当前的i只在本轮循环有效，所以每一次循环的i其实都是一个新的变量，所以最后输出的是6。你可能会问，如果每一轮循环的变量i都是重新声明的，那它怎么知道上一轮循环的值，从而计算出本轮循环的值？这是因为 JavaScript 引擎内部会记住上一轮循环的值，初始化本轮的变量i时，就在上一轮循环的基础上进行计算。 另外，for循环还有一个特别之处，就是设置循环变量的那部分是一个父作用域，而循环体内部是一个单独的子作用域。 1234567for (let i = 0; i &lt; 3; i++) &#123; let i = 'abc'; console.log(i);&#125;// abc// abc// abc 上面代码正确运行，输出了 3 次abc。这表明函数内部的变量i与循环变量i不在同一个作用域，有各自单独的作用域。]]></content>
       <categories>
         <category>面试经验</category>
       </categories>
@@ -70,8 +70,8 @@
         <category>知识点</category>
       </categories>
       <tags>
-        <tag>知识点</tag>
         <tag>操作系统</tag>
+        <tag>知识点</tag>
       </tags>
   </entry>
   <entry>
@@ -89,13 +89,13 @@
   <entry>
     <title><![CDATA[“三次握手”和“四次挥手”]]></title>
     <url>%2Fpassages%2F%E2%80%9C%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%E2%80%9D%E5%92%8C%E2%80%9C%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B%E2%80%9D%2F</url>
-    <content type="text"><![CDATA[计算机网络当中的“三次握手”和“四次挥手”简单讲解。 概念列表 简写 全称 翻译 备注 SYN Synchronize Sequence Numbers 同步序列编号 发送请求 ACK Acknowledgement 确认字符 确认请求 FIN Finish TCP首部中的结束标志 关闭请求 三次握手(建立连接) 客户端发送SYN，进入SYN_SEND状态 服务器接收到SYN，向客户端返回SYN+ACK，进入SYN-RCVD状态 客户端返回ACK，双方都进入ESTABLISHED状态，连接成功 四次挥手(关闭连接) 客户端向服务器发送一个ACK和FIN报文段，此时，客户端进入FIN_WAIT_1状态，表示没有数据可发了 服务器收到了客户端的FIN报文段，回复最后一个ACK，此时客户端进入FIN_WAIT_2状态，服务器告诉客户端，我也没有数据可发了，可以关闭了 服务器向客户端发送FIN报文段，请求关闭连接，同时进入CLOSE_WAIT状态 客户端收到了服务器的FIN报文段，向服务器发送ACK报文段，然后进入TIME_WAIT状态。服务器收到后关闭连接，客户端等待 2ms 后依然没有回应，证明连接已关闭，客户端关闭连接。 场景类比三次握手 次数 顾客(客户端) 在线客服(服务器) 1 您好，在吗？ 2 亲，在的，请问有什么问题吗？ 3 我想咨询关于。。。 四次挥手 次数 顾客(客户端) 电话客服(服务器) 1 我想问的就是这些了 2 您的问题已全部答复，祝您生活愉快，再见！ 3 挂断电话 4 喂? 啊，客服电话挂断了，我也挂断吧]]></content>
+    <content type="text"><![CDATA[计算机网络当中的“三次握手”和“四次挥手”简单讲解。 概念列表 简写 全称 翻译 备注 SYN Synchronize Sequence Numbers 同步序列编号 发送请求 ACK Acknowledgement 确认字符 确认请求 FIN Finish TCP首部中的结束标志 关闭请求 三次握手(建立连接) 客户端发送SYN，进入SYN_SEND状态 服务器接收到SYN，向客户端返回SYN+ACK，进入SYN-RCVD状态 客户端返回ACK，双方都进入ESTABLISHED状态，连接成功 四次挥手(关闭连接) 客户端向服务器发送一个ACK和FIN报文段，此时，客户端进入FIN_WAIT_1状态，表示没有数据可发了 服务器收到了客户端的FIN报文段，回复最后一个ACK，此时客户端进入FIN_WAIT_2状态，服务器告诉客户端，我也没有数据可发了，可以关闭了 服务器向客户端发送FIN报文段，请求关闭连接，同时进入CLOSE_WAIT状态 客户端收到了服务器的FIN报文段，向服务器发送ACK报文段，然后进入TIME_WAIT状态。服务器收到后关闭连接，客户端等待 2ms 后依然没有回应，证明连接已关闭，客户端关闭连接。 场景类比三次握手 次数 顾客(客户端) 在线客服(服务器) 1 您好，在吗？ 2 亲，在的，请问有什么问题吗？ 3 我想咨询关于。。。 四次挥手 次数 顾客(客户端) 电话客服(服务器) 1 我想问的就是这些了 2 您的问题已全部答复，祝您生活愉快，再见！ 3 挂断电话 4 喂? 啊，客服电话挂断了，我也挂断吧 更详细的解释请见 https://juejin.im/post/5ccd0dfc6fb9a0324a08bb73]]></content>
       <categories>
         <category>知识点</category>
       </categories>
       <tags>
-        <tag>计算机网络</tag>
         <tag>知识点</tag>
+        <tag>计算机网络</tag>
       </tags>
   </entry>
   <entry>
@@ -106,8 +106,8 @@
         <category>知识点</category>
       </categories>
       <tags>
-        <tag>计算机网络</tag>
         <tag>知识点</tag>
+        <tag>计算机网络</tag>
       </tags>
   </entry>
   <entry>
@@ -118,8 +118,8 @@
         <category>知识点</category>
       </categories>
       <tags>
-        <tag>计算机网络</tag>
         <tag>知识点</tag>
+        <tag>计算机网络</tag>
       </tags>
   </entry>
   <entry>
@@ -130,8 +130,8 @@
         <category>知识点</category>
       </categories>
       <tags>
-        <tag>知识点</tag>
         <tag>操作系统</tag>
+        <tag>知识点</tag>
       </tags>
   </entry>
   <entry>
@@ -191,8 +191,8 @@
       </categories>
       <tags>
         <tag>Vue.js</tag>
-        <tag>前端</tag>
         <tag>使用技巧</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -221,17 +221,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[现在的打算]]></title>
-    <url>%2Fpassages%2F%E7%8E%B0%E5%9C%A8%E7%9A%84%E6%89%93%E7%AE%97%2F</url>
-    <content type="text"><![CDATA[考研成绩出来之后，我最终还是进入了多方面准备的模式。]]></content>
-      <categories>
-        <category>日记</category>
-      </categories>
-      <tags>
-        <tag>学习路径</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[使用Express进行Web开发]]></title>
     <url>%2Fpassages%2F%E4%BD%BF%E7%94%A8Express%E8%BF%9B%E8%A1%8CWeb%E5%BC%80%E5%8F%91%2F</url>
     <content type="text"><![CDATA[Express 是一个基于 Node.js 平台的极简、灵活的 Web 应用开发框架，它提供了一系列强大的特性，帮助开发人员创建各种 Web 和移动设备应用。 初始化项目 1npm init 初始化完成后会出现一个package.json文件，此时使用一下命令来安装Express.js并将其存入package.json文件中 1npm install express --save 编写一个简单的HEllo World程序，来测试Express是否安装成功，首先需要编写一个index.js文件 1234567891011121314// 定义Express实例var express = require('express');var app = express();// 定义路由app.get('/', function (req, res) &#123; res.send('Hello World!');&#125;);// 设置启动地址的端口信息var server = app.listen(3000, function () &#123; var host = server.address().address; var port = server.address().port;// 打印相关的内容提示 console.log('Example app listening at http://%s:%s', host, port);&#125;); 保存上述代码，在命令行中使用以下命令来运行程序 1node index.js 此时在浏览器中访问 http://localhost:3000/ 可以打开测试页面，如果输出Hello World即表示成功。]]></content>
@@ -239,9 +228,9 @@
         <category>Node.js</category>
       </categories>
       <tags>
+        <tag>Node.js</tag>
         <tag>前端</tag>
         <tag>入门教程</tag>
-        <tag>Node.js</tag>
       </tags>
   </entry>
   <entry>
@@ -277,8 +266,8 @@
       </categories>
       <tags>
         <tag>Vue.js</tag>
-        <tag>前端</tag>
         <tag>Webpack</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -302,10 +291,10 @@
         <category>Node.js</category>
       </categories>
       <tags>
-        <tag>前端</tag>
-        <tag>入门教程</tag>
         <tag>Webpack</tag>
         <tag>Node.js</tag>
+        <tag>前端</tag>
+        <tag>入门教程</tag>
       </tags>
   </entry>
   <entry>
@@ -316,9 +305,9 @@
         <category>Node.js</category>
       </categories>
       <tags>
+        <tag>Node.js</tag>
         <tag>前端</tag>
         <tag>入门教程</tag>
-        <tag>Node.js</tag>
       </tags>
   </entry>
   <entry>
