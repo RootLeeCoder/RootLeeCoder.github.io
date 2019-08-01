@@ -190,9 +190,9 @@
         <category>Vue.js</category>
       </categories>
       <tags>
+        <tag>前端</tag>
         <tag>Vue.js</tag>
         <tag>使用技巧</tag>
-        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -265,9 +265,9 @@
         <category>Vue.js</category>
       </categories>
       <tags>
-        <tag>Vue.js</tag>
         <tag>Webpack</tag>
         <tag>前端</tag>
+        <tag>Vue.js</tag>
       </tags>
   </entry>
   <entry>
@@ -318,15 +318,15 @@
         <category>Vue.js</category>
       </categories>
       <tags>
-        <tag>Vue.js</tag>
         <tag>前端</tag>
         <tag>入门教程</tag>
+        <tag>Vue.js</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[使用HEXO搭建个人博客]]></title>
     <url>%2Fpassages%2F%E4%BD%BF%E7%94%A8HEXO%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%2F</url>
-    <content type="text"><![CDATA[这是本博客的第一篇文章，随着众多牛博Powered by Hexo的指引，我开始了与HEXO一段相见恨晚的旅程。 点击观看视频教程 1. 安装与使用 1.1 安装前准备安装前请确保电脑中已经安装下列应用程序： Node.js Git 如果没有安装请点击以上链接进入官网安装。 1.2 进行安装1npm install -g hexo-cli 1.3 开始建站123hexo init &lt;文件夹名称&gt;cd &lt;文件夹名称&gt;npm install 如果执行hexo init &lt;文件夹名称&gt;命令时遇到npm ERR!属于正常现象。 1.4 渲染生成网页静态文件1hexo g 此处的g为generate(部署) 1.5 查看生成的网站1hexo s 此处的s为server 此时打开在浏览器中打开 http://localhost:4000/ ，网站建立成功。 2 写作 2.1 生成新文章1hexo new "post title" 注：此处post title为文章标题，以下类似语法不再说明 此时HEXO已经帮助我们生成了post-title.md文件，存放在\source\_posts\目录下 在Markdown文件中输入文本，执行hexo g和hexo s命令后可以在浏览器中看到刚刚输入的 Markdown 文本。 2.2 生成草稿1hexo new draft "draft title" 草稿页面不会被HEXO渲染，也就是说最后的静态页面不会生成草稿文章 2.3 生成页面1hexo new page "page title" 3 部署 3.1 安装hexo-deployer-git1npm install hexo-deployer-git --save 3.2 确认插件是否安装1npm list hexo-deployer-git 3.3 配置部署数据在_config.yml文件中添加以下选项： 123deploy: type: git repo: http:github.com/xxx/xxx.git 注：以上repo中存放Github项目地址，请前往GitPage去搭建自己的个人主页 3.4 将生成的网站部署到git仓库当中：1hexo d 如果遇到 Github 密码错误就执行一下命令，再运行hexo d： 1git config --global credential.helper wincred 4 更改主题 这里以本博客使用的BWM主题为例 首先将该项目clone到\themes\目录下 网站配置文件存放于\_config.yml 主题配置文件存放于\theme\theme-bmw\_config.yml 再按照官方文档进行操作 初学者看到这里就可以了哦，下面的东西仅仅作为补充，并不影响博客的搭建。毕竟博客的内容才是最重要的。 5 Front Matter 新手对于本节内容即学即用即可。 Front Matter 没有确切的中文翻译，它更像是一个配置文件。 自动生成的md文件最上面两个分割线所包裹的区域就是 Front Matter，Front Matter 采用YAML语法 示例： 12345title: Hello Worldcategory: - 1 - 2comment: on 6 其它常用命令 6.1 监视文件变动1hexo g -w 6.2 发表草稿1hexo publish [layout] &lt;filename&gt; 6.3 详细网站列表1hexo list route]]></content>
+    <content type="text"><![CDATA[这是本博客的第一篇文章，随着众多牛博Powered by Hexo的指引，我开始了与HEXO一段相见恨晚的旅程。 点击观看视频教程 1. 安装与使用 1.1 安装前准备安装前请确保电脑中已经安装下列应用程序： Node.js Git 如果没有安装请点击以上链接进入官网安装。 1.2 进行安装1npm install -g hexo-cli 1.3 开始建站123hexo init &lt;文件夹名称&gt;cd &lt;文件夹名称&gt;npm install 如果执行hexo init &lt;文件夹名称&gt;命令时遇到npm ERR!属于正常现象。 1.4 渲染生成网页静态文件1hexo g 此处的g为generate(部署) 1.5 查看生成的网站1hexo s 此处的s为server 此时打开在浏览器中打开 http://localhost:4000/ ，网站建立成功。 2 写作 2.1 生成新文章1hexo new "post title" 注：此处post title为文章标题，以下类似语法不再说明 此时HEXO已经帮助我们生成了post-title.md文件，存放在\source\_posts\目录下 在Markdown文件中输入文本，执行hexo g和hexo s命令后可以在浏览器中看到刚刚输入的 Markdown 文本。 2.2 生成草稿1hexo new draft "draft title" 草稿页面不会被HEXO渲染，也就是说最后的静态页面不会生成草稿文章 2.3 生成页面1hexo new page "page title" 3 部署 3.1 安装hexo-deployer-git1npm install hexo-deployer-git --save 3.2 确认插件是否安装1npm list hexo-deployer-git 3.3 配置部署数据在_config.yml文件中添加以下选项： 123deploy: type: git repo: http:github.com/xxx/xxx.git 注：以上repo中存放Github项目地址，请前往GitPage去搭建自己的个人主页 3.4 将生成的网站部署到git仓库当中：1hexo d 如果遇到 Github 密码错误就执行一下命令，再运行hexo d： 1git config --global credential.helper wincred 4 更改主题 这里以本博客使用的BWM主题为例（注：现已更改为NexT主题，但操作步骤没什么不同） 首先将该项目clone到\themes\目录下 网站配置文件存放于\_config.yml 主题配置文件存放于\theme\theme-bmw\_config.yml 再按照官方文档进行操作 初学者看到这里就可以了哦，下面的东西仅仅作为补充，并不影响博客的搭建。毕竟博客的内容才是最重要的。 5 Front Matter 新手对于本节内容即学即用即可。 Front Matter 没有确切的中文翻译，它更像是一个配置文件。 自动生成的md文件最上面两个分割线所包裹的区域就是 Front Matter，Front Matter 采用YAML语法 示例： 12345title: Hello Worldcategory: - 1 - 2comment: on 6 其它常用命令 6.1 监视文件变动1hexo g -w 6.2 发表草稿1hexo publish [layout] &lt;filename&gt; 6.3 详细网站列表1hexo list route]]></content>
       <categories>
         <category>HEXO</category>
       </categories>
