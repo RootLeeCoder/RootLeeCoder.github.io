@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[前端学习笔记(持续更新)]]></title>
+    <url>%2Fpassages%2F%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%2F</url>
+    <content type="text"><![CDATA[本日志将持续记录学习工作过程当中遇到的零碎知识点，当数量达到足够多之后会考虑系统性的整理。 JavaScript 当中的 unshift()方法unshift() 方法可以向数组的开头添加一个或者更多的元素，并返回新的长度。 实例： 123456789101112&lt;script type="text/javascript"&gt;var arr = new Array()arr[0] = "George"arr[1] = "John"arr[2] = "Thomas"document.write(arr + "&lt;br /&gt;")document.write(arr.unshift("William") + "&lt;br /&gt;")document.write(arr)&lt;/script&gt; 输出结果： 123George,John,Thomas4William,George,John,Thomas 提示：如果想将一个或多个元素添加到数组的尾部，请使用push()方法。 CSS 当中的linear-gradient()函数CSS 当中的 linear-gradient()函数可以创建一个渐变色的图片，具体实现效果请见如下两个网页： https://developer.mozilla.org/zh-CN/docs/Web/CSS/linear-gradient https://www.runoob.com/cssref/func-linear-gradient.html]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>Vue.js</tag>
+        <tag>学习笔记</tag>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Vuex 入门]]></title>
     <url>%2Fpassages%2FVuex-%E5%85%A5%E9%97%A8%2F</url>
     <content type="text"><![CDATA[初入职场，发现 Vue 项目当中使用了 Vuex，借此机会初步了解一下 Vuex 的入门知识。 官网对于Vuex的解释如下： Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。 在还用 webpack4 创建Vue-CLi项目的时候可以选择使用Vuex，创建后的文件目录结构如下： 打开store.js文件之后，看到的代码如下： 12345678910111213141516import Vue from 'vue'import Vuex from 'vuex'Vue.use(Vuex)export default new Vuex.Store(&#123; state: &#123; &#125;, mutations: &#123; &#125;, actions: &#123; &#125;&#125;) state: 驱动应用的数据源state是Vuex中的数据源，我们需要保存的数据就保存在这里，可以在页面通过this.$store.state来获取我们定义的数据。举个栗子，在state当中添加如下数据： 123state: &#123; count: 12&#125;, 在 DOM 结构当中添加： 1&lt;h1&gt;我是从页面上直接获取的：&#123;&#123;this.$store.state.count&#125;&#125;&lt;/h1&gt; Getters: 计算属性Getters相当于 Vue 中的computed计算属性，getter 的返回值会根据它的依赖被缓存起来，且只有当它的依赖值发生了改变才会被重新计算，这里我们可以通过定义Vuex的Getters来获取，Getters 可以用于监听state中的值的变化，返回计算后的结果。 在 DOM 结构当中添加： 1&lt;h1&gt;我是从Getters获取的计算后的值：&#123;&#123;this.$store.getters.getStateCount&#125;&#125;&lt;/h1&gt; 再修改state.js文件如下，其中getters中的getStateCount方法接收一个参数state，这个参数就是我们用来保存数据的那个对象： 12345getters: &#123; // 类似于 Vue 当中的 computed getStateCount: function(state) &#123; return state.count+1 &#125;&#125; Mutations: 更改 Vuex 的 store 中的状态如果需要修改store中的值唯一的方法就是提交mutation来修改，在 DOM 结构当中添加： 123&lt;h1&gt;count的值：&#123;&#123;this.$store.state.count&#125;&#125;&lt;/h1&gt;&lt;button @click="addFun"&gt;+&lt;/button&gt;&lt;button @click="reductionFun"&gt;-&lt;/button&gt; 在 methods 当中添加： 12345678methods: &#123; addFun() &#123; this.$store.commit("add"); &#125;, reductionFun() &#123; this.$store.commit("reduction"); &#125;,&#125; 在 store.js 文件当中添加： 12345678mutations: &#123; add(state) &#123; // 上面的定义 state 对象 state.count += 10 &#125;, reduction(state) &#123; // 上面的定义 state 对象 state.count -= 10 &#125;,&#125;, 修改完成之后可以发现点击加减按钮可以改变 count 的值 Actions: 提交 mutation，而不是直接变更状态Action 可以包含任意异步操作。 先修改 store.js 文件，在当中定义 actions 提交 mutation 的函数： 12345678actions: &#123; // 注册 actions，类似 Vue 里的 methods addFun(context) &#123; // 接收一个与 store 实例具有相同方法属性的 context 对象 context.commit('add') &#125;, reductionFun(context) &#123; // 接收一个与 store 实例具有相同方法属性的 context 对象 context.commit('reduction') &#125;&#125;, 然后在 .vue 文件里面修改 methods： 12345678910methods: &#123; addFun() &#123; // this.$store.commit("add"); this.$store.dispatch("addFun"); &#125;, reductionFun() &#123; // this.$store.commit("reduction"); this.$store.dispatch("reductionFun"); &#125;,&#125; 这里我们把 commit 提交 mutations 修改为使用 dispatch 来提交 actions ；我们点击页面，效果是一样的。 如果我们需要指定加减的数值，就直接传入 dispatch 中的第二个参数，然后在 action 中的对应函数中接受参数在传递给 mutations 中的函数进行计算： 1234567891011methods: &#123; addFun() &#123; // this.$store.commit("add"); this.$store.dispatch("addFun"); &#125;, reductionFun() &#123; // this.$store.commit("reduction"); var n=100; this.$store.dispatch("reductionFun", n); &#125;,&#125; 修改 store.js 如下： 12345678actions: &#123; // 注册 actions，类似 Vue 里的 methods addFun(context) &#123; // 接收一个与 store 实例具有相同方法属性的 context 对象 context.commit('add') &#125;, reductionFun(context,n) &#123; // 接收一个与 store 实例具有相同方法属性的 context 对象 context.commit('reduction',n) &#125;&#125;, 此时再点击按钮，可以看到减少的值为设定的变量 n 的值。 本文参考https://baijiahao.baidu.com/s?id=1618794879569468435&amp;wfr=spider&amp;for=pc]]></content>
@@ -241,8 +255,8 @@
         <category>使用技巧</category>
       </categories>
       <tags>
-        <tag>使用技巧</tag>
         <tag>HEXO</tag>
+        <tag>使用技巧</tag>
       </tags>
   </entry>
   <entry>
