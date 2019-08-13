@@ -100,17 +100,19 @@
 
 
   <meta name="description" content="本日志将持续记录学习工作过程当中遇到的零碎知识点，当数量达到足够多之后会考虑系统性的整理。">
-<meta name="keywords" content="Vue.js,前端,学习笔记,JavaScript">
+<meta name="keywords" content="前端,Vue.js,学习笔记,JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端学习笔记(持续更新)">
 <meta property="og:url" content="hhttps://rootleecoder.github.io/passages/前端学习笔记-持续更新/index.html">
 <meta property="og:site_name" content="Reegon&#39;s blog">
 <meta property="og:description" content="本日志将持续记录学习工作过程当中遇到的零碎知识点，当数量达到足够多之后会考虑系统性的整理。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-12T11:43:57.587Z">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/13/mpL7fs.png">
+<meta property="og:updated_time" content="2019-08-13T01:56:31.714Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端学习笔记(持续更新)">
 <meta name="twitter:description" content="本日志将持续记录学习工作过程当中遇到的零碎知识点，当数量达到足够多之后会考虑系统性的整理。">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/08/13/mpL7fs.png">
 
 
 
@@ -440,7 +442,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-12 19:43:57" itemprop="dateModified" datetime="2019-08-12T19:43:57+08:00">2019-08-12</time>
+                <time title="修改时间：2019-08-13 09:56:31" itemprop="dateModified" datetime="2019-08-13T09:56:31+08:00">2019-08-13</time>
               
             
           </span>
@@ -505,6 +507,15 @@
 <h2 id="CSS-当中的linear-gradient-函数"><a href="#CSS-当中的linear-gradient-函数" class="headerlink" title="CSS 当中的linear-gradient()函数"></a>CSS 当中的<code>linear-gradient()</code>函数</h2><p>CSS 当中的 <code>linear-gradient()</code>函数可以创建一个渐变色的图片，具体实现效果请见如下两个网页：</p>
 <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/linear-gradient" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/CSS/linear-gradient</a></p>
 <p><a href="https://www.runoob.com/cssref/func-linear-gradient.html" target="_blank" rel="noopener">https://www.runoob.com/cssref/func-linear-gradient.html</a></p>
+<h2 id="实现如下列表效果的-CSS-写法"><a href="#实现如下列表效果的-CSS-写法" class="headerlink" title="实现如下列表效果的 CSS 写法"></a>实现如下列表效果的 CSS 写法</h2><p><img src="https://s2.ax1x.com/2019/08/13/mpL7fs.png" alt="展示效果.png"></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">overflow</span>: <span class="selector-tag">hidden</span>;</span><br><span class="line"><span class="selector-tag">white-space</span>: <span class="selector-tag">nowarp</span>;</span><br><span class="line"><span class="selector-tag">text-overflow</span>: <span class="selector-tag">ellipsis</span>;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">line-height</span>: <span class="selector-class">.2rem</span>;</span><br><span class="line"><span class="selector-tag">padding</span>: 0 <span class="selector-class">.1rem</span>;</span><br></pre></td></tr></table></figure>
+<p>其中 <code>overflow</code>属性规定了当内容溢出元素框时发生的事情，将<code>overflow</code>属性设定为<code>hidden</code>时，内容会被修剪，并且其余内容是不可见的，如果不规定<code>overflow</code>属性，则按默认值会呈现在框外。</p>
+<p>其中<code>white-space</code>属性规定了元素内如何处理空白，将<code>white-space</code>属性设定为<code>nowarp</code>时，文本不会换行，而会在同一行上继续，直到遇到<code>&lt;br&gt;</code>标签为止。</p>
+<p>其中<code>text-overflow</code>属性规定了当文本溢出包含元素时发生的事情，<code>ellipsis</code>属性规定显示省略符号来代表被修剪的文本。</p>
+<p>详细属性可以点击如下链接：</p>
+<p><a href="https://www.w3school.com.cn/cssref/pr_pos_overflow.asp" target="_blank" rel="noopener">overflow</a></p>
+<p><a href="https://www.w3school.com.cn/cssref/pr_text_white-space.asp" target="_blank" rel="noopener">white-space</a></p>
+<p><a href="https://www.w3school.com.cn/cssref/pr_text-overflow.asp" target="_blank" rel="noopener">text-overflow</a></p>
 
       
     </div>
@@ -528,9 +539,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Vue-js/" rel="tag"># Vue.js</a>
-          
             <a href="/tags/前端/" rel="tag"># 前端</a>
+          
+            <a href="/tags/Vue-js/" rel="tag"># Vue.js</a>
           
             <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
           
@@ -796,7 +807,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-当中的-unshift-方法"><span class="nav-number">1.</span> <span class="nav-text">JavaScript 当中的 unshift()方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-当中的linear-gradient-函数"><span class="nav-number">2.</span> <span class="nav-text">CSS 当中的linear-gradient()函数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-当中的-unshift-方法"><span class="nav-number">1.</span> <span class="nav-text">JavaScript 当中的 unshift()方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-当中的linear-gradient-函数"><span class="nav-number">2.</span> <span class="nav-text">CSS 当中的linear-gradient()函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现如下列表效果的-CSS-写法"><span class="nav-number">3.</span> <span class="nav-text">实现如下列表效果的 CSS 写法</span></a></li></ol></div>
             
 
           </div>
