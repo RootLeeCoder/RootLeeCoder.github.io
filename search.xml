@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA['js获取内网IP的方法']]></title>
+    <url>%2Fpassages%2Fjs%E8%8E%B7%E5%8F%96%E5%86%85%E7%BD%91IP%E7%9A%84%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[在生产开发的过程当中，有时需要获取内网的IP地址，此时可以通过以下方法来实现 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051&lt;html&gt; &lt;head&gt; &lt;script&gt; function getUserIP(onNewIP) &#123; // onNewIp - your listener function for new IPs //compatibility for firefox and chrome var myPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection; var pc = new myPeerConnection(&#123; iceServers: [] &#125;), noop = function () &#123;&#125;, localIPs = &#123;&#125;, ipRegex = /([0-9]&#123;1,3&#125;(\.[0-9]&#123;1,3&#125;)&#123;3&#125;|[a-f0-9]&#123;1,4&#125;(:[a-f0-9]&#123;1,4&#125;)&#123;7&#125;)/g, key; function iterateIP(ip) &#123; if (!localIPs[ip]) onNewIP(ip); localIPs[ip] = true; &#125; //create a bogus data channel pc.createDataChannel(""); // create offer and set local description pc.createOffer().then(function (sdp) &#123; sdp.sdp.split('\n').forEach(function (line) &#123; if (line.indexOf('candidate') &lt; 0) return; line.match(ipRegex).forEach(iterateIP); &#125;); pc.setLocalDescription(sdp, noop, noop); &#125;).catch(function (reason) &#123; // An error occurred, so handle the failure to connect &#125;); //listen for candidate events pc.onicecandidate = function (ice) &#123; if (!ice || !ice.candidate || !ice.candidate.candidate || !ice.candidate.candidate.match(ipRegex)) return; ice.candidate.candidate.match(ipRegex).forEach(iterateIP); &#125;; &#125; // Usage getUserIP(function (ip) &#123; alert("Got IP! :" + ip); &#125;); &lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;/body&gt;&lt;/html&gt;]]></content>
+      <categories>
+        <category>Tips</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[使用 Linode VPS + V2Ray 客户端实现科学上网]]></title>
     <url>%2Fpassages%2F%E5%AE%9E%E7%8E%B0%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%2F</url>
     <content type="text"><![CDATA[由于众所周知的原因，墙是越来越高，本文将简单介绍使用 Linode VPS + V2Ray 客户端实现科学上网的过程 一、注册进入Linode官网进行注册，注册需要 VISA 或者 MasterCard 信用卡，无法使用微信或者支付宝支付，注册完成后可使用PayPal 充值。注册门槛较高，这也是 Linode 相对稳定的原因。 二、新增服务 注册完成后，在侧边栏选择 Linodes，系统选择 CentOS7， 机房地区选择美国费利蒙(比日本和新加坡稳定)，计划可以选择最便宜的，完成后的费用应该是5美元一个月。 注意此处要设置主机登录密码（上图未给出，我也懒得补） 三、部署ShadowSocks 完成上一步后进入 Dashbord，点开刚刚创建的服务，点击上图的 Launch Console 进入控制台。 登录名root，密码输入自己刚刚设置 首先安装 wget 1sudo yum -y install wget 执行以下命令，安装一键脚本 123wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.shchmod +x shadowsocks-all.sh./shadowsocks-all.sh 2&gt;&amp;1 | tee shadowsocks-all.log 按照提示设置SS服务，成功后应有如下提示： 12345678910111213Congratulations, Shadowsocks-Python server install completed!Your Server IP : 173.xxx.xxx.91Your Server Port : 12345Your Password : xxxxxxYour Encryption Method: aes-256-cfbYour QR Code: (For Shadowsocks Windows, OSX, Android and iOS clients) ss://YWVzLTI1Ni1j5OTFAMTczLjI0Mi4xMjYuOTE6NTAwMTU=Your QR Code has been saved as a PNG file path: /root/shadowsocks_python_qr.pngWelcome to visit: https://teddysun.com/486.htmlEnjoy it! 需要记录的数据有 服务器ip地址 服务端口 密码 加密方式 以上数据下一步会用到 四、安装并配置本地客户端1.下载 1)下载【v2ray-windows-64.zip Github Release】;2)下载【v2rayN-v2rayN.exe-Github Release】； 对v2ray-windows-64.zip进行解压，然后将下载的V2RayN.exe复制到解压后的目录，即两个下载好的文件需要在同一目录。 2.配置 运行V2RayN.exe，然后进行配置。因为我们部署的是SS服务器，所以选择如下： 然后在弹出的窗口里填上上一步获取到的4个数据，完成！ 在右下角右击图标，启用Http代理，可选择全局模式或者PAC模式，其中PAC模式对特定的网站(如Google、Twitter、YouTube等)进行代理，而对国内普通网站还是直连。 五、写在最后由于本人比较懒，所以教程的很多地方写的比较简略。如果有哪里不懂的，可以参考以下链接自己研究： https://www.laozuo.org/linode https://zal.me/74.html https://www.stackcc.com/2019/04/02/v2raysetup/ 以上链接不保证时效性，说不定哪天就挂了╮(╯▽╰)╭ 最后声明一下，科学上网这个行为本身是不违法的，但你要是拿这个搞事情，那就自己承担后果去吧~ (本文完)]]></content>
@@ -21,8 +32,8 @@
         <category>前端</category>
       </categories>
       <tags>
-        <tag>Vue.js</tag>
         <tag>前端</tag>
+        <tag>Vue.js</tag>
         <tag>学习笔记</tag>
         <tag>JavaScript</tag>
       </tags>
@@ -48,8 +59,8 @@
         <category>ECharts</category>
       </categories>
       <tags>
-        <tag>入门教程</tag>
         <tag>前端</tag>
+        <tag>入门教程</tag>
         <tag>ECharts</tag>
       </tags>
   </entry>
@@ -97,8 +108,8 @@
         <category>知识点</category>
       </categories>
       <tags>
-        <tag>操作系统</tag>
         <tag>知识点</tag>
+        <tag>操作系统</tag>
       </tags>
   </entry>
   <entry>
@@ -121,8 +132,8 @@
         <category>知识点</category>
       </categories>
       <tags>
-        <tag>知识点</tag>
         <tag>计算机网络</tag>
+        <tag>知识点</tag>
       </tags>
   </entry>
   <entry>
@@ -133,8 +144,8 @@
         <category>知识点</category>
       </categories>
       <tags>
-        <tag>知识点</tag>
         <tag>计算机网络</tag>
+        <tag>知识点</tag>
       </tags>
   </entry>
   <entry>
@@ -145,8 +156,8 @@
         <category>知识点</category>
       </categories>
       <tags>
-        <tag>知识点</tag>
         <tag>计算机网络</tag>
+        <tag>知识点</tag>
       </tags>
   </entry>
   <entry>
@@ -157,8 +168,8 @@
         <category>知识点</category>
       </categories>
       <tags>
-        <tag>操作系统</tag>
         <tag>知识点</tag>
+        <tag>操作系统</tag>
       </tags>
   </entry>
   <entry>
@@ -217,9 +228,9 @@
         <category>Vue.js</category>
       </categories>
       <tags>
-        <tag>使用技巧</tag>
-        <tag>Vue.js</tag>
         <tag>前端</tag>
+        <tag>Vue.js</tag>
+        <tag>使用技巧</tag>
       </tags>
   </entry>
   <entry>
@@ -255,9 +266,9 @@
         <category>Node.js</category>
       </categories>
       <tags>
+        <tag>前端</tag>
         <tag>入门教程</tag>
         <tag>Node.js</tag>
-        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -292,9 +303,9 @@
         <category>Vue.js</category>
       </categories>
       <tags>
+        <tag>前端</tag>
         <tag>Vue.js</tag>
         <tag>Webpack</tag>
-        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -318,10 +329,10 @@
         <category>Node.js</category>
       </categories>
       <tags>
+        <tag>前端</tag>
         <tag>入门教程</tag>
         <tag>Webpack</tag>
         <tag>Node.js</tag>
-        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -332,9 +343,9 @@
         <category>Node.js</category>
       </categories>
       <tags>
+        <tag>前端</tag>
         <tag>入门教程</tag>
         <tag>Node.js</tag>
-        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -345,9 +356,9 @@
         <category>Vue.js</category>
       </categories>
       <tags>
-        <tag>入门教程</tag>
-        <tag>Vue.js</tag>
         <tag>前端</tag>
+        <tag>Vue.js</tag>
+        <tag>入门教程</tag>
       </tags>
   </entry>
   <entry>
@@ -358,9 +369,9 @@
         <category>HEXO</category>
       </categories>
       <tags>
+        <tag>入门教程</tag>
         <tag>博客</tag>
         <tag>HEXO</tag>
-        <tag>入门教程</tag>
       </tags>
   </entry>
 </search>
