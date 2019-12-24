@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[ES6的部分新特性(持续更新)]]></title>
+    <url>%2Fpassages%2FES6%E7%9A%84%E9%83%A8%E5%88%86%E6%96%B0%E7%89%B9%E6%80%A7-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%2F</url>
+    <content type="text"><![CDATA[本文记录学习过程当中遇到的一些实用的 ES6 语法，达到一定规模后考虑系统性整理 Object.freeze()冻结对象ES6 当中的const可以定义常量，但是定义的对象属性还是可以被修改。如果不希望自己定义的对象属性被修改，可以使用Object.freeze()冻结对象，使用方法如下： 1234567891011const obj = &#123; prop: 42&#125;;Object.freeze(obj);obj.prop = 33;// Throws an error in strict modeconsole.log(obj.prop);// expected output: 42]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>学习笔记</tag>
+        <tag>JavaScript</tag>
+        <tag>ES6</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[js获取内网IP的方法]]></title>
     <url>%2Fpassages%2Fjs%E8%8E%B7%E5%8F%96%E5%86%85%E7%BD%91IP%E7%9A%84%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[在生产开发的过程当中，有时需要获取内网的IP地址，此时可以通过以下方法来实现 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051&lt;html&gt; &lt;head&gt; &lt;script&gt; function getUserIP(onNewIP) &#123; // onNewIp - your listener function for new IPs //compatibility for firefox and chrome var myPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection; var pc = new myPeerConnection(&#123; iceServers: [] &#125;), noop = function () &#123;&#125;, localIPs = &#123;&#125;, ipRegex = /([0-9]&#123;1,3&#125;(\.[0-9]&#123;1,3&#125;)&#123;3&#125;|[a-f0-9]&#123;1,4&#125;(:[a-f0-9]&#123;1,4&#125;)&#123;7&#125;)/g, key; function iterateIP(ip) &#123; if (!localIPs[ip]) onNewIP(ip); localIPs[ip] = true; &#125; //create a bogus data channel pc.createDataChannel(""); // create offer and set local description pc.createOffer().then(function (sdp) &#123; sdp.sdp.split('\n').forEach(function (line) &#123; if (line.indexOf('candidate') &lt; 0) return; line.match(ipRegex).forEach(iterateIP); &#125;); pc.setLocalDescription(sdp, noop, noop); &#125;).catch(function (reason) &#123; // An error occurred, so handle the failure to connect &#125;); //listen for candidate events pc.onicecandidate = function (ice) &#123; if (!ice || !ice.candidate || !ice.candidate.candidate || !ice.candidate.candidate.match(ipRegex)) return; ice.candidate.candidate.match(ipRegex).forEach(iterateIP); &#125;; &#125; // Usage getUserIP(function (ip) &#123; alert("Got IP! :" + ip); &#125;); &lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;/body&gt;&lt;/html&gt;]]></content>
@@ -33,9 +47,9 @@
       </categories>
       <tags>
         <tag>前端</tag>
-        <tag>Vue.js</tag>
         <tag>学习笔记</tag>
         <tag>JavaScript</tag>
+        <tag>Vue.js</tag>
       </tags>
   </entry>
   <entry>
@@ -108,8 +122,8 @@
         <category>知识点</category>
       </categories>
       <tags>
-        <tag>知识点</tag>
         <tag>操作系统</tag>
+        <tag>知识点</tag>
       </tags>
   </entry>
   <entry>
@@ -132,8 +146,8 @@
         <category>知识点</category>
       </categories>
       <tags>
-        <tag>计算机网络</tag>
         <tag>知识点</tag>
+        <tag>计算机网络</tag>
       </tags>
   </entry>
   <entry>
@@ -144,8 +158,8 @@
         <category>知识点</category>
       </categories>
       <tags>
-        <tag>计算机网络</tag>
         <tag>知识点</tag>
+        <tag>计算机网络</tag>
       </tags>
   </entry>
   <entry>
@@ -156,8 +170,8 @@
         <category>知识点</category>
       </categories>
       <tags>
-        <tag>计算机网络</tag>
         <tag>知识点</tag>
+        <tag>计算机网络</tag>
       </tags>
   </entry>
   <entry>
@@ -168,8 +182,8 @@
         <category>知识点</category>
       </categories>
       <tags>
-        <tag>知识点</tag>
         <tag>操作系统</tag>
+        <tag>知识点</tag>
       </tags>
   </entry>
   <entry>
@@ -192,8 +206,8 @@
         <category>知识点</category>
       </categories>
       <tags>
-        <tag>知识点</tag>
         <tag>前端</tag>
+        <tag>知识点</tag>
         <tag>面试</tag>
       </tags>
   </entry>
@@ -267,8 +281,8 @@
       </categories>
       <tags>
         <tag>前端</tag>
-        <tag>入门教程</tag>
         <tag>Node.js</tag>
+        <tag>入门教程</tag>
       </tags>
   </entry>
   <entry>
@@ -330,9 +344,9 @@
       </categories>
       <tags>
         <tag>前端</tag>
-        <tag>入门教程</tag>
         <tag>Webpack</tag>
         <tag>Node.js</tag>
+        <tag>入门教程</tag>
       </tags>
   </entry>
   <entry>
@@ -344,8 +358,8 @@
       </categories>
       <tags>
         <tag>前端</tag>
-        <tag>入门教程</tag>
         <tag>Node.js</tag>
+        <tag>入门教程</tag>
       </tags>
   </entry>
   <entry>
