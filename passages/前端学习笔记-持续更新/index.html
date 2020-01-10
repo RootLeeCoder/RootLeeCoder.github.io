@@ -108,7 +108,7 @@
 <meta property="og:description" content="本日志将持续记录学习工作过程当中遇到的零碎知识点，当数量达到足够多之后会考虑系统性的整理。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/13/mpL7fs.png">
-<meta property="og:updated_time" content="2019-12-20T07:57:41.982Z">
+<meta property="og:updated_time" content="2020-01-10T08:42:19.110Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端学习笔记(持续更新)">
 <meta name="twitter:description" content="本日志将持续记录学习工作过程当中遇到的零碎知识点，当数量达到足够多之后会考虑系统性的整理。">
@@ -442,7 +442,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-12-20 15:57:41" itemprop="dateModified" datetime="2019-12-20T15:57:41+08:00">2019-12-20</time>
+                <time title="修改时间：2020-01-10 16:42:19" itemprop="dateModified" datetime="2020-01-10T16:42:19+08:00">2020-01-10</time>
               
             
           </span>
@@ -500,7 +500,7 @@
 <a id="more"></a>
 <h2 id="JavaScript-当中的-unshift-方法"><a href="#JavaScript-当中的-unshift-方法" class="headerlink" title="JavaScript 当中的 unshift()方法"></a>JavaScript 当中的 <code>unshift()</code>方法</h2><p><code>unshift()</code> 方法可以向<strong>数组</strong>的开头添加一个或者更多的元素，并返回新的长度。</p>
 <p>实例：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>()</span></span><br><span class="line"><span class="javascript">arr[<span class="number">0</span>] = <span class="string">"George"</span></span></span><br><span class="line"><span class="javascript">arr[<span class="number">1</span>] = <span class="string">"John"</span></span></span><br><span class="line"><span class="javascript">arr[<span class="number">2</span>] = <span class="string">"Thomas"</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="built_in">document</span>.write(arr + <span class="string">"&lt;br /&gt;"</span>)</span></span><br><span class="line"><span class="javascript"><span class="built_in">document</span>.write(arr.unshift(<span class="string">"William"</span>) + <span class="string">"&lt;br /&gt;"</span>)</span></span><br><span class="line"><span class="javascript"><span class="built_in">document</span>.write(arr)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">var arr = new Array()</span></span><br><span class="line"><span class="undefined">arr[0] = "George"</span></span><br><span class="line"><span class="undefined">arr[1] = "John"</span></span><br><span class="line"><span class="undefined">arr[2] = "Thomas"</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="xml">document.write(arr + "<span class="tag">&lt;<span class="name">br</span> /&gt;</span>")</span></span><br><span class="line"><span class="xml">document.write(arr.unshift("William") + "<span class="tag">&lt;<span class="name">br</span> /&gt;</span>")</span></span><br><span class="line"><span class="undefined">document.write(arr)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>输出结果：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">George,John,Thomas</span><br><span class="line"><span class="number">4</span></span><br><span class="line">William,George,John,Thomas</span><br></pre></td></tr></table></figure>
 <p>提示：如果想将一个或多个元素添加到数组的尾部，请使用<code>push()</code>方法。</p>
@@ -545,6 +545,9 @@
 <p><a href="https://www.w3school.com.cn/cssref/pr_pos_overflow.asp" target="_blank" rel="noopener">overflow</a></p>
 <p><a href="https://www.w3school.com.cn/cssref/pr_text_white-space.asp" target="_blank" rel="noopener">white-space</a></p>
 <p><a href="https://www.w3school.com.cn/cssref/pr_text-overflow.asp" target="_blank" rel="noopener">text-overflow</a></p>
+<h2 id="JavaScript-中的另一种访问属性的方式"><a href="#JavaScript-中的另一种访问属性的方式" class="headerlink" title="JavaScript 中的另一种访问属性的方式"></a>JavaScript 中的另一种访问属性的方式</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> Obj = &#123;</span><br><span class="line">    key: <span class="number">1</span>,</span><br><span class="line">    value: <span class="string">"hello"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(Obj.value) <span class="comment">// hello</span></span><br><span class="line"><span class="built_in">console</span>.log(Obj[<span class="string">"value"</span>]) <span class="comment">// hello</span></span><br></pre></td></tr></table></figure>
+<p>两种方式的等价的，第二种表示法更灵活，因为可以像这样来指定属性名：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Obj[<span class="string">"va"</span> + <span class="string">"lue"</span>]</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -852,7 +855,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-当中的-unshift-方法"><span class="nav-number">1.</span> <span class="nav-text">JavaScript 当中的 unshift()方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-当中的-splice-方法"><span class="nav-number">2.</span> <span class="nav-text">JavaScript 当中的 splice()方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-当中的linear-gradient-函数"><span class="nav-number">3.</span> <span class="nav-text">CSS 当中的linear-gradient()函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现如下列表效果的-CSS-写法"><span class="nav-number">4.</span> <span class="nav-text">实现如下列表效果的 CSS 写法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-当中的-unshift-方法"><span class="nav-number">1.</span> <span class="nav-text">JavaScript 当中的 unshift()方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-当中的-splice-方法"><span class="nav-number">2.</span> <span class="nav-text">JavaScript 当中的 splice()方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-当中的linear-gradient-函数"><span class="nav-number">3.</span> <span class="nav-text">CSS 当中的linear-gradient()函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现如下列表效果的-CSS-写法"><span class="nav-number">4.</span> <span class="nav-text">实现如下列表效果的 CSS 写法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-中的另一种访问属性的方式"><span class="nav-number">5.</span> <span class="nav-text">JavaScript 中的另一种访问属性的方式</span></a></li></ol></div>
             
 
           </div>
@@ -873,7 +876,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
