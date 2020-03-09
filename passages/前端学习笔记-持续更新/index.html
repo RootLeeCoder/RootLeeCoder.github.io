@@ -108,7 +108,7 @@
 <meta property="og:description" content="本日志将持续记录学习工作过程当中遇到的零碎知识点，当数量达到足够多之后会考虑系统性的整理。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/13/mpL7fs.png">
-<meta property="og:updated_time" content="2020-01-10T08:42:19.110Z">
+<meta property="og:updated_time" content="2020-03-09T07:51:40.476Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端学习笔记(持续更新)">
 <meta name="twitter:description" content="本日志将持续记录学习工作过程当中遇到的零碎知识点，当数量达到足够多之后会考虑系统性的整理。">
@@ -442,7 +442,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-01-10 16:42:19" itemprop="dateModified" datetime="2020-01-10T16:42:19+08:00">2020-01-10</time>
+                <time title="修改时间：2020-03-09 15:51:40" itemprop="dateModified" datetime="2020-03-09T15:51:40+08:00">2020-03-09</time>
               
             
           </span>
@@ -548,6 +548,7 @@
 <h2 id="JavaScript-中的另一种访问属性的方式"><a href="#JavaScript-中的另一种访问属性的方式" class="headerlink" title="JavaScript 中的另一种访问属性的方式"></a>JavaScript 中的另一种访问属性的方式</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> Obj = &#123;</span><br><span class="line">    key: <span class="number">1</span>,</span><br><span class="line">    value: <span class="string">"hello"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(Obj.value) <span class="comment">// hello</span></span><br><span class="line"><span class="built_in">console</span>.log(Obj[<span class="string">"value"</span>]) <span class="comment">// hello</span></span><br></pre></td></tr></table></figure>
 <p>两种方式的等价的，第二种表示法更灵活，因为可以像这样来指定属性名：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Obj[<span class="string">"va"</span> + <span class="string">"lue"</span>]</span><br></pre></td></tr></table></figure>
+<h2 id="for-let-…-in-…-和-for-let-…-of-…-的区别"><a href="#for-let-…-in-…-和-for-let-…-of-…-的区别" class="headerlink" title="for (let … in …) 和 for (let … of …) 的区别"></a>for (let … in …) 和 for (let … of …) 的区别</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="string">'h'</span>, <span class="string">'e'</span>, <span class="string">'l'</span>, <span class="string">'l'</span>, <span class="string">'o'</span>]</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> item <span class="keyword">in</span> arr) &#123;</span><br><span class="line">    <span class="comment">// in 遍历 key</span></span><br><span class="line">    <span class="built_in">console</span>.log(item) <span class="comment">// 0,1,2,3,4</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> item <span class="keyword">of</span> arr) &#123;</span><br><span class="line">    <span class="comment">// of 遍历 value</span></span><br><span class="line">    <span class="built_in">console</span>.log(item) <span class="comment">// h,e,l,l,o</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -865,7 +866,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-当中的-unshift-方法"><span class="nav-number">1.</span> <span class="nav-text">JavaScript 当中的 unshift()方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-当中的-splice-方法"><span class="nav-number">2.</span> <span class="nav-text">JavaScript 当中的 splice()方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-当中的linear-gradient-函数"><span class="nav-number">3.</span> <span class="nav-text">CSS 当中的linear-gradient()函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现如下列表效果的-CSS-写法"><span class="nav-number">4.</span> <span class="nav-text">实现如下列表效果的 CSS 写法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-中的另一种访问属性的方式"><span class="nav-number">5.</span> <span class="nav-text">JavaScript 中的另一种访问属性的方式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-当中的-unshift-方法"><span class="nav-number">1.</span> <span class="nav-text">JavaScript 当中的 unshift()方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-当中的-splice-方法"><span class="nav-number">2.</span> <span class="nav-text">JavaScript 当中的 splice()方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-当中的linear-gradient-函数"><span class="nav-number">3.</span> <span class="nav-text">CSS 当中的linear-gradient()函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现如下列表效果的-CSS-写法"><span class="nav-number">4.</span> <span class="nav-text">实现如下列表效果的 CSS 写法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-中的另一种访问属性的方式"><span class="nav-number">5.</span> <span class="nav-text">JavaScript 中的另一种访问属性的方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for-let-…-in-…-和-for-let-…-of-…-的区别"><span class="nav-number">6.</span> <span class="nav-text">for (let … in …) 和 for (let … of …) 的区别</span></a></li></ol></div>
             
 
           </div>
