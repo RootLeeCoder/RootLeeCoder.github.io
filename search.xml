@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[代码赏析(持续更新)]]></title>
+    <url>%2Fpassages%2F%E4%BB%A3%E7%A0%81%E8%B5%8F%E6%9E%90-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%2F</url>
+    <content type="text"><![CDATA[本文章收集我在学习过程当中找到的一些优秀代码案例，经过钻研后进行复盘和赏析。 输入框效果输入框输入值后，数组内找值， 返回匹配的字符串。类似百度输入框的效果。 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990&lt;!DOCTYPE html&gt;&lt;html lang="en"&gt;&lt;head&gt; &lt;meta charset="UTF-8"&gt; &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; &lt;title&gt;Document&lt;/title&gt; &lt;style&gt; body &#123; margin: 0; position: relative; height: 100vh; &#125; .center &#123; box-sizing: border-box; width: 400px; padding: 4px 6px; position: absolute; top: 35%; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; &#125; .input &#123; padding: 10px 4px; &#125; .list div &#123; padding: 10px 6px; border: 1px solid #ddd; &#125; .list div:hover &#123; background: grey; cursor: pointer; &#125; .list div:not(:last-child) &#123; border-bottom: 1px solid #ddd; &#125; &lt;/style&gt;&lt;/head&gt;&lt;body&gt; &lt;div class='center'&gt; &lt;input type="text" class='input'&gt; &lt;div class='list'&gt; &lt;/div&gt; &lt;/div&gt; &lt;script&gt; const dataList = ['航空母舰','航空吴六', '无关数据', '航x空', '航空飞行器'] const el = document.querySelector('.input') const list = document.querySelector('.list') function debounce(fn, wait) &#123; let timer return function () &#123; timer &amp;&amp; clearTimeout(timer) timer = setTimeout(() =&gt; &#123; fn.call(this) &#125;, wait) &#125; &#125; function getData() &#123; list.innerHTML = '' let value = el.value let ret = [] for (let i of dataList) &#123; if (i.includes(value)) &#123; ret.push(i) &#125; &#125; ret.forEach(item =&gt; &#123; let el = document.createElement('div') el.innerText = item list.appendChild(el) &#125;) &#125; el.addEventListener('input', debounce(getData, 1000)) &lt;/script&gt;&lt;/body&gt;&lt;/html&gt; 赏析更新中… 统计出现最多的词123456789101112131415161718192021222324function getWordAnd(str) &#123; let arr = str.split(/[,\.\s]/) let map = new Map() let ret = [[], 0] arr.forEach(word =&gt; &#123; if (word !== '') &#123; if (map.has(word)) &#123; let times = map.get(word) map.set(word, times + 1) &#125; else &#123; map.set(word, 1) &#125; &#125; &#125;) for (let [i, j] of map) &#123; if (j &gt; ret[1]) &#123; ret[0] = [i] ret[1] = j &#125; else if (j === ret[1]) &#123; ret[0].push(i) &#125; &#125; return ret&#125; 赏析更新中…]]></content>
+      <categories>
+        <category>代码</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
+        <tag>代码赏析</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[将网站部署到腾讯云]]></title>
     <url>%2Fpassages%2F%E5%B0%86%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2%E5%88%B0%E8%85%BE%E8%AE%AF%E4%BA%91%2F</url>
     <content type="text"><![CDATA[Nothing to say. 1. 购买腾讯云服务器截止本文发布，腾讯云校园优惠套餐的价格是120元/年，25岁以下免学生认证。购买地址：https://cloud.tencent.com/act/campus ，我选择的系统是 Cent OS 7.6 版本。 购买后可以在控制台看到系统信息： 购买完成后点击操作当中的登录来设置登录密码。 2. 使用 PuTTY 远程登录腾讯云可以通过网页上的终端来调试主机，但是验证步骤比较麻烦，所以在设置好登录密码后，可以通过第三方软件比如PuTTY来登录腾讯云。 当然这个步骤也是可以跳过的，只是方便了操作，并非必需。详情可见：https://zhangzifan.com/use-putty-login-qcloud.html 3. 使用 FileZilla 来查看/修改/上传/下载服务器上的文件FileZilla下载地址：https://www.filezilla.cn/ 记得端口号填写22，点击快速连接即可。 4. 在服务器上安装 NginxNginx 是一个高性能的 HTTP 和反向代理 Web 服务器。 在 CentOS 下，可以通过 yum 来直接安装 Nginx： 1yum install nginx -y 安装完成后，使用 nginx 命令启动 Nginx： 1nginx 此时，访问 http://&lt;您的域名&gt; 可以看到 Nginx 的测试页面 5. 打包工程文件在本地使用npm run build命令来编译，此时在工程文件目录当中新增了一个dist文件夹，使用 FileZilla 将dist文件夹上传至服务器上，我存放的路径为 /data/www 6. 配置静态服务器的访问路径外网用户访问服务器的 Web 服务由 Nginx 提供，Nginx 需要配置静态资源的路径信息才能通过 url 正确访问到服务器上的静态资源。 使用 FileZilla 将打包后生成的 dist 文件夹放入服务器中，记住路径。 使用 FileZilla 打开 Nginx 的默认配置文件/etc/nginx/nginx.conf ，修改 Nginx 配置，按照自己刚刚设置的路径修改下列代码，修改如下： 现在我们需要重启 Nginx 让新的配置生效： 1nginx -s reload 然后就可以进行访问了：]]></content>
@@ -357,8 +369,8 @@
       <tags>
         <tag>前端</tag>
         <tag>入门教程</tag>
-        <tag>Node.js</tag>
         <tag>Webpack</tag>
+        <tag>Node.js</tag>
       </tags>
   </entry>
   <entry>
