@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA['自适应侧边栏实现']]></title>
+    <title><![CDATA[自适应侧边栏实现]]></title>
     <url>%2Fpassages%2F%E8%87%AA%E9%80%82%E5%BA%94%E4%BE%A7%E8%BE%B9%E6%A0%8F%E5%AE%9E%E7%8E%B0%2F</url>
     <content type="text"><![CDATA[本文简单描述如何在 Vue 项目中根据窗口宽度大小进行侧边栏的显示和隐藏 实现思路：addEventListener()方法可以试试监听窗口的大小变化，每当大小变化时，和指定的宽度进行比对，进行显示和隐藏 123456789101112131415161718192021222324252627282930313233343536373839404142434445&lt;template&gt; &lt;div class="total-container"&gt; &lt;div class="sidebar" v-show="showSideBar"&gt;&lt;/div&gt; &lt;/div&gt;&lt;/template&gt;&lt;script&gt;const WIDTH = 1100 // 宽度小于1100px时，判断设备是移动设备export default &#123; data() &#123; return &#123; showSideBar: true &#125; &#125;, beforeMount() &#123; window.addEventListener('resize', this.$_resizeHandler) &#125;, mounted() &#123; this.$_resizeHandler() &#125;, beforeDestroy() &#123; window.removeEventListener('resize', this.$_resizeHandler) &#125;, methods: &#123; $_resizeHandler() &#123; if (window.innerWidth &lt; WIDTH) &#123; this.showSideBar = false &#125; else &#123; this.showSideBar = true &#125; &#125; &#125;&#125;&lt;/script&gt;&lt;style lang="less" scoped&gt;.total-container &#123; .sidebar &#123; position: fixed; width: 200px; height: 100%; background-color: gray; &#125;&#125;&lt;/style&gt;]]></content>
       <categories>
@@ -242,8 +242,8 @@
         <category>知识点</category>
       </categories>
       <tags>
-        <tag>知识点</tag>
         <tag>前端</tag>
+        <tag>知识点</tag>
         <tag>面试</tag>
       </tags>
   </entry>
@@ -381,8 +381,8 @@
       <tags>
         <tag>前端</tag>
         <tag>入门教程</tag>
-        <tag>Node.js</tag>
         <tag>Webpack</tag>
+        <tag>Node.js</tag>
       </tags>
   </entry>
   <entry>
@@ -419,9 +419,9 @@
         <category>HEXO</category>
       </categories>
       <tags>
+        <tag>入门教程</tag>
         <tag>博客</tag>
         <tag>HEXO</tag>
-        <tag>入门教程</tag>
       </tags>
   </entry>
 </search>
