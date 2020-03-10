@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA['自适应侧边栏实现']]></title>
+    <url>%2Fpassages%2F%E8%87%AA%E9%80%82%E5%BA%94%E4%BE%A7%E8%BE%B9%E6%A0%8F%E5%AE%9E%E7%8E%B0%2F</url>
+    <content type="text"><![CDATA[本文简单描述如何在 Vue 项目中根据窗口宽度大小进行侧边栏的显示和隐藏 实现思路：addEventListener()方法可以试试监听窗口的大小变化，每当大小变化时，和指定的宽度进行比对，进行显示和隐藏 123456789101112131415161718192021222324252627282930313233343536373839404142434445&lt;template&gt; &lt;div class="total-container"&gt; &lt;div class="sidebar" v-show="showSideBar"&gt;&lt;/div&gt; &lt;/div&gt;&lt;/template&gt;&lt;script&gt;const WIDTH = 1100 // 宽度小于1100px时，判断设备是移动设备export default &#123; data() &#123; return &#123; showSideBar: true &#125; &#125;, beforeMount() &#123; window.addEventListener('resize', this.$_resizeHandler) &#125;, mounted() &#123; this.$_resizeHandler() &#125;, beforeDestroy() &#123; window.removeEventListener('resize', this.$_resizeHandler) &#125;, methods: &#123; $_resizeHandler() &#123; if (window.innerWidth &lt; WIDTH) &#123; this.showSideBar = false &#125; else &#123; this.showSideBar = true &#125; &#125; &#125;&#125;&lt;/script&gt;&lt;style lang="less" scoped&gt;.total-container &#123; .sidebar &#123; position: fixed; width: 200px; height: 100%; background-color: gray; &#125;&#125;&lt;/style&gt;]]></content>
+      <categories>
+        <category>Vue.js</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>Vue.js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[代码赏析(持续更新)]]></title>
     <url>%2Fpassages%2F%E4%BB%A3%E7%A0%81%E8%B5%8F%E6%9E%90-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0%2F</url>
     <content type="text"><![CDATA[本文章收集我在学习过程当中找到的一些优秀代码案例，经过钻研后进行复盘和赏析。 输入框效果输入框输入值后，数组内找值， 返回匹配的字符串。类似百度输入框的效果。 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990&lt;!DOCTYPE html&gt;&lt;html lang="en"&gt;&lt;head&gt; &lt;meta charset="UTF-8"&gt; &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; &lt;title&gt;Document&lt;/title&gt; &lt;style&gt; body &#123; margin: 0; position: relative; height: 100vh; &#125; .center &#123; box-sizing: border-box; width: 400px; padding: 4px 6px; position: absolute; top: 35%; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; &#125; .input &#123; padding: 10px 4px; &#125; .list div &#123; padding: 10px 6px; border: 1px solid #ddd; &#125; .list div:hover &#123; background: grey; cursor: pointer; &#125; .list div:not(:last-child) &#123; border-bottom: 1px solid #ddd; &#125; &lt;/style&gt;&lt;/head&gt;&lt;body&gt; &lt;div class='center'&gt; &lt;input type="text" class='input'&gt; &lt;div class='list'&gt; &lt;/div&gt; &lt;/div&gt; &lt;script&gt; const dataList = ['航空母舰','航空吴六', '无关数据', '航x空', '航空飞行器'] const el = document.querySelector('.input') const list = document.querySelector('.list') function debounce(fn, wait) &#123; let timer return function () &#123; timer &amp;&amp; clearTimeout(timer) timer = setTimeout(() =&gt; &#123; fn.call(this) &#125;, wait) &#125; &#125; function getData() &#123; list.innerHTML = '' let value = el.value let ret = [] for (let i of dataList) &#123; if (i.includes(value)) &#123; ret.push(i) &#125; &#125; ret.forEach(item =&gt; &#123; let el = document.createElement('div') el.innerText = item list.appendChild(el) &#125;) &#125; el.addEventListener('input', debounce(getData, 1000)) &lt;/script&gt;&lt;/body&gt;&lt;/html&gt; 赏析更新中… 统计出现最多的词123456789101112131415161718192021222324function getWordAnd(str) &#123; let arr = str.split(/[,\.\s]/) let map = new Map() let ret = [[], 0] arr.forEach(word =&gt; &#123; if (word !== '') &#123; if (map.has(word)) &#123; let times = map.get(word) map.set(word, times + 1) &#125; else &#123; map.set(word, 1) &#125; &#125; &#125;) for (let [i, j] of map) &#123; if (j &gt; ret[1]) &#123; ret[0] = [i] ret[1] = j &#125; else if (j === ret[1]) &#123; ret[0].push(i) &#125; &#125; return ret&#125; 赏析更新中…]]></content>
@@ -230,8 +242,8 @@
         <category>知识点</category>
       </categories>
       <tags>
-        <tag>前端</tag>
         <tag>知识点</tag>
+        <tag>前端</tag>
         <tag>面试</tag>
       </tags>
   </entry>
@@ -369,8 +381,8 @@
       <tags>
         <tag>前端</tag>
         <tag>入门教程</tag>
-        <tag>Webpack</tag>
         <tag>Node.js</tag>
+        <tag>Webpack</tag>
       </tags>
   </entry>
   <entry>
@@ -407,9 +419,9 @@
         <category>HEXO</category>
       </categories>
       <tags>
-        <tag>入门教程</tag>
         <tag>博客</tag>
         <tag>HEXO</tag>
+        <tag>入门教程</tag>
       </tags>
   </entry>
 </search>

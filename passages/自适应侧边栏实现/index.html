@@ -99,18 +99,18 @@
 
 
 
-  <meta name="description" content="本文记录学习过程当中遇到的一些实用的 ES6 语法，达到一定规模后考虑系统性整理">
-<meta name="keywords" content="前端,学习笔记,JavaScript,ES6">
+  <meta name="description" content="本文简单描述如何在 Vue 项目中根据窗口宽度大小进行侧边栏的显示和隐藏">
+<meta name="keywords" content="前端,Vue.js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ES6的部分新特性(持续更新)">
-<meta property="og:url" content="hhttps://rootleecoder.github.io/passages/ES6的部分新特性-持续更新/index.html">
+<meta property="og:title" content="&#39;自适应侧边栏实现&#39;">
+<meta property="og:url" content="hhttps://rootleecoder.github.io/passages/自适应侧边栏实现/index.html">
 <meta property="og:site_name" content="Reegon&#39;s blog">
-<meta property="og:description" content="本文记录学习过程当中遇到的一些实用的 ES6 语法，达到一定规模后考虑系统性整理">
+<meta property="og:description" content="本文简单描述如何在 Vue 项目中根据窗口宽度大小进行侧边栏的显示和隐藏">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-24T02:48:01.884Z">
+<meta property="og:updated_time" content="2020-03-10T09:03:10.844Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ES6的部分新特性(持续更新)">
-<meta name="twitter:description" content="本文记录学习过程当中遇到的一些实用的 ES6 语法，达到一定规模后考虑系统性整理">
+<meta name="twitter:title" content="&#39;自适应侧边栏实现&#39;">
+<meta name="twitter:description" content="本文简单描述如何在 Vue 项目中根据窗口宽度大小进行侧边栏的显示和隐藏">
 
 
 
@@ -118,7 +118,7 @@
 
   
   
-  <link rel="canonical" href="hhttps://rootleecoder.github.io/passages/ES6的部分新特性-持续更新/">
+  <link rel="canonical" href="hhttps://rootleecoder.github.io/passages/自适应侧边栏实现/">
 
 
 
@@ -128,7 +128,7 @@
   };
 </script>
 
-  <title>ES6的部分新特性(持续更新) | Reegon's blog</title>
+  <title>'自适应侧边栏实现' | Reegon's blog</title>
   
 
 
@@ -380,7 +380,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="hhttps://rootleecoder.github.io/passages/ES6的部分新特性-持续更新/">
+    <link itemprop="mainEntityOfPage" href="hhttps://rootleecoder.github.io/passages/自适应侧边栏实现/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Reegon">
@@ -397,7 +397,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ES6的部分新特性(持续更新)
+          <h1 class="post-title" itemprop="name headline">'自适应侧边栏实现'
 
               
             
@@ -423,7 +423,7 @@
                 
               
 
-              <time title="创建时间：2019-12-24 10:38:38 / 修改时间：10:48:01" itemprop="dateCreated datePublished" datetime="2019-12-24T10:38:38+08:00">2019-12-24</time>
+              <time title="创建时间：2020-03-10 16:44:02 / 修改时间：17:03:10" itemprop="dateCreated datePublished" datetime="2020-03-10T16:44:02+08:00">2020-03-10</time>
             
 
             
@@ -445,7 +445,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/前端/" itemprop="url" rel="index"><span itemprop="name">前端</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Vue-js/" itemprop="url" rel="index"><span itemprop="name">Vue.js</span></a></span>
 
                 
                 
@@ -481,11 +481,11 @@
 
       
         <blockquote>
-<p>本文记录学习过程当中遇到的一些实用的 ES6 语法，达到一定规模后考虑系统性整理</p>
+<p>本文简单描述如何在 Vue 项目中根据窗口宽度大小进行侧边栏的显示和隐藏</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="Object-freeze-冻结对象"><a href="#Object-freeze-冻结对象" class="headerlink" title="Object.freeze()冻结对象"></a><code>Object.freeze()</code>冻结对象</h2><p>ES6 当中的<code>const</code>可以定义常量，但是定义的对象属性还是可以被修改。如果不希望自己定义的对象属性被修改，可以使用<code>Object.freeze()</code>冻结对象，使用方法如下：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  prop: <span class="number">42</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.freeze(obj);</span><br><span class="line"></span><br><span class="line">obj.prop = <span class="number">33</span>;</span><br><span class="line"><span class="comment">// Throws an error in strict mode</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj.prop);</span><br><span class="line"><span class="comment">// expected output: 42</span></span><br></pre></td></tr></table></figure>
+<p>实现思路：<code>addEventListener()</code>方法可以试试监听窗口的大小变化，每当大小变化时，和指定的宽度进行比对，进行显示和隐藏</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"total-container"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"sidebar"</span> <span class="attr">v-show</span>=<span class="string">"showSideBar"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript"><span class="keyword">const</span> WIDTH = <span class="number">1100</span> <span class="comment">// 宽度小于1100px时，判断设备是移动设备</span></span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="undefined">    data() &#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="javascript">            showSideBar: <span class="literal">true</span></span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;,</span></span><br><span class="line"><span class="undefined">    beforeMount() &#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">window</span>.addEventListener(<span class="string">'resize'</span>, <span class="keyword">this</span>.$_resizeHandler)</span></span><br><span class="line"><span class="undefined">    &#125;,</span></span><br><span class="line"><span class="undefined">    mounted() &#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.$_resizeHandler()</span></span><br><span class="line"><span class="undefined">    &#125;,</span></span><br><span class="line"><span class="undefined">    beforeDestroy() &#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">window</span>.removeEventListener(<span class="string">'resize'</span>, <span class="keyword">this</span>.$_resizeHandler)</span></span><br><span class="line"><span class="undefined">    &#125;,</span></span><br><span class="line"><span class="undefined">    methods: &#123;</span></span><br><span class="line"><span class="undefined">        $_resizeHandler() &#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">if</span> (<span class="built_in">window</span>.innerWidth &lt; WIDTH) &#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">this</span>.showSideBar = <span class="literal">false</span></span></span><br><span class="line"><span class="javascript">            &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">this</span>.showSideBar = <span class="literal">true</span></span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">lang</span>=<span class="string">"less"</span> <span class="attr">scoped</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="css"><span class="selector-class">.total-container</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="selector-class">.sidebar</span> &#123;</span></span><br><span class="line"><span class="undefined">        position: fixed;</span></span><br><span class="line"><span class="undefined">        width: 200px;</span></span><br><span class="line"><span class="undefined">        height: 100%;</span></span><br><span class="line"><span class="undefined">        background-color: gray;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -511,11 +511,7 @@
           
             <a href="/tags/前端/" rel="tag"># 前端</a>
           
-            <a href="/tags/学习笔记/" rel="tag"># 学习笔记</a>
-          
-            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
-          
-            <a href="/tags/ES6/" rel="tag"># ES6</a>
+            <a href="/tags/Vue-js/" rel="tag"># Vue.js</a>
           
         </div>
       
@@ -528,8 +524,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/passages/js获取内网IP的方法/" rel="next" title="js获取内网IP的方法">
-                <i class="fa fa-chevron-left"></i> js获取内网IP的方法
+              <a href="/passages/代码赏析-持续更新/" rel="next" title="代码赏析(持续更新)">
+                <i class="fa fa-chevron-left"></i> 代码赏析(持续更新)
               </a>
             
           </div>
@@ -537,10 +533,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/passages/将网站部署到腾讯云/" rel="prev" title="将网站部署到腾讯云">
-                将网站部署到腾讯云 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -584,17 +576,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -792,23 +775,6 @@
         </div>
       </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-freeze-冻结对象"><span class="nav-number">1.</span> <span class="nav-text">Object.freeze()冻结对象</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
       
 
       
