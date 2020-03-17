@@ -99,18 +99,18 @@
 
 
 
-  <meta name="description" content="关于软件工程的几个基本问题">
-<meta name="keywords" content="知识点,软件工程">
+  <meta name="description" content="Ionic 框架原先只支持 Angular，现在开放了 Vue 的支持，但是目前还处于内测阶段，会有一些问题。本文就来记录一下在 Vue 项目中使用 Ionic 可能遇到的问题。">
+<meta name="keywords" content="Vue.js,Ionic">
 <meta property="og:type" content="article">
-<meta property="og:title" content="软件工程知识点">
-<meta property="og:url" content="hhttps://rootleecoder.github.io/passages/软件工程知识点/index.html">
+<meta property="og:title" content="Vue搭建Ionic项目可能遇到的潜在问题和解决方法">
+<meta property="og:url" content="hhttps://rootleecoder.github.io/passages/Vue搭建Ionic项目可能遇到的潜在问题和解决方法/index.html">
 <meta property="og:site_name" content="Reegon&#39;s blog">
-<meta property="og:description" content="关于软件工程的几个基本问题">
+<meta property="og:description" content="Ionic 框架原先只支持 Angular，现在开放了 Vue 的支持，但是目前还处于内测阶段，会有一些问题。本文就来记录一下在 Vue 项目中使用 Ionic 可能遇到的问题。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-05T07:23:14.825Z">
+<meta property="og:updated_time" content="2020-03-17T09:35:04.632Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="软件工程知识点">
-<meta name="twitter:description" content="关于软件工程的几个基本问题">
+<meta name="twitter:title" content="Vue搭建Ionic项目可能遇到的潜在问题和解决方法">
+<meta name="twitter:description" content="Ionic 框架原先只支持 Angular，现在开放了 Vue 的支持，但是目前还处于内测阶段，会有一些问题。本文就来记录一下在 Vue 项目中使用 Ionic 可能遇到的问题。">
 
 
 
@@ -118,7 +118,7 @@
 
   
   
-  <link rel="canonical" href="hhttps://rootleecoder.github.io/passages/软件工程知识点/">
+  <link rel="canonical" href="hhttps://rootleecoder.github.io/passages/Vue搭建Ionic项目可能遇到的潜在问题和解决方法/">
 
 
 
@@ -128,7 +128,7 @@
   };
 </script>
 
-  <title>软件工程知识点 | Reegon's blog</title>
+  <title>Vue搭建Ionic项目可能遇到的潜在问题和解决方法 | Reegon's blog</title>
   
 
 
@@ -380,7 +380,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="hhttps://rootleecoder.github.io/passages/软件工程知识点/">
+    <link itemprop="mainEntityOfPage" href="hhttps://rootleecoder.github.io/passages/Vue搭建Ionic项目可能遇到的潜在问题和解决方法/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Reegon">
@@ -397,7 +397,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">软件工程知识点
+          <h1 class="post-title" itemprop="name headline">Vue搭建Ionic项目可能遇到的潜在问题和解决方法
 
               
             
@@ -423,7 +423,7 @@
                 
               
 
-              <time title="创建时间：2019-03-05 14:34:45 / 修改时间：15:23:14" itemprop="dateCreated datePublished" datetime="2019-03-05T14:34:45+08:00">2019-03-05</time>
+              <time title="创建时间：2020-03-17 11:56:37 / 修改时间：17:35:04" itemprop="dateCreated datePublished" datetime="2020-03-17T11:56:37+08:00">2020-03-17</time>
             
 
             
@@ -445,7 +445,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/知识点/" itemprop="url" rel="index"><span itemprop="name">知识点</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Vue-js/" itemprop="url" rel="index"><span itemprop="name">Vue.js</span></a></span>
 
                 
                 
@@ -481,44 +481,20 @@
 
       
         <blockquote>
-<p>关于软件工程的几个基本问题</p>
+<p>Ionic 框架原先只支持 Angular，现在开放了 Vue 的支持，但是目前还处于内测阶段，会有一些问题。本文就来记录一下在 Vue 项目中使用 Ionic 可能遇到的问题。</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="一、-什么是软件危机？产生的原因是什么？"><a href="#一、-什么是软件危机？产生的原因是什么？" class="headerlink" title="一、 什么是软件危机？产生的原因是什么？"></a>一、 什么是软件危机？产生的原因是什么？</h2><p><strong>概念</strong>：软件危机是指落后的软件生产方式无法满足迅速增长的计算机软件需求，从而导致软件开发与维护过程中出现一系列严重问题的现象。</p>
-<p><strong>原因</strong>：</p>
-<ol>
-<li>用户需求不明确</li>
-<li>缺乏正确的理论指导</li>
-<li>软件开发规模越来越大</li>
-<li>软件开发复杂度越来越高</li>
-</ol>
-<h2 id="二、-需求分析阶段的基本任务是什么？"><a href="#二、-需求分析阶段的基本任务是什么？" class="headerlink" title="二、 需求分析阶段的基本任务是什么？"></a>二、 需求分析阶段的基本任务是什么？</h2><p>软件需求分析所要做的工作是深入描述软件的功能和性能，确定软件设计的限制和软件同其它系统元素的接口细节，定义软件的其它有效性需求。</p>
-<h2 id="三、-什么是数据字典？有什么作用？有哪些条目？"><a href="#三、-什么是数据字典？有什么作用？有哪些条目？" class="headerlink" title="三、 什么是数据字典？有什么作用？有哪些条目？"></a>三、 什么是数据字典？有什么作用？有哪些条目？</h2><p><strong>概念</strong>：数据字典是描述数据的信息集合，是对系统中使用的所有数据元素的定义的集合。</p>
-<p><strong>作用</strong>：数据字典最重要的作用是作为分析阶段的工具。任何字典最重要的用途都是供人查询对不了解的条目的解释，在结构化分析中，数据字典的作用是给数据流图上每个成分加以定义和说明。</p>
-<p><strong>条目</strong>：</p>
-<ol>
-<li>数据项</li>
-<li>数据结构</li>
-<li>数据流</li>
-<li>数据存储</li>
-<li>处理过程</li>
-<li>外部实体</li>
-</ol>
-<h2 id="四-、概要设计阶段的基本任务是什么？"><a href="#四-、概要设计阶段的基本任务是什么？" class="headerlink" title="四 、概要设计阶段的基本任务是什么？"></a>四 、概要设计阶段的基本任务是什么？</h2><p>概要设计的主要任务是把需求分析得到的系统扩展用例图转换为<strong>软件结构</strong>和<strong>数据结构</strong>。设计软件结构的具体任务是：将一个复杂系统按功能进行模块划分、建立模块的层次结构及调用关系、确定模块间的接口及人机界面等。</p>
-<h2 id="五、-详细设计阶段的基本任务是什么？有哪些描述方法？"><a href="#五、-详细设计阶段的基本任务是什么？有哪些描述方法？" class="headerlink" title="五、 详细设计阶段的基本任务是什么？有哪些描述方法？"></a>五、 详细设计阶段的基本任务是什么？有哪些描述方法？</h2><p><strong>基本任务</strong>：</p>
-<ol>
-<li>为每个模块进行详细的算法设计</li>
-<li>为每个模块内的数据结构进行设计</li>
-<li>对数据库进行设计，即确定数据库的物理结构</li>
-<li>编写详细设计说明书</li>
-<li>评审</li>
-</ol>
-<p><strong>描述方法</strong>：</p>
-<ol>
-<li>程序流程图</li>
-<li>PAD 图 (Problem Analysis Diagram, 问题分析图)</li>
-<li>过程设计语言</li>
-</ol>
+<p>创建好 Vue 项目后安装 Ionic 框架：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install @ionic/vue</span><br></pre></td></tr></table></figure>
+<p>安装完成后在 main.js 中添加如下代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Ionic <span class="keyword">from</span> <span class="string">'@ionic/vue'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'@ionic/core/css/ionic.bundle.css'</span>;</span><br><span class="line"></span><br><span class="line">Vue.use(Ionic);</span><br></pre></td></tr></table></figure>
+<p>运行项目时如果遇到以下错误：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;export &apos;ICON_PATHS&apos; was not found in &apos;ionicons/icons&apos;</span><br></pre></td></tr></table></figure>
+<p>则意味着我们需要安装ionicons，而且它对版本有要求，要在V4.5.10以下，所以执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i ionicons@4.5.9-1 -D</span><br></pre></td></tr></table></figure>
+<p>若报错：<code>&#39;webpack-dev-server&#39;</code>不是内部或外部命令，也不是可运行的程序</p>
+<p>则运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install webpack-dev-server --save-dev</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -542,9 +518,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/知识点/" rel="tag"># 知识点</a>
+            <a href="/tags/Vue-js/" rel="tag"># Vue.js</a>
           
-            <a href="/tags/软件工程/" rel="tag"># 软件工程</a>
+            <a href="/tags/Ionic/" rel="tag"># Ionic</a>
           
         </div>
       
@@ -557,8 +533,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/passages/“三次握手”和“四次挥手”/" rel="next" title="“三次握手”和“四次挥手”">
-                <i class="fa fa-chevron-left"></i> “三次握手”和“四次挥手”
+              <a href="/passages/自适应侧边栏实现/" rel="next" title="自适应侧边栏实现">
+                <i class="fa fa-chevron-left"></i> 自适应侧边栏实现
               </a>
             
           </div>
@@ -566,10 +542,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/passages/OS复试知识点/" rel="prev" title="OS复试知识点">
-                OS复试知识点 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -613,17 +585,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -823,23 +786,6 @@
         </div>
       </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、-什么是软件危机？产生的原因是什么？"><span class="nav-number">1.</span> <span class="nav-text">一、 什么是软件危机？产生的原因是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、-需求分析阶段的基本任务是什么？"><span class="nav-number">2.</span> <span class="nav-text">二、 需求分析阶段的基本任务是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、-什么是数据字典？有什么作用？有哪些条目？"><span class="nav-number">3.</span> <span class="nav-text">三、 什么是数据字典？有什么作用？有哪些条目？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四-、概要设计阶段的基本任务是什么？"><span class="nav-number">4.</span> <span class="nav-text">四 、概要设计阶段的基本任务是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、-详细设计阶段的基本任务是什么？有哪些描述方法？"><span class="nav-number">5.</span> <span class="nav-text">五、 详细设计阶段的基本任务是什么？有哪些描述方法？</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
       
 
       
