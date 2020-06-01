@@ -254,8 +254,8 @@
         <category>知识点</category>
       </categories>
       <tags>
-        <tag>前端</tag>
         <tag>知识点</tag>
+        <tag>前端</tag>
         <tag>面试</tag>
       </tags>
   </entry>
@@ -341,8 +341,8 @@
         <category>使用技巧</category>
       </categories>
       <tags>
-        <tag>使用技巧</tag>
         <tag>HEXO</tag>
+        <tag>使用技巧</tag>
       </tags>
   </entry>
   <entry>
@@ -393,8 +393,8 @@
       <tags>
         <tag>前端</tag>
         <tag>入门教程</tag>
-        <tag>Webpack</tag>
         <tag>Node.js</tag>
+        <tag>Webpack</tag>
       </tags>
   </entry>
   <entry>
