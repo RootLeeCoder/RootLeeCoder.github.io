@@ -107,15 +107,15 @@
 <meta property="og:site_name" content="Reegon&#39;s blog">
 <meta property="og:description" content="众所周知，将博客里面的图片放在别人的图床上是极其不靠谱的，要想保证数据的安全性，最好自己掌握一套图片处理的流程。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="c:/Users/86152/Desktop/2013053-56f7f7176c8afe2d.webp">
-<meta property="og:image" content="c:/Users/86152/Desktop/TIM截图20200723171023.png">
-<meta property="og:image" content="c:/Users/86152/Desktop/bb.png">
-<meta property="og:image" content="c:/Users/86152/Desktop/cc.png">
-<meta property="og:updated_time" content="2020-07-23T09:21:07.101Z">
+<meta property="og:image" content="http://212.64.93.67:8888/images/2020/07/23/2013053-56f7f7176c8afe2d.png">
+<meta property="og:image" content="http://212.64.93.67:8888/images/2020/07/23/aa.png">
+<meta property="og:image" content="http://212.64.93.67:8888/images/2020/07/23/bb.png">
+<meta property="og:image" content="http://212.64.93.67:8888/images/2020/07/23/cc.png">
+<meta property="og:updated_time" content="2020-07-23T09:36:15.130Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Chevereto+Typora+PicGo实现私人图床博客解决方案">
 <meta name="twitter:description" content="众所周知，将博客里面的图片放在别人的图床上是极其不靠谱的，要想保证数据的安全性，最好自己掌握一套图片处理的流程。">
-<meta name="twitter:image" content="c:/Users/86152/Desktop/2013053-56f7f7176c8afe2d.webp">
+<meta name="twitter:image" content="http://212.64.93.67:8888/images/2020/07/23/2013053-56f7f7176c8afe2d.png">
 
 
 
@@ -428,7 +428,7 @@
                 
               
 
-              <time title="创建时间：2020-07-23 16:49:36 / 修改时间：17:21:07" itemprop="dateCreated datePublished" datetime="2020-07-23T16:49:36+08:00">2020-07-23</time>
+              <time title="创建时间：2020-07-23 16:49:36 / 修改时间：17:36:15" itemprop="dateCreated datePublished" datetime="2020-07-23T16:49:36+08:00">2020-07-23</time>
             
 
             
@@ -503,16 +503,16 @@
 <p>在<code>docker-compose.yaml</code> 增加如下内容</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">'3'</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line"><span class="attr">  db:</span></span><br><span class="line"><span class="attr">    image:</span> <span class="string">mariadb</span></span><br><span class="line"><span class="attr">    volumes:</span></span><br><span class="line"><span class="attr">      - database:</span><span class="string">/var/lib/mysql:rw</span></span><br><span class="line"><span class="attr">    restart:</span> <span class="string">always</span></span><br><span class="line"><span class="attr">    networks:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">private</span></span><br><span class="line"><span class="attr">    environment:</span></span><br><span class="line"><span class="attr">      MYSQL_ROOT_PASSWORD:</span> <span class="string">chevereto_root</span></span><br><span class="line"><span class="attr">      MYSQL_DATABASE:</span> <span class="string">chevereto</span></span><br><span class="line"><span class="attr">      MYSQL_USER:</span> <span class="string">chevereto</span></span><br><span class="line"><span class="attr">      MYSQL_PASSWORD:</span> <span class="string">chevereto</span></span><br><span class="line"></span><br><span class="line"><span class="attr">  chevereto:</span></span><br><span class="line"><span class="attr">    depends_on:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">db</span></span><br><span class="line"><span class="attr">    image:</span> <span class="string">nmtan/chevereto</span></span><br><span class="line"><span class="attr">    restart:</span> <span class="string">always</span></span><br><span class="line"><span class="attr">    networks:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="string">private</span></span><br><span class="line"><span class="attr">    environment:</span></span><br><span class="line"><span class="attr">      CHEVERETO_DB_HOST:</span> <span class="string">db</span></span><br><span class="line"><span class="attr">      CHEVERETO_DB_USERNAME:</span> <span class="string">chevereto</span></span><br><span class="line"><span class="attr">      CHEVERETO_DB_PASSWORD:</span> <span class="string">chevereto</span></span><br><span class="line"><span class="attr">      CHEVERETO_DB_NAME:</span> <span class="string">chevereto</span></span><br><span class="line"><span class="attr">      CHEVERETO_DB_PREFIX:</span> <span class="string">chv_</span></span><br><span class="line"><span class="attr">    volumes:</span></span><br><span class="line"><span class="attr">      - chevereto_images:</span><span class="string">/var/www/html/images:rw</span></span><br><span class="line"><span class="attr">    ports:</span></span><br><span class="line"><span class="bullet">      -</span> <span class="number">8888</span><span class="string">:80</span></span><br><span class="line"></span><br><span class="line"><span class="attr">networks:</span></span><br><span class="line"><span class="attr">  private:</span></span><br><span class="line"><span class="attr">volumes:</span></span><br><span class="line"><span class="attr">  database:</span></span><br><span class="line"><span class="attr">  chevereto_images:</span></span><br></pre></td></tr></table></figure>
 <p>输入你的公网IP和配置文件中的端口号，检查是否安装成功</p>
-<p><img src="C:\Users\86152\Desktop\2013053-56f7f7176c8afe2d.webp" alt="安装后的页面"></p>
+<p><img src="http://212.64.93.67:8888/images/2020/07/23/2013053-56f7f7176c8afe2d.png" alt="安装成功后的页面"></p>
 <p>如果看到上述页面，那就说明没问题了。当然关于语言、时区、大小限制这些都可以在Dashboard里面自行设置。因为都是图形界面，所以就没有详细介绍的必要了。总之这样就可以用了。</p>
 <h2 id="4-配置本地上传环境"><a href="#4-配置本地上传环境" class="headerlink" title="4. 配置本地上传环境"></a>4. 配置本地上传环境</h2><p>私人图床虽然可以用了，但是如果每次用到图片都要手动打开，未免太麻烦。这就需要我们来配置本地环境。</p>
 <p>首先安装好 Typora 和 PicGo。</p>
-<p><img src="C:\Users\86152\Desktop\TIM截图20200723171023.png" alt="Typora设置"></p>
+<p><img src="http://212.64.93.67:8888/images/2020/07/23/aa.png" alt="图像上传设置"></p>
 <p>然后按照上图设置好 Typora。</p>
-<p><img src="C:\Users\86152\Desktop\bb.png" alt="PicGo插件安装"></p>
+<p><img src="http://212.64.93.67:8888/images/2020/07/23/bb.png" alt="PicGo插件安装"></p>
 <p>然后在PicGo里面安装 cheverto 插件，如图所示，打开配置</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Url: http://你的图床地址/api/1/upload</span><br><span class="line">Key: 自己去DashBoard里面去找</span><br></pre></td></tr></table></figure>
-<p><img src="C:\Users\86152\Desktop\cc.png" alt="设置选定图床"></p>
+<p><img src="http://212.64.93.67:8888/images/2020/07/23/cc.png" alt="设置选定图床"></p>
 <p>从此以后，我们就可以在 Typora 里面优雅地右键添加本地图片了，软件将会按照配置自动将图片上传到私人图床里面。只要你的服务器不倒，图片就不会消失。</p>
 
       
