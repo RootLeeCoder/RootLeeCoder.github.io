@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[使用Chevereto+Typora+PicGo实现私人图床博客解决方案]]></title>
+    <url>%2Fpassages%2F%E4%BD%BF%E7%94%A8Chevereto%2BTypora%2BPicGo%E5%AE%9E%E7%8E%B0%E7%A7%81%E4%BA%BA%E5%9B%BE%E5%BA%8A%E5%8D%9A%E5%AE%A2%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%2F</url>
+    <content type="text"><![CDATA[众所周知，将博客里面的图片放在别人的图床上是极其不靠谱的，要想保证数据的安全性，最好自己掌握一套图片处理的流程。 1. 前言最近在浏览自己曾经的博客时，惊讶地发现，有一些放在路过图床上的内容已经无法显示了，损失惨重。因为我用图床基本上都是为了存储 Markdown 博客里面的图片，使用频率并不高，数据量也不大，但是对数据的长久保存有很高的要求。正好自己有了腾讯云服务器，虽然是配置最低的学生套餐，但又不是不能用，所以想了想决定以此为基础搞起来。 2. 事先准备的工具 服务器：腾讯云 Markdown编辑工具：Typora(请更新到较高的版本，否则可能不支持) 图床上传工具：PicGo 3. 在服务器端安装 Cheveretoi.安装docker和compose（容器的编排工具）123yum install docker-latestcurl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-composechmod +x /usr/local/bin/docker-compose ii.获取mariadb和nmtan/chevereto镜像123systemctl start docker-latest.servicedocker pull mariadb:latestdocker pull nmtan/chevereto:latest iii.使用Docker-compose启动服务123mkdir cheverto/cd chevertotouch docker-compose.yaml 在docker-compose.yaml 增加如下内容 123456789101112131415161718192021222324252627282930313233343536373839version: '3'services: db: image: mariadb volumes: - database:/var/lib/mysql:rw restart: always networks: - private environment: MYSQL_ROOT_PASSWORD: chevereto_root MYSQL_DATABASE: chevereto MYSQL_USER: chevereto MYSQL_PASSWORD: chevereto chevereto: depends_on: - db image: nmtan/chevereto restart: always networks: - private environment: CHEVERETO_DB_HOST: db CHEVERETO_DB_USERNAME: chevereto CHEVERETO_DB_PASSWORD: chevereto CHEVERETO_DB_NAME: chevereto CHEVERETO_DB_PREFIX: chv_ volumes: - chevereto_images:/var/www/html/images:rw ports: - 8888:80networks: private:volumes: database: chevereto_images: 输入你的公网IP和配置文件中的端口号，检查是否安装成功 如果看到上述页面，那就说明没问题了。当然关于语言、时区、大小限制这些都可以在Dashboard里面自行设置。因为都是图形界面，所以就没有详细介绍的必要了。总之这样就可以用了。 4. 配置本地上传环境私人图床虽然可以用了，但是如果每次用到图片都要手动打开，未免太麻烦。这就需要我们来配置本地环境。 首先安装好 Typora 和 PicGo。 然后按照上图设置好 Typora。 然后在PicGo里面安装 cheverto 插件，如图所示，打开配置 12Url: http://你的图床地址/api/1/uploadKey: 自己去DashBoard里面去找 从此以后，我们就可以在 Typora 里面优雅地右键添加本地图片了，软件将会按照配置自动将图片上传到私人图床里面。只要你的服务器不倒，图片就不会消失。]]></content>
+      <categories>
+        <category>代码</category>
+      </categories>
+      <tags>
+        <tag>学习笔记</tag>
+        <tag>服务器</tag>
+        <tag>图床</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[每日一更的小Tips]]></title>
     <url>%2Fpassages%2F%E6%AF%8F%E6%97%A5%E4%B8%80%E6%9B%B4%E7%9A%84%E5%B0%8FTips%2F</url>
     <content type="text"><![CDATA[此日志用来培养自己常更新博客的习惯。 2020-07-02——git指定分支的命令1git clone -b [分支名] [仓库地址] 因为大多数情况下我们只需要master分支的最新版本，而用正常的git clone命令会 clone 全部内容，所以此命令可以极大程度减少git所需的时间。 2020-07-03——前端实现内容复制命令12345678910111213// 复制内容copyContent(val) &#123; let _input = document.createElement("input") // 直接构建input _input.value = '这是要复制的内容文本数据' // 设置内容 document.body.appendChild(_input) // 添加临时实例 _input.select() // 选择实例内容 document.execCommand("Copy") // 执行复制 this.$message(&#123; // 消息提示(可选) message: '复制成功', type: 'success' &#125;) document.body.removeChild(_input) // 删除临时实例&#125; 2020-07-04——浏览器自带Base64转码函数12345678// 加密encode_base64Convert() &#123; this.decode = window.btoa(this.encode)&#125;,// 解密decode_base64Convert() &#123; this.encode = window.atob(this.decode)&#125;, 2020-07-05——Vue路由设置redirect跳转12345const routes = [ // 跳转到主页(目前是直接跳转到Base64) &#123; path: '/', redirect: '/Base64'&#125;, &#123; path: '*', redirect: '/Base64'&#125;,] 2020-07-06——Vue项目在history模式下的Nginx配置1234567891011121314151617181920server &#123; listen 80; server_name localhost; include /etc/nginx/default.d/*.conf; location / &#123; try_files $uri $uri/ /index.html; root /data/www/front_end_tools/dist; index index.html index.htm; &#125; error_page 404 /404.html; location = /40x.html &#123; &#125; error_page 500 502 503 504 /50x.html; location = /50x.html &#123; &#125;&#125; 2020-07-15——JavaScript匹配字符串的三种方法123456789101112131415161718192021// indexOf()方法区分大小写let str1 = 'Hello World'console.log(str1.indexOf('lo')) // 3,(找到刚开始匹配的位置)console.log(str1.indexOf('aa')) // -1,(找不到就显示-1)// test()方法区分大小写，必须用一个正则表达式来匹配字符串let str2 = 'qwertyasdfzxcv'let reg = /asdf/gconsole.log(reg.test(str2)) // true// exec()方法区分大小写，匹配失败则返回nulllet str = "我今年25岁明年26岁后年27岁千年24岁"let reg2 = /\d+/glet resultwhile (result = reg2.exec(str)) &#123; console.log(result[0])&#125;// 25// 26// 27// 24 2020-07-16——解决Base64中文乱码的问题12345678// 加密encode_base64Convert() &#123; this.decode = window.btoa(unescape(encodeURIComponent(this.encode)))&#125;,// 解密decode_base64Convert() &#123; this.encode = decodeURIComponent(escape(window.atob(this.decode)))&#125;, 其中，escape() 函数可对字符串进行编码，但不会对 ASCII 字母和数字进行编码，也不会对下面这些 ASCII 标点符号进行编码： * @ - _ + . / 。其他所有的字符都会被转义序列替换。 但是现在escape()函数已经过时，换用encodeURIComponent()函数来代替。encodeURIComponent()函数可把字符串作为 URI 组件进行编码。 该方法不会对 ASCII 字母和数字进行编码，也不会对这些 ASCII 标点符号进行编码： - _ . ! ~ * ‘ ( ) 。 其他字符（比如 ：;/?:@&amp;=+$,# 这些用于分隔 URI 组件的标点符号），都是由一个或多个十六进制的转义序列替换的。 2020-07-17——JS停止事件发生的方法stopPropagation()1event.stopPropagation() 该方法将停止事件的传播，阻止它被分派到其他 Document 节点。在事件传播的任何阶段都可以调用它。注意，虽然该方法不能阻止同一个 Document 节点上的其他事件句柄被调用，但是它可以阻止把事件分派到其他节点。 2020-07-18——滚动条样式重置1234567891011121314/* 滚动条设置 */// 总体宽度html::-webkit-scrollbar &#123; width: 10px;&#125;// 轨道html::-webkit-scrollbar-track &#123; background-color: transparent;&#125;// 滑块html::-webkit-scrollbar-thumb &#123; border-radius: 10%; background-color: rgba(144,147,153,.3);&#125; 2020-07-19——Vue-Cli 3 自定义端口号1234"scripts": &#123; "serve": "vue-cli-service serve --port 8964", "build": "vue-cli-service build"&#125;,]]></content>
@@ -55,8 +68,8 @@
         <category>服务器</category>
       </categories>
       <tags>
-        <tag>腾讯云</tag>
         <tag>服务器</tag>
+        <tag>腾讯云</tag>
       </tags>
   </entry>
   <entry>
